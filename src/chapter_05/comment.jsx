@@ -18,7 +18,7 @@ const styles = {
     contentContainer:{
         marginLeft: 8,
         display: "flex",
-        flexDirection: "coulumn",
+        flexDirection: "column",
         justifyContent: "center",
     },
     nameText:{
@@ -42,10 +42,8 @@ function Comment(props){
                 />
             </div>
             <div style={styles.contentContainer}>
-                <span style={styles.nameText}>React</span>
-                <span style={styles.commentText}>
-                    Welcome to the show!
-                </span>
+                <span style={styles.nameText}>{props.name}</span>
+                <span style={styles.commentText}>{props.comment}</span>
             </div>
         </div>
     );
