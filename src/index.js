@@ -11,10 +11,11 @@ import NotificationList from './chapter_06/NotificationList'; //다시 듣기
 import Accommodate from './chapter_07/Accommodate';  //다시 듣기
 import ConfirmButton from './chapter_08/ConfirmButton'; //class bind 방식
 import ConfirmButtonF from './chapter_08/ConfirmButton(fun)';
+import LandingPage from './chpater_09/LandingPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ConfirmButtonF />
+    <LandingPage />
 );
 
 // If you want to start measuring performance in your app, pass a function
