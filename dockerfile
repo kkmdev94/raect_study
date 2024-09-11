@@ -13,9 +13,8 @@ RUN git clone https://github.com/kkmdev94/raect_study.git
 # Set working directory to the project directory
 WORKDIR /home/raect_study
 
-# Copy public files and other source files
-COPY public/index.html ./public/
-COPY . .
+# Copy public files to the /home/public directory
+COPY public/ /home/public/
 
 # Environment variables
 ENV CHOKIDAR_USEPOLLING=true
