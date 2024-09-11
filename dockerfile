@@ -1,27 +1,28 @@
 FROM node:20-alpine
 
+# Set working directory
 WORKDIR /home
 
-# 패키지 설치 단계(패키지 설치와 빌드 단계를 분리 해서 패키지가 변경되었을때만 설치되도록 입력.)
-COPY ["package.json", "package-lock.json", "public/index.html","./"]
-RUN apk add --no-cache git
-RUN apk add --no-cache curl
-RUN ["npm", "install"]
+# Install dependencies
+COPY package.json package-lock.json ./
+RUN apk add --no-cache git curl && npm install
 
-
-# 빌드 단계
-
-WORKDIR /home
-
+# Clone the repository and copy necessary files
 RUN git clone https://github.com/kkmdev94/raect_study.git
 
-WORKDIR /home/HP_frontend
+# Set working directory to the project directory
+WORKDIR /home/raect_study
 
-COPY index.html /home/public
+# Copy public files and other source files
+COPY public/index.html ./public/
+COPY . .
 
-ENV CHOKIDAR_SUERPOLLING=ture
+# Environment variables
+ENV CHOKIDAR_USEPOLLING=true
 
+# Expose port
 EXPOSE 3000
 
+# Start the application
 CMD ["npm", "run", "start"]
 #CMD ["node", "./public/index.html"]
