@@ -25,6 +25,13 @@ function Toolbar(props) {
             ) : (
                 <button onClick={onClickLogin}>로그인</button>
             )}
+
+            {isLoggedIn ? (
+                <button onClick={onClickLogout}>테스트입니다.</button>
+            ):(
+                <button onClick={onClickLogin}>이거슨 실시간으로 변경이 됩니다</button>
+            )} 
+
         </div>
     );
 }
