@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button.transparent-button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  background-color: gray;
+  padding: 20px 0;
+}
+
+article.card {
+  width: 600px;
+  margin: 20px auto;
+  margin-bottom: 60px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+/*** HEADER 시작 ***/
+article.card header {
+  height: 40px;
+  padding: 10px;
+}
+
+article.card header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.circle-image {
+  height: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.circle-image > img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.card-username {
+  padding: 10px 0;
+  font-weight: 900;
+  line-height: 20px;
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+.option-more {
+  float: right;
+  padding: 7px;
+}
+/**** HEADER 종료 ***/
+
+/*** CONTENT 시작 ***/
+.card-container {
+  padding: 5px 10px;
+}
+
+.card-buttons {
+  padding: 0 5px;
+  margin-top: 5px;
+}
+
+.card-buttons > div {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.card-buttons > div.last-card-button {
+  float: right;
+  margin-right: 0;
+}
