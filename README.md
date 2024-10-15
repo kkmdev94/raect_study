@@ -3,4 +3,5 @@ THIS IS MY STUDY
 1. HTML
 2. CSS
 3. JAVASCRIPTS
+HTML,CSS,JAVASCRIPTS => Instargram PhotoCard
 4. React
