@@ -15,11 +15,12 @@ import ConfirmButtonF from './chapter_08/ConfirmButton(fun)';
 import AttendanceBook from './chapter_10/AttendanceBook';
 import SingUp from './chapter_11/SingUp';
 import Calculator from './chapter_12/Calculator';
+import ProfileCard from './chapter_13/ProfileCard';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Calculator />
+    <ProfileCard />
 );
 
 // If you want to start measuring performance in your app, pass a function
