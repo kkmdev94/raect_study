@@ -14,7 +14,10 @@ function MainContent(props) {
                 color: theme == "light" ? "black":"white",
             }}
         >
-
+            <p>Hello everyone, This is theme change possibility website</p> 
+            <button onClick={toggleTheme}>theme change</button>
         </div>
     );
 }
+
+export default MainContent;
