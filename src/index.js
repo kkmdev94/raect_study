@@ -17,11 +17,12 @@ import SingUp from './chapter_11/SingUp';
 import Calculator from './chapter_12/Calculator';
 import ProfileCard from './chapter_13/ProfileCard';
 import DarkOrLight from './chapter_14/DarkOrLight';
+import Blocks from './chapter_15/Blocks';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <DarkOrLight />
+    <Blocks />
 );
 
 // If you want to start measuring performance in your app, pass a function
