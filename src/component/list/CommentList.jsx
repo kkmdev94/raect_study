@@ -20,11 +20,12 @@ function CommentList(props) {
 
     return (
         <Wrapper>
-            {comments && comments.map((comment, index) => {
-                return <CommentListItem key={comment.id} comment={comment} />;
+            {comments.map((comment, index) => {
+                return <CommentListItem key={comment.id} comment={comment}/>;
             })}
         </Wrapper>
     );
+    console.log(comments)
 }
 
 export default CommentList;
