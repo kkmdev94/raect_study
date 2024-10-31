@@ -20,7 +20,7 @@ const Container = styled.div`
 
     & > * {
         :not(:last-child) {
-            margin-bottom:16px;
+            margin-bottom: 16px;
         }
     }
 `;

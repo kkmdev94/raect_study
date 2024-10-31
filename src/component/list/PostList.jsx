@@ -4,7 +4,7 @@ import PostlistItem from "./PostlistItem";
 
 const Wrapper = styled.div`
     display: flex;
-    flex-direction: colum;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 
@@ -16,11 +16,11 @@ const Wrapper = styled.div`
 `;
 
 function PostList(props) {
-    const {posts, onClickItem} = props;
+    const { posts, onClickItem } = props;
 
     return (
       <Wrapper>
-        {props.map((post, index) => {
+        {posts.map((post, index) => {
             return (
                 <PostlistItem
                     key={post.id}
