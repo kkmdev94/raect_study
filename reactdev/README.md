@@ -1,0 +1,7 @@
+THIS IS MY STUDY
+
+1. HTML
+2. CSS
+3. JAVASCRIPTS
+4. HTML,CSS,JAVASCRIPTS => Instargram PhotoCard
+5. React
