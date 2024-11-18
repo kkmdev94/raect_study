@@ -1,7 +1,7 @@
 ### IntelliJ IDEA ###
 JAVA/
-!java-start-v20240803
-!javateacher
+!java-start-v20240803/
+!javateacher/
 
 out/
 !**/src/main/**/out/
