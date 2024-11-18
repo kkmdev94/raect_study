@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f9bd936-0b29-4c35-ae3d-08d01981609f" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/java-start/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/java-start/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="1f9bd936-0b29-4c35-ae3d-08d01981609f" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +32,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.keymap",
     "애플리케이션.Bignumber.executor": "Run",
