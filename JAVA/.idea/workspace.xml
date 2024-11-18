@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f9bd936-0b29-4c35-ae3d-08d01981609f" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-start/src/cond/Switch1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-start/src/cond/Switch2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-start/src/cond/Switch3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-start/src/cond/Switch4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-start/src/cond/ex/If1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-start/src/cond/ex/If2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-start/src/cond/ex/If3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/CommentJava.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/HelloJava.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/HelloJava2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/cond/Switch1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/cond/Switch2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/cond/Switch3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/cond/Switch4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/cond/ex/If1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/cond/ex/If2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/cond/ex/If3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/Comp1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/Comp2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/Operator1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/Operator2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/Operator3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/Operator4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/OperatorAdd1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/operator/OperatorAdd2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/Var8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/ex/VarEx1Question.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/ex/VarEx2Question.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java-start/variable/ex/VarEx3Question.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sample/sample.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/java_start.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/java_start.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/java_start_v20240803.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/java_start_v20240803.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2p1AQnHDSR8ATGHrFsL9GuILfr5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "애플리케이션.If1.executor": "Run",
+    "애플리케이션.If2.executor": "Run",
+    "애플리케이션.If3.executor": "Run",
+    "애플리케이션.Operator1.executor": "Run",
+    "애플리케이션.Switch1.executor": "Run",
+    "애플리케이션.Switch2.executor": "Run",
+    "애플리케이션.Switch3.executor": "Run",
+    "애플리케이션.Switch4.executor": "Run"
+  }
+}]]></component>
+  <component name="RunManager" selected="애플리케이션.If3">
+    <configuration name="If1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cond.ex.If1" />
+      <module name="java-start" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cond.ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="If2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cond.ex.If2" />
+      <module name="java-start" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cond.ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="If3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cond.ex.If3" />
+      <module name="java-start" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cond.ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Switch3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cond.Switch3" />
+      <module name="java-start" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cond.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Switch4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cond.Switch4" />
+      <module name="java-start" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cond.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="애플리케이션.If3" />
+        <item itemvalue="애플리케이션.If2" />
+        <item itemvalue="애플리케이션.If1" />
+        <item itemvalue="애플리케이션.Switch4" />
+        <item itemvalue="애플리케이션.Switch3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="1f9bd936-0b29-4c35-ae3d-08d01981609f" name="변경" comment="" />
+      <created>1731923195380</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731923195380</updated>
+    </task>
+    <servers />
+  </component>
+</project>

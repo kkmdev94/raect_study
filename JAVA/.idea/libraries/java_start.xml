@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="java-start">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/java-start/java-start.zip!/" />
+      <root url="jar://$PROJECT_DIR$/sample/java-start/java-start.zip!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
