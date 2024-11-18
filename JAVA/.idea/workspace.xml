@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f9bd936-0b29-4c35-ae3d-08d01981609f" name="변경" comment="" />
+    <list default="true" id="1f9bd936-0b29-4c35-ae3d-08d01981609f" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-start/src/ForEach/LIs1.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-start/src/ForEach/LIs1.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +44,7 @@
     "애플리케이션.If2.executor": "Run",
     "애플리케이션.If3.executor": "Run",
     "애플리케이션.If4.executor": "Run",
+    "애플리케이션.LIs1.executor": "Run",
     "애플리케이션.Operator1.executor": "Run",
     "애플리케이션.Switch1.executor": "Run",
     "애플리케이션.Switch2.executor": "Run",
@@ -49,7 +53,7 @@
     "애플리케이션.SwitchEx1.executor": "Run"
   }
 }]]></component>
-  <component name="RunManager" selected="애플리케이션.EvenOdEx">
+  <component name="RunManager" selected="애플리케이션.LIs1">
     <configuration name="BigNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cond.ex.BigNumber" />
       <module name="java-start" />
@@ -76,8 +80,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="If3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cond.ex.If3" />
+    <configuration name="If4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cond.ex.If4" />
       <module name="java-start" />
       <extension name="coverage">
         <pattern>
@@ -89,12 +93,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="If4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cond.ex.If4" />
+    <configuration name="LIs1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ForEach.LIs1" />
       <module name="java-start" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cond.ex.*" />
+          <option name="PATTERN" value="ForEach.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.LIs1" />
         <item itemvalue="애플리케이션.EvenOdEx" />
         <item itemvalue="애플리케이션.BigNumber" />
         <item itemvalue="애플리케이션.SwitchEx1" />
         <item itemvalue="애플리케이션.If4" />
-        <item itemvalue="애플리케이션.If3" />
       </list>
     </recent_temporary>
   </component>
