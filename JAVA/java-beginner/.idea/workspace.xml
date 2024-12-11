@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4dee936d-ce01-4c16-84e7-4a7dce9878a4" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/class1/ClassStart1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/class1/ClassStart1Ref.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/class1/ClassStart2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/ClassStrat3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,15 +37,18 @@
     "Application.ClassStart1.executor": "Run",
     "Application.ClassStart1Ref.executor": "Run",
     "Application.ClassStart2.executor": "Run",
+    "Application.ClassStrat3.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/study/JAVA/java-beginner",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "애플리케이션.Main.executor": "Run"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ClassStart1Ref">
+  <component name="RunManager" selected="Application.ClassStrat3">
     <configuration name="ClassStart1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="class1.ClassStart1" />
       <module name="java-beginner" />
@@ -86,8 +88,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClassStrat3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="class1.ClassStrat3" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="class1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClassStrat3" />
         <item itemvalue="Application.ClassStart1Ref" />
         <item itemvalue="Application.ClassStart2" />
         <item itemvalue="Application.ClassStart1" />
