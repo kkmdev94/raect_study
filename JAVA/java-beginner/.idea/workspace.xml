@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4dee936d-ce01-4c16-84e7-4a7dce9878a4" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/class1/ClassStrat3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/class1/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/ClassStrat4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/ClassStrat5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/Ex/MovieReview.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/Ex/MovieReviewMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/Ex/ProductOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/Ex/ProductOrderMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class1/memo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +43,10 @@
     "Application.ClassStart1Ref.executor": "Run",
     "Application.ClassStart2.executor": "Run",
     "Application.ClassStrat3.executor": "Run",
+    "Application.ClassStrat4.executor": "Run",
+    "Application.ClassStrat5.executor": "Run",
+    "Application.MovieReviewMain.executor": "Run",
+    "Application.ProductOrderMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -48,46 +57,13 @@
     "애플리케이션.Main.executor": "Run"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ClassStrat3">
-    <configuration name="ClassStart1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="class1.ClassStart1" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="class1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClassStart1Ref" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="class1.ClassStart1Ref" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="class1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClassStart2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="class1.ClassStart2" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="class1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="class1.Ex" />
+      <recent name="class1" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ProductOrderMain">
     <configuration name="ClassStrat3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="class1.ClassStrat3" />
       <module name="java-beginner" />
@@ -101,12 +77,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClassStrat4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="class1.ClassStrat4" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="class1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClassStrat5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="class1.ClassStrat5" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="class1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieReviewMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="class1.Ex.MovieReviewMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="class1.Ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductOrderMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="class1.Ex.ProductOrderMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="class1.Ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProductOrderMain" />
+        <item itemvalue="Application.MovieReviewMain" />
+        <item itemvalue="Application.ClassStrat5" />
+        <item itemvalue="Application.ClassStrat4" />
         <item itemvalue="Application.ClassStrat3" />
-        <item itemvalue="Application.ClassStart1Ref" />
-        <item itemvalue="Application.ClassStart2" />
-        <item itemvalue="Application.ClassStart1" />
       </list>
     </recent_temporary>
   </component>
