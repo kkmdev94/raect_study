@@ -23,8 +23,7 @@ public class ProductOrderMain {
 
         for (ProductOrder f : pr) {
             System.out.println("이름 : " + f.productName + " 가격 : " + f.price + " 갯수 : " + f.quantity);
-            int sum = f.price * f.quantity;
-            total += sum;
+            total += f.price * f.quantity;
         }
         System.out.println("최종 합계는 : " + total + "원");
     }
