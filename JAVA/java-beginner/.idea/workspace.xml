@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/class2/Method1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/class2/Method2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/class2/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class2/InitData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class2/InitMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class2/NullMain1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/class2/memo2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,12 +27,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.InitMain.executor": "Run",
+    "Application.Method1.executor": "Run",
+    "Application.NullMain1.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="class2" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.NullMain1">
+    <configuration name="InitMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="class2.InitMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="class2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Method1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="class2.Method1" />
       <module name="java-beginner" />
@@ -45,8 +69,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NullMain1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="class2.NullMain1" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="class2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NullMain1" />
+        <item itemvalue="Application.InitMain" />
         <item itemvalue="Application.Method1" />
       </list>
     </recent_temporary>
