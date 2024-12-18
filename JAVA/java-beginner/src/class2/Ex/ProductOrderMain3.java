@@ -1,19 +1,35 @@
 package class2.Ex;
 
-public class ProductOrderMain2 {
+import java.util.Scanner;
+
+public class ProductOrderMain3 {
 
     public static void main(String[] args) {
-        ProductOrder[] orders = new ProductOrder[3];
+        Scanner sc = new Scanner(System.in);
+        System.out.print("입력할 주문의 갯수를 입력하세요 : ");
+        int quantitySc = sc.nextInt();
+        ProductOrder[] orders = new ProductOrder[quantitySc];
 
-        orders[0] = createOrder("apple", 1000, 5);
-        orders[1] = createOrder("banana", 1500, 4);
-        orders[2] = createOrder("orange", 2000, 6);
 
+        for (int i = 0; i < orders.length; i++) {
+            sc.nextLine();
+            System.out.println((i+1) + "번째 주문 정보를 입력하세요.");
+
+            System.out.print("상품명 : ");
+            String name = sc.nextLine();
+
+            System.out.print("가격 : ");
+            int price = sc.nextInt();
+
+            System.out.print("수량 : ");
+            int quantity = sc.nextInt();
+
+            orders[i] = createOrder(name,price,quantity);
+        }
         printOrders(orders);
 
         int totalAmount = getTotalAmount(orders);
         System.out.println("최종 합계는 : " + totalAmount + "원");
-
     }
 
     public static ProductOrder createOrder(String name, int price, int quantity) {
