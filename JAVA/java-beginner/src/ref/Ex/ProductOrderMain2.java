@@ -1,4 +1,4 @@
-package class2.Ex;
+package ref.Ex;
 
 public class ProductOrderMain2 {
 
