@@ -5,30 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/oop1/MusicPlayerData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/oop1/MusicPlayerMain1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/oop1/MusicPlayerMain2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/oop1/MusicPlayerMain3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/oop1/memo3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/MusicPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/MusicPlayerMain4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ValueData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ValueDataMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ValueObjectMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ex/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ex/AccountMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ex/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ex/RectangleOopMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oop1/ex/RectangleProceduralMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/BigData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/BigData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/Ex/ProductOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/Ex/ProductOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/Ex/ProductOrderMain2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/Ex/ProductOrderMain2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/Ex/ProductOrderMain3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/Ex/ProductOrderMain3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/InitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/InitData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/InitMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/InitMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/Method1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/Method1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/Method2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/Method2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/MethodChange1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/MethodChange1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/MethodChange2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/MethodChange2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/NullMain1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/NullMain1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/NullMain2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/NullMain2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/NullMain3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/NullMain3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/VarChange1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/VarChange1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/VarChange2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/VarChange2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/class2/memo2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/ref/memo2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,15 +43,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AccountMain.executor": "Run",
     "Application.InitMain.executor": "Run",
     "Application.Method1.executor": "Run",
     "Application.MusicPlayerMain1.executor": "Run",
     "Application.MusicPlayerMain3.executor": "Run",
+    "Application.MusicPlayerMain4.executor": "Run",
     "Application.NullMain1.executor": "Run",
     "Application.NullMain2.executor": "Run",
     "Application.NullMain3.executor": "Run",
     "Application.ProductOrderMain2.executor": "Run",
     "Application.ProductOrderMain3.executor": "Run",
+    "Application.RectangleOopMain.executor": "Run",
+    "Application.RectangleProceduralMain.executor": "Run",
+    "Application.ValueDataMain.executor": "Run",
+    "Application.ValueObjectMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
@@ -77,9 +70,22 @@
       <recent name="class2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MusicPlayerMain3">
-    <configuration name="MusicPlayerMain1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="oop1.MusicPlayerMain1" />
+  <component name="RunManager" selected="Application.AccountMain">
+    <configuration name="AccountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="oop1.ex.AccountMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oop1.ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MusicPlayerMain4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="oop1.MusicPlayerMain4" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
@@ -91,51 +97,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MusicPlayerMain3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="oop1.MusicPlayerMain3" />
+    <configuration name="RectangleOopMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="oop1.ex.RectangleOopMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oop1.ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RectangleProceduralMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="oop1.ex.RectangleProceduralMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oop1.ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValueObjectMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="oop1.ValueObjectMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="oop1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NullMain3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ref.NullMain3" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ref.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductOrderMain2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ref.Ex.ProductOrderMain2" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ref.Ex.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductOrderMain3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ref.Ex.ProductOrderMain3" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ref.Ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MusicPlayerMain3" />
-        <item itemvalue="Application.MusicPlayerMain1" />
-        <item itemvalue="Application.ProductOrderMain3" />
-        <item itemvalue="Application.ProductOrderMain2" />
-        <item itemvalue="Application.NullMain3" />
+        <item itemvalue="Application.AccountMain" />
+        <item itemvalue="Application.RectangleOopMain" />
+        <item itemvalue="Application.RectangleProceduralMain" />
+        <item itemvalue="Application.MusicPlayerMain4" />
+        <item itemvalue="Application.ValueObjectMain" />
       </list>
     </recent_temporary>
   </component>
