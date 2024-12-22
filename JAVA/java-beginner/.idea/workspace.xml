@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/helloshop/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pack/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pack/PackageMain1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pack/PackageMain2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pack/PackageMain3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pack/a/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pack/b/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/Speaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/SpeakerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +53,7 @@
     "Application.ProductOrderMain3.executor": "Run",
     "Application.RectangleOopMain.executor": "Run",
     "Application.RectangleProceduralMain.executor": "Run",
+    "Application.SpeakerMain.executor": "Run",
     "Application.ValueDataMain.executor": "Run",
     "Application.ValueObjectMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -74,7 +70,7 @@
       <recent name="class2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PackageMain1">
+  <component name="RunManager" selected="Application.SpeakerMain">
     <configuration name="BookMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="construct.ex.BookMain" />
       <module name="java-beginner" />
@@ -114,19 +110,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MethodInitMain3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="construct.MethodInitMain3" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="construct.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PackageMain1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pack.PackageMain1" />
       <module name="java-beginner" />
@@ -140,13 +123,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpeakerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="access.SpeakerMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="access.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpeakerMain" />
         <item itemvalue="Application.PackageMain1" />
         <item itemvalue="Application.BookMain" />
         <item itemvalue="Application.ConstructMain2" />
         <item itemvalue="Application.ConstructMain1" />
-        <item itemvalue="Application.MethodInitMain3" />
       </list>
     </recent_temporary>
   </component>
