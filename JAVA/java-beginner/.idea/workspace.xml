@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/access/BankAccountMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/ex/CounterMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/ex/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/ex/MaxCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/ex/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/ex/ShoppingCartMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,15 +57,20 @@
     "Application.RectangleOopMain.executor": "Run",
     "Application.RectangleProceduralMain.executor": "Run",
     "Application.ShoppingCartMain.executor": "Run",
+    "Application.ShoppingCartMain2.executor": "Run",
     "Application.SpeakerMain.executor": "Run",
     "Application.ValueDataMain.executor": "Run",
     "Application.ValueObjectMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/JAVA/JAVA/java-beginner/src/access/ex2"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA\JAVA\java-beginner\src\access\ex2" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pack" />
       <recent name="construct" />
@@ -80,7 +79,7 @@
       <recent name="class2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShoppingCartMain">
+  <component name="RunManager" selected="Application.ShoppingCartMain2">
     <configuration name="AccessOuterMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="access.b.AccessOuterMain" />
       <module name="java-beginner" />
@@ -120,19 +119,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PublicClassOuterMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="access.b.PublicClassOuterMain" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="access.b.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ShoppingCartMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="access.ex.ShoppingCartMain" />
       <module name="java-beginner" />
@@ -146,13 +132,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShoppingCartMain2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="access.ex2.ShoppingCartMain2" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="access.ex2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShoppingCartMain2" />
         <item itemvalue="Application.ShoppingCartMain" />
         <item itemvalue="Application.CounterMain" />
         <item itemvalue="Application.BankAccountMain" />
         <item itemvalue="Application.AccessOuterMain" />
-        <item itemvalue="Application.PublicClassOuterMain" />
       </list>
     </recent_temporary>
   </component>
