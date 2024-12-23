@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/access/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/a/AccessData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/a/AccseeInnerMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/a/PublicClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/a/PublicClassInnerMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/b/AccessOuterMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/access/b/PublicClassOuterMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/BankAccountMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/ex/CounterMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/ex/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/ex/MaxCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/ex/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/access/ex/ShoppingCartMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,9 +41,11 @@
     "Application.AccessOuterMain.executor": "Run",
     "Application.AccountMain.executor": "Run",
     "Application.AccseeInnerMain.executor": "Run",
+    "Application.BankAccountMain.executor": "Run",
     "Application.BookMain.executor": "Run",
     "Application.ConstructMain1.executor": "Run",
     "Application.ConstructMain2.executor": "Run",
+    "Application.CounterMain.executor": "Run",
     "Application.InitMain.executor": "Run",
     "Application.Method1.executor": "Run",
     "Application.MethodInitMain1.executor": "Run",
@@ -61,6 +62,7 @@
     "Application.PublicClassOuterMain.executor": "Run",
     "Application.RectangleOopMain.executor": "Run",
     "Application.RectangleProceduralMain.executor": "Run",
+    "Application.ShoppingCartMain.executor": "Run",
     "Application.SpeakerMain.executor": "Run",
     "Application.ValueDataMain.executor": "Run",
     "Application.ValueObjectMain.executor": "Run",
@@ -78,7 +80,7 @@
       <recent name="class2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AccessOuterMain">
+  <component name="RunManager" selected="Application.ShoppingCartMain">
     <configuration name="AccessOuterMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="access.b.AccessOuterMain" />
       <module name="java-beginner" />
@@ -92,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccseeInnerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="access.a.AccseeInnerMain" />
+    <configuration name="BankAccountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="access.BankAccountMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="access.a.*" />
+          <option name="PATTERN" value="access.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PackageMain1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pack.PackageMain1" />
+    <configuration name="CounterMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="access.ex.CounterMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pack.*" />
+          <option name="PATTERN" value="access.ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,12 +133,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpeakerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="access.SpeakerMain" />
+    <configuration name="ShoppingCartMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="access.ex.ShoppingCartMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="access.*" />
+          <option name="PATTERN" value="access.ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShoppingCartMain" />
+        <item itemvalue="Application.CounterMain" />
+        <item itemvalue="Application.BankAccountMain" />
         <item itemvalue="Application.AccessOuterMain" />
         <item itemvalue="Application.PublicClassOuterMain" />
-        <item itemvalue="Application.AccseeInnerMain" />
-        <item itemvalue="Application.SpeakerMain" />
-        <item itemvalue="Application.PackageMain1" />
       </list>
     </recent_temporary>
   </component>
