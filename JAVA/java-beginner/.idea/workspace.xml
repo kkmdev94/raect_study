@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/final1/Constant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/ConstantMain1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/ConstantMain2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/ConstructInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/FianlRefMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/FieldInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/FinalFieldMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/FinalLocalMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/ex/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/final1/ex/MemeberMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/extends1/ex1/ElectricCar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +56,7 @@
     "Application.JavaMemoryMain1.executor": "Run",
     "Application.JavaMemoryMain2.executor": "Run",
     "Application.MathArrayUtilsMain.executor": "Run",
+    "Application.MemeberMain.executor": "Run",
     "Application.Method1.executor": "Run",
     "Application.MethodInitMain1.executor": "Run",
     "Application.MethodInitMain3.executor": "Run",
