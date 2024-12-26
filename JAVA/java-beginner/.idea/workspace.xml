@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/static2/DecoData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/DecoDataMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/DecoMain1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/DecoMain2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/DecoUtil1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/DecoUtil2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static2/ex/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static2/ex/CarMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static2/ex/MathArrayUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static2/ex/MathArrayUtilsMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +41,7 @@
     "Application.AccseeInnerMain.executor": "Run",
     "Application.BankAccountMain.executor": "Run",
     "Application.BookMain.executor": "Run",
+    "Application.CarMain.executor": "Run",
     "Application.ConstructMain1.executor": "Run",
     "Application.ConstructMain2.executor": "Run",
     "Application.CounterMain.executor": "Run",
@@ -55,6 +54,7 @@
     "Application.InitMain.executor": "Run",
     "Application.JavaMemoryMain1.executor": "Run",
     "Application.JavaMemoryMain2.executor": "Run",
+    "Application.MathArrayUtilsMain.executor": "Run",
     "Application.Method1.executor": "Run",
     "Application.MethodInitMain1.executor": "Run",
     "Application.MethodInitMain3.executor": "Run",
@@ -82,6 +82,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="static2.ex" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JAVA\JAVA\java-beginner\src\access\ex2" />
     </key>
@@ -93,26 +96,13 @@
       <recent name="construct" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DecoDataMain">
-    <configuration name="DataCountMain2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="static1.DataCountMain2" />
+  <component name="RunManager" selected="Application.MathArrayUtilsMain">
+    <configuration name="CarMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="static2.ex.CarMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="static1.Data1" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataCountMain3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="static1.DataCountMain3" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="static1.*" />
+          <option name="PATTERN" value="static2.ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,13 +149,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MathArrayUtilsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="static2.ex.MathArrayUtilsMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="static2.ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MathArrayUtilsMain" />
+        <item itemvalue="Application.CarMain" />
         <item itemvalue="Application.DecoDataMain" />
         <item itemvalue="Application.DecoMain2" />
         <item itemvalue="Application.DecoMain1" />
-        <item itemvalue="Application.DataCountMain3" />
-        <item itemvalue="Application.DataCountMain2" />
       </list>
     </recent_temporary>
   </component>
