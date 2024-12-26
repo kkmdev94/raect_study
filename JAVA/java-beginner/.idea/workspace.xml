@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/static2/ex/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/ex/CarMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/ex/MathArrayUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static2/ex/MathArrayUtilsMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static2/ex/MathArrayUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/static2/ex/MathArrayUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,53 +31,53 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccessOuterMain.executor": "Run",
-    "Application.AccountMain.executor": "Run",
-    "Application.AccseeInnerMain.executor": "Run",
-    "Application.BankAccountMain.executor": "Run",
-    "Application.BookMain.executor": "Run",
-    "Application.CarMain.executor": "Run",
-    "Application.ConstructMain1.executor": "Run",
-    "Application.ConstructMain2.executor": "Run",
-    "Application.CounterMain.executor": "Run",
-    "Application.DataCountMain1.executor": "Run",
-    "Application.DataCountMain2.executor": "Run",
-    "Application.DataCountMain3.executor": "Run",
-    "Application.DecoDataMain.executor": "Run",
-    "Application.DecoMain1.executor": "Run",
-    "Application.DecoMain2.executor": "Run",
-    "Application.InitMain.executor": "Run",
-    "Application.JavaMemoryMain1.executor": "Run",
-    "Application.JavaMemoryMain2.executor": "Run",
-    "Application.MathArrayUtilsMain.executor": "Run",
-    "Application.Method1.executor": "Run",
-    "Application.MethodInitMain1.executor": "Run",
-    "Application.MethodInitMain3.executor": "Run",
-    "Application.MusicPlayerMain1.executor": "Run",
-    "Application.MusicPlayerMain3.executor": "Run",
-    "Application.MusicPlayerMain4.executor": "Run",
-    "Application.NullMain1.executor": "Run",
-    "Application.NullMain2.executor": "Run",
-    "Application.NullMain3.executor": "Run",
-    "Application.PackageMain1.executor": "Run",
-    "Application.ProductOrderMain2.executor": "Run",
-    "Application.ProductOrderMain3.executor": "Run",
-    "Application.PublicClassOuterMain.executor": "Run",
-    "Application.RectangleOopMain.executor": "Run",
-    "Application.RectangleProceduralMain.executor": "Run",
-    "Application.ShoppingCartMain.executor": "Run",
-    "Application.ShoppingCartMain2.executor": "Run",
-    "Application.SpeakerMain.executor": "Run",
-    "Application.ValueDataMain.executor": "Run",
-    "Application.ValueObjectMain.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JAVA/JAVA/java-beginner/src/access/ex2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccessOuterMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AccountMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AccseeInnerMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BankAccountMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BookMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CarMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConstructMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConstructMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CounterMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataCountMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataCountMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataCountMain3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DecoDataMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DecoMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DecoMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InitMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JavaMemoryMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JavaMemoryMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MathArrayUtilsMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Method1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MethodInitMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MethodInitMain3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MusicPlayerMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MusicPlayerMain3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MusicPlayerMain4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NullMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NullMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NullMain3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PackageMain1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductOrderMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductOrderMain3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PublicClassOuterMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RectangleOopMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RectangleProceduralMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ShoppingCartMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ShoppingCartMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SpeakerMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ValueDataMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ValueObjectMain.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JAVA/JAVA/java-beginner/src/access/ex2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="static2.ex" />
