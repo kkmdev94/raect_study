@@ -33,4 +33,8 @@ public class MemberConstruct {
         this.age = age;
         this.grade = grade;
     }
+
+    public void test() { // <- 요 ()안에 참조값을 넘겨 받느냐 아니면 비워두고 나 멤버 변수를 참조값으로 받느냐에 따라 this 생략이 가능하다.
+        System.out.println("생성자 호출 name = " + name + ", age = " + age + ", grade = " + grade);
+    }
 }
