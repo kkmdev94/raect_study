@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/extends1/ex/Album.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extends1/ex/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extends1/ex/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extends1/ex/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/extends1/ex/ShopMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/basic/CastingMain1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/basic/CastingMain2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/basic/CastingMain3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/basic/Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/basic/Parent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/basic/PolyMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +44,9 @@
     "Application.BankAccountMain.executor": "Run",
     "Application.BookMain.executor": "Run",
     "Application.CarMain.executor": "Run",
+    "Application.CastingMain1.executor": "Run",
+    "Application.CastingMain2.executor": "Run",
+    "Application.CastingMain3.executor": "Run",
     "Application.ClassMain.executor": "Run",
     "Application.ConstantMain1.executor": "Run",
     "Application.ConstantMain2.executor": "Run",
@@ -74,6 +78,7 @@
     "Application.NullMain2.executor": "Run",
     "Application.NullMain3.executor": "Run",
     "Application.PackageMain1.executor": "Run",
+    "Application.PolyMain.executor": "Run",
     "Application.ProductOrderMain2.executor": "Run",
     "Application.ProductOrderMain3.executor": "Run",
     "Application.PublicClassOuterMain.executor": "Run",
@@ -107,20 +112,20 @@
       <recent name="D:\JAVA\JAVA\java-beginner\src\access\ex2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Poly.basic" />
       <recent name="final1" />
       <recent name="static2" />
       <recent name="static1" />
       <recent name="memory" />
-      <recent name="pack" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShopMain">
-    <configuration name="ClassMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.ClassMain" />
+  <component name="RunManager" selected="Application.CastingMain3">
+    <configuration name="CastingMain1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.basic.CastingMain1" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="Poly.basic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,12 +133,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExtendsAccessMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="extends1.access.ExtendsAccessMain" />
+    <configuration name="CastingMain2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.basic.CastingMain2" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="extends1.access.*" />
+          <option name="PATTERN" value="Poly.basic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CastingMain3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.basic.CastingMain3" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Poly.basic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolyMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.basic.PolyMain" />
+      <module name="java-beginner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Poly.basic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,39 +185,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Super1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="extends1.super1.Super1Main" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="extends1.super1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Super2Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="extends1.super2.Super2Main" />
-      <module name="java-beginner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="extends1.super2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CastingMain3" />
+        <item itemvalue="Application.CastingMain2" />
+        <item itemvalue="Application.CastingMain1" />
+        <item itemvalue="Application.PolyMain" />
         <item itemvalue="Application.ShopMain" />
-        <item itemvalue="Application.Super2Main" />
-        <item itemvalue="Application.Super1Main" />
-        <item itemvalue="Application.ClassMain" />
-        <item itemvalue="Application.ExtendsAccessMain" />
       </list>
     </recent_temporary>
   </component>
