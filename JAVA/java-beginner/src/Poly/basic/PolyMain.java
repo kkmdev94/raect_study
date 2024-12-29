@@ -1,7 +1,5 @@
 package Poly.basic;
 
-import java.sql.SQLOutput;
-
 public class PolyMain {
 
     public static void main(String[] args) {
