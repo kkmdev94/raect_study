@@ -5,20 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e579a4cb-6190-4d79-af7b-d11b4bb9c4fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex1/AnimalSoundMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex1/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex1/Caw.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex1/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/AnimalPolyMain1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/AnimalPolyMain2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/AnimalPolyMain3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/Caw.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Poly/ex2/Pig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/diamond/Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/diamond/DiamondMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/diamond/InterfaceA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/diamond/InterfaceB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex3/AbstractAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex3/AbstractMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex3/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex3/Caw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex3/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex4/AbstractAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex4/AbstractMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex4/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex4/Caw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex4/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex5/Cat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex5/Caw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex5/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex5/InterfaceMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex5/InterfactAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex6/AbstractAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex6/Bird.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex6/Chicken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex6/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex6/Fly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Poly/ex6/SoundFlyMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Poly/basic/PolyMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Poly/basic/PolyMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +40,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -45,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AbstractMain.executor": "Run",
     "Application.AccessOuterMain.executor": "Run",
     "Application.AccountMain.executor": "Run",
     "Application.AccseeInnerMain.executor": "Run",
@@ -73,11 +87,13 @@
     "Application.DecoDataMain.executor": "Run",
     "Application.DecoMain1.executor": "Run",
     "Application.DecoMain2.executor": "Run",
+    "Application.DiamondMain.executor": "Run",
     "Application.ExtendsAccessMain.executor": "Run",
     "Application.FianlRefMain.executor": "Run",
     "Application.FinalFieldMain.executor": "Run",
     "Application.FinalLocalMain.executor": "Run",
     "Application.InitMain.executor": "Run",
+    "Application.InterfaceMain.executor": "Run",
     "Application.JavaMemoryMain1.executor": "Run",
     "Application.JavaMemoryMain2.executor": "Run",
     "Application.MathArrayUtilsMain.executor": "Run",
@@ -93,6 +109,7 @@
     "Application.NullMain3.executor": "Run",
     "Application.OverridingMain.executor": "Run",
     "Application.PackageMain1.executor": "Run",
+    "Application.Poly.ex4.AbstractMain.executor": "Run",
     "Application.PolyMain.executor": "Run",
     "Application.ProductOrderMain2.executor": "Run",
     "Application.ProductOrderMain3.executor": "Run",
@@ -102,6 +119,7 @@
     "Application.ShopMain.executor": "Run",
     "Application.ShoppingCartMain.executor": "Run",
     "Application.ShoppingCartMain2.executor": "Run",
+    "Application.SoundFlyMain.executor": "Run",
     "Application.SpeakerMain.executor": "Run",
     "Application.Super1Main.executor": "Run",
     "Application.Super2Main.executor": "Run",
@@ -113,7 +131,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/study/JAVA/java-beginner/src/extends1/overriding"
+    "last_opened_file_path": "D:/JAVA/JAVA/java-beginner/src/Poly/ex4"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -122,25 +140,26 @@
       <recent name="static2.ex" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA\JAVA\java-beginner\src\Poly\ex4" />
       <recent name="D:\study\JAVA\java-beginner\src\extends1\overriding" />
       <recent name="D:\study\JAVA\java-beginner\src\extends1\ex3" />
       <recent name="D:\JAVA\JAVA\java-beginner\src\access\ex2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Poly.diamond" />
       <recent name="Poly.ex2" />
       <recent name="Poly.ex1" />
       <recent name="Poly.basic" />
       <recent name="final1" />
-      <recent name="static2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AnimalPolyMain3">
-    <configuration name="AnimalPolyMain1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Poly.ex2.AnimalPolyMain1" />
+  <component name="RunManager" selected="Application.SoundFlyMain">
+    <configuration name="AbstractMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.ex3.AbstractMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Poly.ex2.*" />
+          <option name="PATTERN" value="Poly.ex3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,12 +167,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimalPolyMain2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Poly.ex2.AnimalPolyMain2" />
+    <configuration name="DiamondMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.diamond.DiamondMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Poly.ex2.*" />
+          <option name="PATTERN" value="Poly.diamond.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -161,12 +180,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimalPolyMain3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Poly.ex2.AnimalPolyMain3" />
+    <configuration name="InterfaceMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.ex5.InterfaceMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Poly.ex2.*" />
+          <option name="PATTERN" value="Poly.ex5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,12 +193,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimalSoundMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Poly.ex1.AnimalSoundMain" />
+    <configuration name="Poly.ex4.AbstractMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.ex4.AbstractMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Poly.ex1.*" />
+          <option name="PATTERN" value="Poly.ex4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -187,12 +206,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OverridingMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Poly.overriding.OverridingMain" />
+    <configuration name="SoundFlyMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Poly.ex6.SoundFlyMain" />
       <module name="java-beginner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Poly.overriding.*" />
+          <option name="PATTERN" value="Poly.ex6.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -202,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AnimalPolyMain3" />
-        <item itemvalue="Application.AnimalPolyMain2" />
-        <item itemvalue="Application.AnimalPolyMain1" />
-        <item itemvalue="Application.AnimalSoundMain" />
-        <item itemvalue="Application.OverridingMain" />
+        <item itemvalue="Application.SoundFlyMain" />
+        <item itemvalue="Application.DiamondMain" />
+        <item itemvalue="Application.InterfaceMain" />
+        <item itemvalue="Application.Poly.ex4.AbstractMain" />
+        <item itemvalue="Application.AbstractMain" />
       </list>
     </recent_temporary>
   </component>
