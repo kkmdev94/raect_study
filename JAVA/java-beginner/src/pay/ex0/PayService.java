@@ -1,10 +1,13 @@
 package pay.ex0;
 
+import java.util.Scanner;
+
 public class PayService {
 
     public void processPay(String option, int amount) {
 
         boolean result;
+
         System.out.println("결제를 시작합니다: option=" + option + ", amount=" + amount);
 
         PaySystem pay = new PaySystem();

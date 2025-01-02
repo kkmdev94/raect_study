@@ -1,5 +1,7 @@
 package pay.ex0;
 
+import java.util.Scanner;
+
 public class PayMain0 {
         public static void main(String[] args) {
 
