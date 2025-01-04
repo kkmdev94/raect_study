@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9cae196-d881-4242-bb35-31597b167935" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pay/ex0/PayMain1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pay/ex0/PayMain1.java" afterDir="false" />
-    </list>
+    <list default="true" id="d9cae196-d881-4242-bb35-31597b167935" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +27,7 @@
     "Application.PayMain0.executor": "Run",
     "Application.PayMain1.executor": "Run",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/JAVA/JAVA/java-start"
+    "last_opened_file_path": "D:/JAVA/JAVA/java-middle"
   }
 }]]></component>
   <component name="RecentsManager">
