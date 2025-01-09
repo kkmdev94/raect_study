@@ -8,6 +8,7 @@ public class TestString2 {
 
         for (String s : arr) {
             System.out.println(String.format("%s : ",s) + s.length());
+//            System.out.println(s + " : " + s.length()); // 선생님 답안.
             sum += s.length();
         }
         System.out.println("sum = " + sum);
