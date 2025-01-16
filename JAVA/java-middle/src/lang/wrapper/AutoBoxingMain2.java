@@ -1,5 +1,8 @@
 package lang.wrapper;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 public class AutoBoxingMain2 {
 
     public static void main(String[] args) {
@@ -12,5 +15,8 @@ public class AutoBoxingMain2 {
 
         System.out.println("boxedValue = " + boxedValue);
         System.out.println("unboxedValue = " + unboxedValue);
+        
+        Class clazz = new MyInteger(value).getClass();
+        System.out.println("clazz.getSuperclass() = " + clazz.getSuperclass());
     }
 }

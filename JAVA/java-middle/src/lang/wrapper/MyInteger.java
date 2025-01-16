@@ -2,7 +2,7 @@ package lang.wrapper;
 
 public class MyInteger {
 
-    private final  int value;
+    private final int value;
 
     public MyInteger(int value) {
         this.value = value;
