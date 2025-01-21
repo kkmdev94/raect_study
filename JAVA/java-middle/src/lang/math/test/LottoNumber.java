@@ -9,7 +9,17 @@ public class LottoNumber {
 
     public int[] getLottoNum() {
         lottoNum = new int[6];
-        for (int i = 0; i < lottoNum.length; i++) {
+//        for (int i = 0; i < lottoNum.length; i++) {
+//            int lottonumber = random.nextInt(45) + 1; // 랜덤 숫자 생성
+//            if (unLottoNum(lottonumber)) {
+//                lottoNum[count] = lottonumber;
+//                count++;
+//            }
+//        }
+//        return lottoNum;
+        while (count < 6) { // 위의 for문에서 0이 나온 이유는 while문으로 돌리면 고유값 6개가 식별될때까지 반복하는 반면,
+                            // for문은 그냥 횟수제한으로 6번이 될때까지 돌리기에 값을 찾지 못해 0이 나오는 것이다
+                            // 즉, unLottoNum 메서드에서 false를 리턴하고 새로운 값을 찾아야되는데 그냥 찾지 못하고 넘겨버려서 기본값인 0이 출력되는 것이다.
             int lottonumber = random.nextInt(45) + 1; // 랜덤 숫자 생성
             if (unLottoNum(lottonumber)) {
                 lottoNum[count] = lottonumber;
