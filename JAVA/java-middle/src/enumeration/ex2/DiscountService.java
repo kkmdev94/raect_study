@@ -11,6 +11,8 @@ public class DiscountService {
             discountPercent = 20;
         } else if (classGrade == ClassGrade.DIAMOND) {
             discountPercent = 30;
+        } else if (classGrade == ClassGrade.VIP) {
+            discountPercent = 50;
         } else {
             System.out.println("할인X");
         }
