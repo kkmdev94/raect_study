@@ -1,7 +1,5 @@
 package enumeration.ex2;
 
-import java.sql.SQLOutput;
-
 public class ClassRefMain {
 
     public static void main(String[] args) {
