@@ -22,6 +22,7 @@ public enum HttpStatus {
 //            }
 //        }
 //        return null;
+    
 //    }
     public static HttpStatus findByCode(int httpCodeInput) {
         HttpStatus status = null;
