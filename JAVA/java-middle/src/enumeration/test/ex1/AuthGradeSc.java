@@ -1,12 +1,14 @@
 package enumeration.test.ex1;
 
-public enum AuthGrade {
-    GUEST("손님",1), LOGIN("회원", 2), ADMIN("관리자", 3);
+public enum AuthGradeSc {
+    GUEST("손님",1),
+    LOGIN("회원", 2),
+    ADMIN("관리자", 3);
 
     private final String description;
     private final int lavel;
 
-    AuthGrade(String description, int lavel) {
+    AuthGradeSc(String description, int lavel) {
         this.description = description;
         this.lavel = lavel;
     }
