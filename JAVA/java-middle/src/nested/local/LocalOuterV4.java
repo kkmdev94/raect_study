@@ -27,6 +27,7 @@ public class LocalOuterV4 {
         // 만약 localVar의 값을 변경한다면? 다시 캡처해야 하나??
 //        localVar = 10; // 컴파일 오류
 //        paramVar = 20; // 컴파일 오류
+        // 변수 캡처 내용이 어렵다면 단순하게 지역 클래스가 접근하는 지역 변수의 값은 변경하면 안된다. 즉, final이거나 사실상 final이어야 한다.
         return printer;
     }
 
