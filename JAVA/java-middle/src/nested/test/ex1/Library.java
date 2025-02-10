@@ -25,7 +25,7 @@ public class Library {
     }
 
 
-    private class Book {
+    private static class Book {
         private String title;
         private String author;
 
