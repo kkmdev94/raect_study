@@ -8,5 +8,6 @@ public class RowTypeMain {
         integerBox.set(10);
         Integer result = (Integer) integerBox.get();
         System.out.println("result = " + result);
+        // 아무것도 안넣으면 object로 된다.
     }
 }
