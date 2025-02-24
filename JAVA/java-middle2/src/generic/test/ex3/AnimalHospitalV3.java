@@ -1,12 +1,12 @@
-package generic.ex3;
+package generic.test.ex3;
 
-import generic.animal.Dog;
+import generic.animal.Animal;
 
-public class DogHospital {
+public class AnimalHospitalV3<T extends Animal> { // Animal 혹은 Animal의 자식들만 들어올 수 있다. (Animal이 최대 그 이상은 들어 올 수 없다.)
 
-    private Dog animal;
+    private T animal;
 
-    public void set(Dog animal) {
+    public void set(T animal) {
         this.animal = animal;
     }
 
@@ -16,7 +16,7 @@ public class DogHospital {
         animal.sound();
     }
 
-    public Dog bigger(Dog target) {
+    public T bigger(T target) {
         return animal.getSize() > target.getSize() ? animal : target;
     }
 }
