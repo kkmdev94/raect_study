@@ -2,18 +2,18 @@ package collection.array;
 
 import java.util.Arrays;
 
-public class MyArrayListV3 {
+public class MyArrayListV4<E> {
 
     private static final int DEFAULT_CAPACITY = 5;
 
     private Object[] elementData;
     private int size = 0;
 
-    public MyArrayListV3() {
-        elementData = new Object[DEFAULT_CAPACITY];
+    public MyArrayListV4() {
+        elementData = new Object[DEFAULT_CAPACITY]; // 생성자에 제네릭 사용 불가.
     }
 
-    public MyArrayListV3(int initialCapacity) {
+    public MyArrayListV4(int initialCapacity) {
         elementData = new Object[initialCapacity];
     }
 
@@ -21,7 +21,7 @@ public class MyArrayListV3 {
         return size;
     }
 
-    public void add(Object e) {
+    public void add(E e) {
         // 코드 추가
         if (size == elementData.length) {
             grow();
@@ -30,7 +30,7 @@ public class MyArrayListV3 {
         size++;
     }
     // 코드 추가
-    public void add(int index, Object e) {
+    public void add(int index, E e) {
         if (size == elementData.length) {
             grow();
         }
@@ -53,18 +53,19 @@ public class MyArrayListV3 {
         elementData = Arrays.copyOf(elementData, newCapacity);
     }
 
-    public Object get(int index) { // 인덱스의 항목을 조회
-        return elementData[index];
+    @SuppressWarnings("unchecked") // 경고를 무시하는 것이다. 알아만 놓기.
+    public E get(int index) { // 인덱스의 항목을 조회
+        return (E) elementData[index];
     }
 
-    public Object set(int index, Object element) {
-        Object oldValue = get(index);
+    public E set(int index, E element) {
+        E oldValue = get(index);
         elementData[index] = element;
         return oldValue;
     }
 
-    public Object remove(int index) {
-        Object oldValue = get(index);
+    public E remove(int index) {
+        E oldValue = get(index);
         shiftLeftFrom(index);
         size--;
         elementData[size]=null;
@@ -77,7 +78,7 @@ public class MyArrayListV3 {
         }
     }
 
-    public int indexof(Object o) {
+    public int indexof(E o) {
         for (int i = 0; i < size; i++) {
             if (o.equals(elementData[i])) {
                 return i;
