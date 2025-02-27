@@ -2,6 +2,7 @@ package collection.array;
 
 import java.util.ArrayList;
 
+//  참고 : https://inpa.tistory.com/entry/JAVA-%E2%98%95-ArrayList-%EA%B5%AC%EC%A1%B0-%EC%82%AC%EC%9A%A9%EB%B2%95#thankYou
 public class MyArrayListV4Main {
 
     public static void main(String[] args) {
@@ -21,7 +22,6 @@ public class MyArrayListV4Main {
         Integer integer = intList.get(0);
         System.out.println("integer = " + integer);
 
-        ArrayList<Integer> ints = new ArrayList<>();
-        ints.add(123);
+//        ArrayList<Integer> l = new ArrayList<>();
     }
 }
