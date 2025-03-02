@@ -1,4 +1,4 @@
-package collection.linked;
+package collection.link;
 
 public class linkedV1 {
 
