@@ -8,37 +8,37 @@ public class JavaListPerformanceTest {
 
     public static void main(String[] args) {
 
-        int size = 50_000;
-        System.out.println("==MyArrayList 추가 ==");
+        int size = 150_000;
+        System.out.println("==ArrayList 추가 ==");
         addFirst(new ArrayList<>(), size);
         addMid(new ArrayList<>(), size);
         ArrayList<Integer> arrayList = new ArrayList<>();
         addLast(arrayList, size);
 
         System.out.println();
-        System.out.println("==MyLinkedList 추가 ==");
+        System.out.println("==LinkedList 추가 ==");
         addFirst(new LinkedList<>(), size);
         addMid(new LinkedList<>(), size);
         LinkedList<Integer> linkedList = new LinkedList<>();
         addLast(linkedList, size);
 
         int loop = 10000;
-        System.out.println("==MyArrayList 조회==");
+        System.out.println("==ArrayList 조회==");
         getIndex(arrayList, loop, 0);
         getIndex(arrayList, loop, size / 2);
         getIndex(arrayList, loop, size - 1);
 
-        System.out.println("==MyLinkedList 조회==");
+        System.out.println("==LinkedList 조회==");
         getIndex(linkedList, loop, 0);
         getIndex(linkedList, loop, size / 2);
         getIndex(linkedList, loop, size - 1);
 
-        System.out.println("==MyArrayList 검색==");
+        System.out.println("==ArrayList 검색==");
         search(arrayList, loop, 0);
         search(arrayList, loop, size / 2);
         search(arrayList, loop, size -1);
 
-        System.out.println("==MyLinkedList 검색==");
+        System.out.println("==LinkedList 검색==");
         search(linkedList, loop, 0);
         search(linkedList, loop, size / 2);
         search(linkedList, loop, size - 1);
