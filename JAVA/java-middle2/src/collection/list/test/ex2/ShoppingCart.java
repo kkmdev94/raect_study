@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class ShoppingCart {
 
-//    private ArrayList arrayList = new ArrayList();
     private ArrayList<Item> arrayList = new ArrayList<>();
 
     public void addItem(Item item) {
