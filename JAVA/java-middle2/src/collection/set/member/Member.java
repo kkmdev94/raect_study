@@ -24,7 +24,7 @@ public class Member {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hash(id); // 이전에는 Objects.hashCode(id)로 했는데 값이 이상해서 확인해보니 잘못 입력했었다, 이런거 조심하자.
     }
 
     @Override
