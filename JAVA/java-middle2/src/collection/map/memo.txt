@@ -1,3 +1,4 @@
 Map과 Set은 거의 같다.
 
 Map에서 Value만 비워두면 Set으로 사용 가능하다.
+
