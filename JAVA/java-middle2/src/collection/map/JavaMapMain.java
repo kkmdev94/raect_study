@@ -12,7 +12,7 @@ public class JavaMapMain {
     }
 
     private static void run(Map<String, Integer> map) {
-        System.out.print("map = " + map.getClass());
+        System.out.println("map = " + map.getClass());
         map.put("C", 10);
         map.put("A", 20);
         map.put("B", 30);
