@@ -1,7 +1,6 @@
 package collection.map.test.member;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class MemberRepository {
 
@@ -13,13 +12,19 @@ public class MemberRepository {
     }
 
     public Member findById(String id) {
-        return null;
+        return memberMap.get(id);
     }
 
     public Member findByName(String name) {
+        for (Member member : memberMap.values()) {
+            if (member.getName().equals(name)) {
+                return member;
+            }
+        }
         return null;
     }
 
     public void remove(String id) {
+        memberMap.remove(id);
     }
 }
