@@ -5,4 +5,6 @@ public class CompressionTask implements Task{
     public void exectue() {
         System.out.println("데이터 압축...");
     }
+
+
 }
