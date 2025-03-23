@@ -1,7 +1,11 @@
 package collection.compare.test;
 
-import java.util.ArrayList;
+public enum Card {
+    SPADE("\u2660");
 
-public interface Card {
-    ArrayList<Integer> number = new ArrayList<>();
+    private String icon;
+
+    Card(String icon) {
+        this.icon = icon;
+    }
 }
