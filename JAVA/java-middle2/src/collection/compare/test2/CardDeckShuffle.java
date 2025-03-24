@@ -1,4 +1,4 @@
-package collection.compare.test;
+package collection.compare.test2;
 
 public class CardDeckShuffle {
 
