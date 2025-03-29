@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문(switch)</title>
+</head>
+<body>
+    <script>
+      var rank = window.prompt('직급을 입력하세요. 1 - 부장 / 2 - 차장 / 3 - 과장 / 4 - 대리 / 5 - 사원');
+
+      rank = parseInt(rank);
+
+      switch (rank) {
+        case 1:
+          document.write('<p>부장의 급여는 <strong>700만원</strong> 입니다.');
+          break;
+        case 2:
+          document.write('<p>차장의 급여는 <strong>600만원</strong> 입니다.');
+          break;
+        case 3:
+          document.write('<p>과장의 급여는 <strong>500만원</strong> 입니다.');
+          break;
+        case 4:
+          document.write('<p>대리의 급여는 <strong>350만원</strong> 입니다.');
+          break;
+        case 5:
+          document.write('<p>사원의 급여는 <strong>250만원</strong> 입니다.');
+          break;
+        default : alert("잘못입력하셨습니다.")
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문-6</title>
+</head>
+<body>
+    <script>
+      var value = window.prompt('학생의 점수를 입력해주세요');
+
+      value = parseInt(value);
+
+      if (value <= 100 && value >= 90) {
+        document.write(value + "점의 학점은 A입니다.");
+      } else if (value <= 89 && value >= 80) {
+        document.write(value + "점의 학점은 B입니다.");
+      }else if (value <= 79 && value >= 70) {
+        document.write(value + "점의 학점은 C입니다.");
+      }else if (value <= 69 && value >= 60) {
+        document.write(value + "점의 학점은 D입니다.");
+      } else {
+        document.write(value + "점의 학점은 F입니다.");
+      }
+    </script>
+</body>
+</html>
