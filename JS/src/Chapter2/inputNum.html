@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>숫자 입력</title>
+</head>
+<body>
+    <script>
+      // prompt를 통해서 입력을 받으면 string 타입으로 리턴된다.
+      var input = prompt('숫자를 입력해주세요', '숫자');
+      alert(typeof(input));
+      //Number 함수를 통해 String을 숫자로 바꾸고 있다. / string이 들어오면 tyepof에서는 number 그대로 출력해주지만 값은 NaN으로 나오는데 이것은 타입오브 체크가 잘 안되서 그런것이다.
+      var num = Number(input);
+      alert(typeof(num));
+      // NaN(Not a Number) : 숫자가 될 수 없는 것을 뜻한다.
+      alert(num);
+    </script>
+</body>
+</html>

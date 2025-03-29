@@ -10,23 +10,12 @@
 </head>
 <body>
     <script>
-        window.onload = function () {
-            var list = "";
-            var num = 10;
-            list += "<ul>";
-            list += "    <li>Hello</li>";
-            list += "    <li>JavaScript</li>";
-            list += "</ul>";
+        var num = 10;
 
-            num += 10;
-            num += 10;
-            num += 10;
-            num += 10;
-
-
-            document.body.innerHTML = list;
-            document.write(num);
-        }
+        alert(num++); // 실행 후 더함 / 후위 증감
+        alert(++num); // 실행 전 더함 / 전위 증감
+        alert(num++);
+        document.write(num);
     </script>
 </body>
 </html>
