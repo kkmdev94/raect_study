@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문-5(사용자 입력 이용)</title>
+</head>
+<body>
+    <script>
+      let dan = prompt('출력을 원하는 구구단의 단수를 적어주세요.', "숫자입력");
+      dan = parseInt(dan);
+
+      for (let i = 1; i <= 9; i++) {
+        document.write(dan + " X " + i + " = " + dan*i +'<br>');
+      }
+    </script>
+</body>
+</html>
