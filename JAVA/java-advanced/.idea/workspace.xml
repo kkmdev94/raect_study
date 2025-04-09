@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6772a087-3df5-4792-a9c0-56d72e82fdb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/control/printer/MyPrinterV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/control/printer/MyPrinterV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/control/printer/MyPrinterV3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/control/yield/YieldMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/control/yield/YieldMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/control/yield/YieldMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +36,7 @@
     "Application.MyPrinterV1.executor": "Run",
     "Application.MyPrinterV2 (1).executor": "Run",
     "Application.MyPrinterV2.executor": "Run",
+    "Application.MyPrinterV3 (1).executor": "Run",
     "Application.MyPrinterV3.executor": "Run",
     "Application.ThredStopMainV3 (1).executor": "Run",
     "Application.ThredStopMainV3 (2).executor": "Run",
@@ -46,6 +44,8 @@
     "Application.ThredStopMainV4.executor": "Run",
     "Application.YieldMain (1).executor": "Run",
     "Application.YieldMain (2).executor": "Run",
+    "Application.YieldMain (3).executor": "Run",
+    "Application.YieldMain (4).executor": "Run",
     "Application.YieldMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -60,22 +60,9 @@
       <recent name="thread.control.interrupt" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.YieldMain (2)">
-    <configuration name="MyPrinterV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.control.printer.MyPrinterV2" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.control.printer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyPrinterV3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.control.printer.MyPrinterV3" />
+  <component name="RunManager" selected="Application.MyPrinterV4">
+    <configuration name="MyPrinterV4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.control.printer.MyPrinterV4" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
@@ -113,7 +100,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="YieldMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="YieldMain (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.control.yield.YieldMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.control.yield.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YieldMain (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.control.yield.YieldMain" />
       <module name="java-advanced" />
       <extension name="coverage">
@@ -128,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyPrinterV4" />
+        <item itemvalue="Application.YieldMain (5)" />
         <item itemvalue="Application.YieldMain (2)" />
         <item itemvalue="Application.YieldMain (1)" />
-        <item itemvalue="Application.YieldMain" />
-        <item itemvalue="Application.MyPrinterV3" />
-        <item itemvalue="Application.MyPrinterV2" />
+        <item itemvalue="Application.YieldMain (4)" />
       </list>
     </recent_temporary>
   </component>
