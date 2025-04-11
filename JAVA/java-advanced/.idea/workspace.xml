@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6772a087-3df5-4792-a9c0-56d72e82fdb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/volatile1/VolatileCountMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/volatile1/VolatileCountMain2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/volatile1/VolatileFlagMain2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/volatile1/memo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,8 @@
     "Application.ThredStopMainV3.executor": "Run",
     "Application.ThredStopMainV4.executor": "Run",
     "Application.VolatileCountMain.executor": "Run",
+    "Application.VolatileCountMain2 (1).executor": "Run",
+    "Application.VolatileCountMain2.executor": "Run",
     "Application.VolatileFlagMain.executor": "Run",
     "Application.YieldMain (1).executor": "Run",
     "Application.YieldMain (2).executor": "Run",
