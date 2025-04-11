@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6772a087-3df5-4792-a9c0-56d72e82fdb6" name="Changes" comment="" />
+    <list default="true" id="6772a087-3df5-4792-a9c0-56d72e82fdb6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/thread/volatile1/VolatileCountMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/volatile1/VolatileCountMain2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/volatile1/VolatileFlagMain2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +45,7 @@
     "Application.ThredStopMainV3 (2).executor": "Run",
     "Application.ThredStopMainV3.executor": "Run",
     "Application.ThredStopMainV4.executor": "Run",
+    "Application.VolatileCountMain.executor": "Run",
     "Application.VolatileFlagMain.executor": "Run",
     "Application.YieldMain (1).executor": "Run",
     "Application.YieldMain (2).executor": "Run",
@@ -56,17 +62,57 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="thread.volatile1" />
       <recent name="thread.control.printer" />
       <recent name="thread.control.interrupt" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VolatileFlagMain">
+  <component name="RunManager" selected="Application.VolatileCountMain2 (1)">
     <configuration name="MyPrinterV4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.control.printer.MyPrinterV4" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="thread.control.printer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VolatileCountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.volatile1.VolatileCountMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.volatile1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VolatileCountMain2 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.volatile1.VolatileCountMain2" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.volatile1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VolatileCountMain2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.volatile1.VolatileCountMain2" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.volatile1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,52 +133,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="YieldMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.control.yield.YieldMain" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.control.yield.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="YieldMain (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.control.yield.YieldMain" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.control.yield.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="YieldMain (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.control.yield.YieldMain" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.control.yield.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.VolatileCountMain2 (1)" />
+        <item itemvalue="Application.VolatileCountMain2" />
+        <item itemvalue="Application.VolatileCountMain" />
         <item itemvalue="Application.VolatileFlagMain" />
         <item itemvalue="Application.MyPrinterV4" />
-        <item itemvalue="Application.YieldMain (5)" />
-        <item itemvalue="Application.YieldMain (2)" />
-        <item itemvalue="Application.YieldMain (1)" />
       </list>
     </recent_temporary>
   </component>
