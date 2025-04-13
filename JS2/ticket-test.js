@@ -1,46 +1,81 @@
-import puppeteer from 'puppeteer-core';
+import puppeteer from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import readline from 'readline';
+import fs from 'fs';
 
-// 👉 유저가 직접 입력해서 크롬 경로 설정 (필요 시 수정)
-const browser = await puppeteer.launch({
-  executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // 크롬 설치 경로
-  headless: false,
-  defaultViewport: null,
-  args: ['--start-maximized']
-});
+puppeteer.use(StealthPlugin());
 
-const page = await browser.newPage();
-await page.goto('https://www.ticketlink.co.kr/product/55751', { waitUntil: 'networkidle2' });
+(async () => {
+  const browser = await puppeteer.launch({
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    headless: false,
+    defaultViewport: null,
+    args: [
+      '--start-maximized',
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-blink-features=AutomationControlled'
+    ]
+  });
 
-// 👉 날짜 영역 로딩 대기 및 날짜 클릭
-await page.waitForSelector('.select_date .date_list a[data-date]', { timeout: 60000 });
-await page.click('a[data-date="2025.05.17"]'); // 원하는 날짜 설정
+  const page = await browser.newPage();
 
-// 👉 예매하기 버튼 대기 및 클릭
-await page.waitForSelector('.prdBtnR a.btn.btn_green.ticket');
-await page.click('.prdBtnR a.btn.btn_green.ticket');
+  // 사용자처럼 보이게 설정
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36');
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => false });
+    window.navigator.chrome = { runtime: {} };
+    Object.defineProperty(navigator, 'languages', { get: () => ['ko-KR', 'ko'] });
+    Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
+  });
 
-// 👉 새 창으로 전환 대기
-const newPagePromise = new Promise(resolve => browser.once('targetcreated', async target => {
-  const newPage = await target.page();
-  await newPage.bringToFront();
-  resolve(newPage);
-}));
-const ticketPage = await newPagePromise;
+  await page.goto('https://www.ticketlink.co.kr/product/55751', { waitUntil: 'networkidle2' });
 
-// 👉 캡차 수동 입력 대기
-console.log('🔐 캡차를 수동으로 입력하고 Enter를 눌러주세요...');
-await waitForEnterKey();
+  console.log('🎯 수동으로 로그인 → 날짜 선택 → 예매하기 버튼 클릭까지 진행하세요.');
 
-// 👉 좌석 선택 iframe 로딩 대기
-await ticketPage.waitForSelector('iframe[name="ifrmSeat"]');
-const frame = await ticketPage.frames().find(f => f.name() === 'ifrmSeat');
+  // 새 창 감지 + 안정화 처리
+  const ticketPage = await waitForNewPage(browser);
 
-console.log('✅ 좌석 선택 iframe 로딩 완료!');
+  console.log('🆕 새 창 감지 완료:', ticketPage.url());
+  console.log('🔐 새 창에서 캡차 수동 입력 후 Enter를 누르세요...');
+  await waitForEnterKey();
 
-// 👉 다음 로직은 여기서 iframe 안의 요소 클릭 등 추가 가능
+  try {
+    await ticketPage.waitForSelector('iframe[name="ifrmSeat"]', { timeout: 15000 });
+    const frame = ticketPage.frames().find(f => f.name() === 'ifrmSeat');
+    if (!frame || frame._detached) throw new Error('❌ iframe이 분리되었거나 존재하지 않음');
 
-// === 보조 함수 ===
+    console.log('✅ 좌석 iframe 탐색 성공');
+
+    const html = await frame.evaluate(() => document.documentElement.innerHTML);
+    fs.writeFileSync('iframe-content.html', html);
+    await frame.screenshot({ path: 'seat-frame.png', fullPage: true });
+
+    console.log('📸 스크린샷 및 HTML 저장 완료');
+  } catch (err) {
+    console.error('❌ iframe 처리 중 에러:', err.message);
+  }
+})();
+
+// 새 창 감지 함수 (안정적)
+async function waitForNewPage(browser) {
+  return new Promise(resolve => {
+    const checkTarget = async () => {
+      const targets = await browser.targets();
+      for (const target of targets) {
+        const page = await target.page();
+        if (page && page.url().includes('/reserve/')) {
+          resolve(page);
+          return;
+        }
+      }
+      setTimeout(checkTarget, 500); // 계속 확인
+    };
+    checkTarget();
+  });
+}
+
+// 사용자 입력 대기
 function waitForEnterKey() {
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
   return new Promise(resolve => rl.question('계속하려면 Enter를 누르세요...\n', () => {
