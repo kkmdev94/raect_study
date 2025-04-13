@@ -6,7 +6,9 @@ import static util.ThreadUtils.sleep;
 public class BankMain {
 
     public static void main(String[] args) throws InterruptedException {
-        BankAccountV1 account = new BankAccountV1(1000);
+//        BankAccountV1 account = new BankAccountV1(1000);
+//        BankAccountV2 account = new BankAccountV2(1000);
+        BankAccountV3 account = new BankAccountV3(1000);
 
         Thread t1 = new Thread(new WithdrawTask(account, 800), "t1");
         Thread t2 = new Thread(new WithdrawTask(account, 800), "t2");
@@ -15,7 +17,7 @@ public class BankMain {
 
         sleep(500);
         log("t1 state : " + t1.getState());
-        log("t2 state : " + t2.getState());
+        log("t2 state : " + t2.getState()); // BLOCKED라고 나오면서 잠긴다.
 
         t1.join();
         t2.join();
