@@ -1,0 +1,16 @@
+LockSupportMainV1의 설명 :
+    log("main -> unpark(t1)");
+    // LockSupport.park()는 매개변수가 없는데, 실행 가능 상태로 바꾸는 LockSupport.unpark(t1)은 왜 매개변수가 존재하는가?
+    // 실행 중인 스레드는 LockSupport.park()를 호출해서 스스로 대기 상태에 빠질 수 있찌만, 대기 상태인 스레드는 자신의 코드를 실행 할 수 없기에
+    // 외부 도움을 받아야 깨어날 수 있으므로 어떤 스레드를 깨울지 정하기 위해 매개변수가 들어간다.
+    LockSupport.unpark(t1); // 1. unpark 사용
+//        t1.interrupt(); // 2. interrupt() 사용
+    // park를 통해 BLOCKED 상태는 interrupt로도 꺠울 수 없지만 park를 통해 상태를 waiting 상태로 전환하기에 interrupt로도 깨울 수 있다.
+
+BLOCKED vs WAITING
+WAITING 상태에 특정 시간까지만 대기하는 기능이 포함된 것이 TIMED_WAITING이다. 둘을 묶어서 WAITING 상태라 표현
+
+인터럽트
+    - BLOCKED 상태는 인터럽트가 걸려도 대기상태를 빠져나오지 못함
+    - WAITING, TIMDE_WAITING 상태는 인터럽트가 걸리면 대기를 빠져나와 RUNNABLE 상태로 변경
+
