@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6772a087-3df5-4792-a9c0-56d72e82fdb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/sync/BankAccountV4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/sync/BankAccountV5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/sync/BankAccountV6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedQueueV1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/bounded/ConsumerTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/bounded/ProducerTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/sync/BankMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/sync/BankMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/sync/test/SyncTest3Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/sync/test/SyncTest3Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BankMain.executor": "Run",
+    "Application.BoundedMain.executor": "Run",
     "Application.JoinMainV0.executor": "Run",
     "Application.LockSupportMainV1.executor": "Run",
     "Application.LockSupportMainV2.executor": "Run",
@@ -88,7 +89,7 @@
       <recent name="thread.control.printer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BankMain">
+  <component name="RunManager" selected="Application.BoundedMain">
     <configuration name="BankMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.sync.BankMain" />
       <module name="java-advanced" />
@@ -102,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SyncTest3Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.sync.test.SyncTest3Main" />
+    <configuration name="BoundedMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.bounded.BoundedMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.sync.test.*" />
+          <option name="PATTERN" value="thread.bounded.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BoundedMain" />
         <item itemvalue="Application.BankMain" />
         <item itemvalue="Application.SyncTest3Main (5)" />
         <item itemvalue="Application.SyncTest3Main" />
         <item itemvalue="Application.SyncTest3Main (4)" />
-        <item itemvalue="Application.SyncTest3Main (3)" />
       </list>
     </recent_temporary>
   </component>
