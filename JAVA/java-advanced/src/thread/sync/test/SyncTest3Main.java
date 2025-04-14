@@ -36,7 +36,7 @@ public class SyncTest3Main {
     }
 
     static class Immutable {
-        private final int value;
+        private final int value; // 파이널이 붙으면 어떤 스레드도 값을 변경 할 수 없다.
 
         Immutable(int value) {
             this.value = value;

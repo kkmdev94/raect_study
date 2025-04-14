@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6772a087-3df5-4792-a9c0-56d72e82fdb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/sync/test/SyncTest1BadMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/sync/test/SyncTest1Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/sync/test/SyncTest2Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/sync/test/SyncTest3Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/sync/BankAccountV4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/sync/BankAccountV5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/sync/BankAccountV6.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/sync/BankMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/sync/BankMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/sync/test/SyncTest3Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/sync/test/SyncTest3Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,20 +81,20 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="thread.sync" />
       <recent name="thread.sync.test" />
       <recent name="thread.sync.lock" />
-      <recent name="thread.sync" />
       <recent name="thread.volatile1" />
       <recent name="thread.control.printer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SyncTest3Main (5)">
-    <configuration name="SyncTest3Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.sync.test.SyncTest3Main" />
+  <component name="RunManager" selected="Application.BankMain">
+    <configuration name="BankMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.sync.BankMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.sync.test.*" />
+          <option name="PATTERN" value="thread.sync.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BankMain" />
         <item itemvalue="Application.SyncTest3Main (5)" />
         <item itemvalue="Application.SyncTest3Main" />
         <item itemvalue="Application.SyncTest3Main (4)" />
         <item itemvalue="Application.SyncTest3Main (3)" />
-        <item itemvalue="Application.SyncTest3Main (2)" />
       </list>
     </recent_temporary>
   </component>
