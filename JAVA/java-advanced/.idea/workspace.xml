@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6772a087-3df5-4792-a9c0-56d72e82fdb6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedQueueV2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/bounded/BoundedMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,59 +31,59 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BankMain.executor": "Run",
-    "Application.BoundedMain.executor": "Run",
-    "Application.JoinMainV0.executor": "Run",
-    "Application.LockSupportMainV1.executor": "Run",
-    "Application.LockSupportMainV2.executor": "Run",
-    "Application.MyPrinterV1 (1).executor": "Run",
-    "Application.MyPrinterV1.executor": "Run",
-    "Application.MyPrinterV2 (1).executor": "Run",
-    "Application.MyPrinterV2.executor": "Run",
-    "Application.MyPrinterV3 (1).executor": "Run",
-    "Application.MyPrinterV3.executor": "Run",
-    "Application.MyPrinterV4.executor": "Run",
-    "Application.SyncTest1BadMain.executor": "Run",
-    "Application.SyncTest1Main (1).executor": "Run",
-    "Application.SyncTest1Main.executor": "Run",
-    "Application.SyncTest2Main.executor": "Run",
-    "Application.SyncTest3Main (1).executor": "Run",
-    "Application.SyncTest3Main (2).executor": "Run",
-    "Application.SyncTest3Main (3).executor": "Run",
-    "Application.SyncTest3Main (4).executor": "Run",
-    "Application.SyncTest3Main (5).executor": "Run",
-    "Application.SyncTest3Main.executor": "Run",
-    "Application.ThredStopMainV3 (1).executor": "Run",
-    "Application.ThredStopMainV3 (2).executor": "Run",
-    "Application.ThredStopMainV3.executor": "Run",
-    "Application.ThredStopMainV4.executor": "Run",
-    "Application.VolatileCountMain.executor": "Run",
-    "Application.VolatileCountMain2 (1).executor": "Run",
-    "Application.VolatileCountMain2 (2).executor": "Run",
-    "Application.VolatileCountMain2.executor": "Run",
-    "Application.VolatileFlagMain.executor": "Run",
-    "Application.YieldMain (1).executor": "Run",
-    "Application.YieldMain (2).executor": "Run",
-    "Application.YieldMain (3).executor": "Run",
-    "Application.YieldMain (4).executor": "Run",
-    "Application.YieldMain (5).executor": "Run",
-    "Application.YieldMain.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/study/JAVA/java-advanced"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BankMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BoundedMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JoinMainV0.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LockSupportMainV1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LockSupportMainV2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPrinterV1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPrinterV1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPrinterV2 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPrinterV2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPrinterV3 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPrinterV3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyPrinterV4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest1BadMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest1Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest1Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest2Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest3Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest3Main (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest3Main (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest3Main (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest3Main (5).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SyncTest3Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThredStopMainV3 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThredStopMainV3 (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThredStopMainV3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThredStopMainV4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VolatileCountMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VolatileCountMain2 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.VolatileCountMain2 (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.VolatileCountMain2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VolatileFlagMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.YieldMain (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.YieldMain (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.YieldMain (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.YieldMain (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.YieldMain (5).executor&quot;: &quot;Run&quot;,
+    &quot;Application.YieldMain.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/study/JAVA/java-advanced&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="thread.bounded" />
       <recent name="thread.sync" />
       <recent name="thread.sync.test" />
       <recent name="thread.sync.lock" />
       <recent name="thread.volatile1" />
-      <recent name="thread.control.printer" />
     </key>
   </component>
   <component name="RunManager" selected="Application.BoundedMain">
