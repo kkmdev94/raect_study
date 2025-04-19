@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedQueueV6_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedQueueV6_3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedQueueV6_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/BasicInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/INcrementInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/IncrementPerformanceMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/IncrementThreadMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/MyAtomicInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/SyncInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/VolatileInteger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/bounded/BoundedMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/bounded/BoundedQueueV6_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/bounded/BoundedQueueV6_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,6 +40,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BoundedMain.executor": "Run",
+    "Application.IncrementPerformanceMain.executor": "Run",
+    "Application.IncrementThreadMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -45,10 +50,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="thread.cas" />
       <recent name="thread.bounded" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.IncrementPerformanceMain">
     <configuration name="BoundedMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.bounded.BoundedMain" />
       <module name="java-advanced" />
@@ -62,8 +68,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IncrementPerformanceMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.cas.IncrementPerformanceMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.cas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IncrementThreadMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.cas.IncrementThreadMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.cas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IncrementPerformanceMain" />
+        <item itemvalue="Application.IncrementThreadMain" />
         <item itemvalue="Application.BoundedMain" />
       </list>
     </recent_temporary>
