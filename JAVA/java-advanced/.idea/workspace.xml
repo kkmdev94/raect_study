@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/cas/CasMainV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/cas/CasMainV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/CasMainV3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/spinlock/SpinLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/spinlock/SpinLockBad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/cas/spinlock/SpinLockMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/cas/BasicInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/cas/increment/BasicInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/cas/INcrementInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/cas/increment/INcrementInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/cas/IncrementPerformanceMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/cas/increment/IncrementPerformanceMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/cas/IncrementThreadMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/cas/increment/IncrementThreadMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/cas/MyAtomicInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/cas/increment/MyAtomicInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/cas/SyncInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/cas/increment/SyncInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/cas/VolatileInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/cas/increment/VolatileInteger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +38,12 @@
   "keyToString": {
     "Application.BoundedMain.executor": "Run",
     "Application.CasMainV1.executor": "Run",
+    "Application.CasMainV2.executor": "Run",
+    "Application.CasMainV3.executor": "Run",
     "Application.IncrementPerformanceMain.executor": "Run",
     "Application.IncrementThreadMain.executor": "Run",
+    "Application.SpinLockMain (1).executor": "Run",
+    "Application.SpinLockMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -53,24 +52,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="thread.cas.spinlock" />
       <recent name="thread.cas" />
       <recent name="thread.bounded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CasMainV2">
-    <configuration name="BoundedMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.bounded.BoundedMain" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.bounded.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.SpinLockMain (1)">
     <configuration name="CasMainV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.cas.CasMainV1" />
       <module name="java-advanced" />
@@ -97,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IncrementPerformanceMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.cas.increment.IncrementPerformanceMain" />
+    <configuration name="CasMainV3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.cas.CasMainV3" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.cas.increment.*" />
+          <option name="PATTERN" value="thread.cas.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,12 +97,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IncrementThreadMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.cas.increment.IncrementThreadMain" />
+    <configuration name="SpinLockMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.cas.spinlock.SpinLockMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.cas.increment.*" />
+          <option name="PATTERN" value="thread.cas.spinlock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpinLockMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.cas.spinlock.SpinLockMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.cas.spinlock.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpinLockMain (1)" />
+        <item itemvalue="Application.SpinLockMain" />
+        <item itemvalue="Application.CasMainV3" />
         <item itemvalue="Application.CasMainV2" />
         <item itemvalue="Application.CasMainV1" />
-        <item itemvalue="Application.IncrementPerformanceMain" />
-        <item itemvalue="Application.IncrementThreadMain" />
-        <item itemvalue="Application.BoundedMain" />
       </list>
     </recent_temporary>
   </component>
