@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/cas/CasMainV3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/cas/spinlock/SpinLock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/cas/spinlock/SpinLockBad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/cas/spinlock/SpinLockMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/collection/simple/SimpleListMainV0.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/collection/simple/list/BasicList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/collection/simple/list/SimpleList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +41,7 @@
     "Application.CasMainV3.executor": "Run",
     "Application.IncrementPerformanceMain.executor": "Run",
     "Application.IncrementThreadMain.executor": "Run",
+    "Application.SimpleListMainV0.executor": "Run",
     "Application.SpinLockMain (1).executor": "Run",
     "Application.SpinLockMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -57,39 +57,39 @@
       <recent name="thread.bounded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SpinLockMain (1)">
-    <configuration name="CasMainV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.cas.CasMainV1" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.cas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CasMainV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.cas.CasMainV2" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.cas.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.SimpleListMainV1">
     <configuration name="CasMainV3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.cas.CasMainV3" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="thread.cas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleListMainV0" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.collection.simple.SimpleListMainV0" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.collection.simple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleListMainV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.collection.simple.list.SimpleListMainV1" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.collection.simple.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SimpleListMainV1" />
+        <item itemvalue="Application.SimpleListMainV0" />
         <item itemvalue="Application.SpinLockMain (1)" />
         <item itemvalue="Application.SpinLockMain" />
         <item itemvalue="Application.CasMainV3" />
-        <item itemvalue="Application.CasMainV2" />
-        <item itemvalue="Application.CasMainV1" />
       </list>
     </recent_temporary>
   </component>
