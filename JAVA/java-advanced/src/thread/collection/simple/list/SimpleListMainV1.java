@@ -6,6 +6,6 @@ public class SimpleListMainV1 {
         SimpleList list = new BasicList();
         list.add("A");
         list.add("B");
-        System.out.println("list = " + list);
+        System.out.println("list = " + list); 
     }
 }

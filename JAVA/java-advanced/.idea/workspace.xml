@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/CallableMainV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/CallableMainV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/RunnableMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/SumTaskMainV1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/SumTaskMainV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/SumTaskMainV2_Bad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/CallableTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/FutureCancelMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/FutureExceptionMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/InvokeAllMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/collection/simple/list/SimpleListMainV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/collection/simple/list/SimpleListMainV1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +46,11 @@
     "Application.CasMainV3.executor": "Run",
     "Application.ExecutorBasicMain (1).executor": "Run",
     "Application.ExecutorBasicMain.executor": "Run",
+    "Application.FutureCancelMain.executor": "Run",
+    "Application.FutureExceptionMain.executor": "Run",
     "Application.IncrementPerformanceMain.executor": "Run",
     "Application.IncrementThreadMain.executor": "Run",
+    "Application.InvokeAllMain.executor": "Run",
     "Application.ListMain.executor": "Run",
     "Application.MapMain.executor": "Run",
     "Application.RunnableMain (1).executor": "Run",
@@ -79,9 +81,9 @@
       <recent name="thread.bounded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SumTaskMainV2_Bad">
-    <configuration name="CallableMainV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.future.CallableMainV2" />
+  <component name="RunManager" selected="Application.InvokeAnyMain">
+    <configuration name="FutureCancelMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.FutureCancelMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
@@ -93,8 +95,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CallableMainV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.future.CallableMainV1" />
+    <configuration name="FutureExceptionMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.FutureExceptionMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
@@ -106,21 +108,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunnableMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.RunnableMain" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.executor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RunnableMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.future.RunnableMain" />
+    <configuration name="InvokeAllMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.InvokeAllMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
@@ -132,21 +121,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SumTaskMainV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.future.SumTaskMainV1" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.executor.future.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SumTaskMainV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.future.SumTaskMainV2" />
+    <configuration name="InvokeAnyMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.InvokeAnyMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
@@ -173,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InvokeAnyMain" />
+        <item itemvalue="Application.InvokeAllMain" />
+        <item itemvalue="Application.FutureExceptionMain" />
+        <item itemvalue="Application.FutureCancelMain" />
         <item itemvalue="Application.SumTaskMainV2_Bad" />
-        <item itemvalue="Application.SumTaskMainV2" />
-        <item itemvalue="Application.SumTaskMainV1" />
-        <item itemvalue="Application.CallableMainV2" />
-        <item itemvalue="Application.CallableMainV1 (1)" />
       </list>
     </recent_temporary>
   </component>
