@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/ExecutorBasicMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/ExecutorUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/RunnableTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/CallableMainV1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/CallableMainV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/RunnableMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/SumTaskMainV1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/SumTaskMainV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/future/SumTaskMainV2_Bad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +39,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BoundedMain.executor": "Run",
+    "Application.CallableMainV1 (1).executor": "Run",
+    "Application.CallableMainV1.executor": "Run",
+    "Application.CallableMainV2.executor": "Run",
     "Application.CasMainV1.executor": "Run",
     "Application.CasMainV2.executor": "Run",
     "Application.CasMainV3.executor": "Run",
@@ -45,6 +51,9 @@
     "Application.IncrementThreadMain.executor": "Run",
     "Application.ListMain.executor": "Run",
     "Application.MapMain.executor": "Run",
+    "Application.RunnableMain (1).executor": "Run",
+    "Application.RunnableMain (2).executor": "Run",
+    "Application.RunnableMain.executor": "Run",
     "Application.SetMain.executor": "Run",
     "Application.SimpleListMainV0.executor": "Run",
     "Application.SimpleListmainV2.executor": "Run",
@@ -52,6 +61,8 @@
     "Application.SimpleListmainV4.executor": "Run",
     "Application.SpinLockMain (1).executor": "Run",
     "Application.SpinLockMain.executor": "Run",
+    "Application.SumTaskMainV1.executor": "Run",
+    "Application.SumTaskMainV2.executor": "Run",
     "Application.SynchronizedListMain.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -61,15 +72,42 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="thread.executor.future" />
       <recent name="thread.collection.simple.list" />
       <recent name="thread.cas.spinlock" />
       <recent name="thread.cas" />
       <recent name="thread.bounded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExecutorBasicMain">
-    <configuration name="ExecutorBasicMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorBasicMain" />
+  <component name="RunManager" selected="Application.SumTaskMainV2_Bad">
+    <configuration name="CallableMainV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.CallableMainV2" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.executor.future.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CallableMainV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.CallableMainV1" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.executor.future.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunnableMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.RunnableMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
@@ -81,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExecutorBasicMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorBasicMain" />
+    <configuration name="RunnableMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.RunnableMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.executor.*" />
+          <option name="PATTERN" value="thread.executor.future.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,12 +132,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.collection.simple.java.ListMain" />
+    <configuration name="SumTaskMainV1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.SumTaskMainV1" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.collection.simple.java.*" />
+          <option name="PATTERN" value="thread.executor.future.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +145,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.collection.simple.java.MapMain" />
+    <configuration name="SumTaskMainV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.SumTaskMainV2" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.collection.simple.java.*" />
+          <option name="PATTERN" value="thread.executor.future.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,12 +158,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.collection.simple.java.SetMain" />
+    <configuration name="SumTaskMainV2_Bad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.future.SumTaskMainV2_Bad" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.collection.simple.java.*" />
+          <option name="PATTERN" value="thread.executor.future.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ExecutorBasicMain" />
-        <item itemvalue="Application.ExecutorBasicMain (1)" />
-        <item itemvalue="Application.MapMain" />
-        <item itemvalue="Application.SetMain" />
-        <item itemvalue="Application.ListMain" />
+        <item itemvalue="Application.SumTaskMainV2_Bad" />
+        <item itemvalue="Application.SumTaskMainV2" />
+        <item itemvalue="Application.SumTaskMainV1" />
+        <item itemvalue="Application.CallableMainV2" />
+        <item itemvalue="Application.CallableMainV1 (1)" />
       </list>
     </recent_temporary>
   </component>
