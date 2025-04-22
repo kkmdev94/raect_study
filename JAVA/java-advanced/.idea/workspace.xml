@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/ExecutorBasicMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/ExecutorUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/RunnableTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +39,8 @@
     "Application.CasMainV1.executor": "Run",
     "Application.CasMainV2.executor": "Run",
     "Application.CasMainV3.executor": "Run",
+    "Application.ExecutorBasicMain (1).executor": "Run",
+    "Application.ExecutorBasicMain.executor": "Run",
     "Application.IncrementPerformanceMain.executor": "Run",
     "Application.IncrementThreadMain.executor": "Run",
     "Application.ListMain.executor": "Run",
@@ -62,7 +67,33 @@
       <recent name="thread.bounded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MapMain">
+  <component name="RunManager" selected="Application.ExecutorBasicMain">
+    <configuration name="ExecutorBasicMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorBasicMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.executor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExecutorBasicMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorBasicMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.executor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ListMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.collection.simple.java.ListMain" />
       <module name="java-advanced" />
@@ -102,39 +133,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleListmainV4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.collection.simple.list.SimpleListmainV4" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.collection.simple.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SynchronizedListMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.collection.simple.java.SynchronizedListMain" />
-      <module name="java-advanced" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.collection.simple.java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExecutorBasicMain" />
+        <item itemvalue="Application.ExecutorBasicMain (1)" />
         <item itemvalue="Application.MapMain" />
         <item itemvalue="Application.SetMain" />
         <item itemvalue="Application.ListMain" />
-        <item itemvalue="Application.SynchronizedListMain" />
-        <item itemvalue="Application.SimpleListmainV4" />
       </list>
     </recent_temporary>
   </component>
