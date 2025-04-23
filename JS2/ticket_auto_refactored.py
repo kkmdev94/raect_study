@@ -2,7 +2,7 @@ import pyautogui
 import time
 
 # 검색할 영역을 정의하는 이미지 파일 경로
-region_image_path = 'target_image2.png'
+region_image_path = 'target_image.png'
 # 영역 내에서 클릭할 대상 이미지 파일 경로
 target_image_path = 'target_image.png'
 
