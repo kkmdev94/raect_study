@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/ExecutorShutdownMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,46 +28,46 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BoundedMain.executor": "Run",
-    "Application.CallableMainV1 (1).executor": "Run",
-    "Application.CallableMainV1.executor": "Run",
-    "Application.CallableMainV2.executor": "Run",
-    "Application.CasMainV1.executor": "Run",
-    "Application.CasMainV2.executor": "Run",
-    "Application.CasMainV3.executor": "Run",
-    "Application.ExecutorBasicMain (1).executor": "Run",
-    "Application.ExecutorBasicMain.executor": "Run",
-    "Application.ExecutorShutdownMain.executor": "Run",
-    "Application.FutureCancelMain.executor": "Run",
-    "Application.FutureExceptionMain.executor": "Run",
-    "Application.IncrementPerformanceMain.executor": "Run",
-    "Application.IncrementThreadMain.executor": "Run",
-    "Application.InvokeAllMain.executor": "Run",
-    "Application.ListMain.executor": "Run",
-    "Application.MapMain.executor": "Run",
-    "Application.NewOrderServiceTestMain.executor": "Run",
-    "Application.OldOrderServiceTestMain.executor": "Run",
-    "Application.RunnableMain (1).executor": "Run",
-    "Application.RunnableMain (2).executor": "Run",
-    "Application.RunnableMain.executor": "Run",
-    "Application.SetMain.executor": "Run",
-    "Application.SimpleListMainV0.executor": "Run",
-    "Application.SimpleListmainV2.executor": "Run",
-    "Application.SimpleListmainV3.executor": "Run",
-    "Application.SimpleListmainV4.executor": "Run",
-    "Application.SpinLockMain (1).executor": "Run",
-    "Application.SpinLockMain.executor": "Run",
-    "Application.SumTaskMainV1.executor": "Run",
-    "Application.SumTaskMainV2.executor": "Run",
-    "Application.SynchronizedListMain.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BoundedMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CallableMainV1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CallableMainV1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CallableMainV2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CasMainV1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CasMainV2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CasMainV3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExecutorBasicMain (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExecutorBasicMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExecutorShutdownMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FutureCancelMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FutureExceptionMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IncrementPerformanceMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IncrementThreadMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InvokeAllMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ListMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MapMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.NewOrderServiceTestMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OldOrderServiceTestMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RunnableMain (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.RunnableMain (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.RunnableMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SetMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimpleListMainV0.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimpleListmainV2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimpleListmainV3.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimpleListmainV4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SpinLockMain (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.SpinLockMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SumTaskMainV1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SumTaskMainV2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SynchronizedListMain.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="thread.executor.test" />
