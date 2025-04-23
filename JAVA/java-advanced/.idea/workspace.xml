@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89996e28-c4bc-47b1-8170-7519ae7d5299" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/poolsize/PoolSizeMainV1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thread/executor/ExecutorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/executor/ExecutorUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/PrestartPoolMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +29,7 @@
     "git-widget-placeholder": "main"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.PoolSizeMainV1">
+  <component name="RunManager" selected="Application.PrestartPoolMain">
     <configuration name="ExecutorShutdownMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorShutdownMain" />
       <module name="java-advanced" />
@@ -58,8 +56,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PrestartPoolMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.PrestartPoolMain" />
+      <module name="java-advanced" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.executor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PrestartPoolMain" />
         <item itemvalue="Application.PoolSizeMainV1" />
         <item itemvalue="Application.ExecutorShutdownMain" />
       </list>
