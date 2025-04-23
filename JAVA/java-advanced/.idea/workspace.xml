@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e21e7e-e69e-4edb-93a9-f7ade9727e4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/test/NewOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/test/NewOrderServiceTeacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/test/NewOrderServiceTestMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/test/OldOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/executor/test/OldOrderServiceTestMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/executor/ExecutorShutdownMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +42,7 @@
     "Application.CasMainV3.executor": "Run",
     "Application.ExecutorBasicMain (1).executor": "Run",
     "Application.ExecutorBasicMain.executor": "Run",
+    "Application.ExecutorShutdownMain.executor": "Run",
     "Application.FutureCancelMain.executor": "Run",
     "Application.FutureExceptionMain.executor": "Run",
     "Application.IncrementPerformanceMain.executor": "Run",
@@ -83,13 +80,13 @@
       <recent name="thread.cas" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NewOrderServiceTestMain">
-    <configuration name="FutureExceptionMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.future.FutureExceptionMain" />
+  <component name="RunManager" selected="Application.ExecutorShutdownMain">
+    <configuration name="ExecutorShutdownMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorShutdownMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.executor.future.*" />
+          <option name="PATTERN" value="thread.executor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExecutorShutdownMain" />
         <item itemvalue="Application.NewOrderServiceTestMain" />
         <item itemvalue="Application.OldOrderServiceTestMain" />
         <item itemvalue="Application.InvokeAnyMain" />
         <item itemvalue="Application.InvokeAllMain" />
-        <item itemvalue="Application.FutureExceptionMain" />
       </list>
     </recent_temporary>
   </component>
