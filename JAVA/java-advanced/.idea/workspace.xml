@@ -32,6 +32,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BadThreadMain.executor": "Run",
     "Application.BoundedMain.executor": "Run",
     "Application.CallableMainV1 (1).executor": "Run",
     "Application.CallableMainV1.executor": "Run",
@@ -79,13 +80,13 @@
       <recent name="thread.cas" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExecutorShutdownMain">
-    <configuration name="ExecutorShutdownMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorShutdownMain" />
+  <component name="RunManager" selected="Application.BadThreadMain">
+    <configuration name="BadThreadMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.start.BadThreadMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.executor.*" />
+          <option name="PATTERN" value="thread.start.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InvokeAllMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.executor.future.InvokeAllMain" />
+    <configuration name="ExecutorShutdownMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.executor.ExecutorShutdownMain" />
       <module name="java-advanced" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread.executor.future.*" />
+          <option name="PATTERN" value="thread.executor.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BadThreadMain" />
         <item itemvalue="Application.ExecutorShutdownMain" />
         <item itemvalue="Application.NewOrderServiceTestMain" />
         <item itemvalue="Application.OldOrderServiceTestMain" />
         <item itemvalue="Application.InvokeAnyMain" />
-        <item itemvalue="Application.InvokeAllMain" />
       </list>
     </recent_temporary>
   </component>
