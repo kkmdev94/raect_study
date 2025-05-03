@@ -1,0 +1,7 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<p th:text="'hello ' + ${name}">hello! empty</p>
+<!-- 서버 없이 그냥 html을 만들어서 볼때 정상적으로 출력되나 확인하기 위해 hello! empty같이 <p> 태그 안에 사용한다. 아무것도 없어도 되지만 그러면 정상적으로
+  출력이 되고 있는지 확인하기 어렵기 떄문에 써놓는다. 서버에 올려서 사용을 할때는 hello + ${name} 이 출력된다.-->
+</body>
+</html>
