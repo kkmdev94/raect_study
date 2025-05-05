@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+
 public class MemoryMemberRepository implements MemberRepository{
 
     // 실무에서는 동시성을 생각해서 ConcurrentHashMap이나 id에서도 atomic long을 사용해야 하지만 예제라 그냥 한다.
