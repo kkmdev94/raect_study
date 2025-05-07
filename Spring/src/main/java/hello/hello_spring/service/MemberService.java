@@ -22,10 +22,17 @@ public class MemberService {
 //        result.ifPresent(m -> {
 //            throw new IllegalStateException("이미 존재하는 회원입니다.");
 //        });
-        extracted(member);
+        long start = System.currentTimeMillis();
 
-        memberRepository.save(member);
-        return member.getId();
+        try{
+            extracted(member);
+            memberRepository.save(member);
+            return member.getId();
+        }finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("timeMs  = " + timeMs + "ms");
+        }
     }
 
     private void extracted(Member member) { // findByName뒤로 쭉 로직이 나오는 이러한 로직은 메서드로 뽑아서 호출하는게 좋다.
@@ -35,8 +42,15 @@ public class MemberService {
                 });
     }
 
-    public List<Member> findMembers() { // 전체 회원 조회 / 서비스에서는 비즈니스적 네임을 사용하는것이 좋다.
-        return memberRepository.findAll();
+    public List<Member> findMembers() {
+        long start = System.currentTimeMillis();// 전체 회원 조회 / 서비스에서는 비즈니스적 네임을 사용하는것이 좋다.
+        try {
+            return memberRepository.findAll();
+        }finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("findMembers  = " + timeMs + "ms");
+        }
     }
 
     public Optional<Member> findOne(Long memberId) { // 멤버 아이디를 넘김.
