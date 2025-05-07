@@ -1,38 +1,35 @@
 package hello.hello_spring.service;
 
 import hello.hello_spring.domain.Member;
-import hello.hello_spring.repository.MemoryMemberRepository;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import hello.hello_spring.repository.MemberRepository;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import java.util.List;
-import static org.assertj.core.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService;
-    MemoryMemberRepository memberRepository;
+//    MemberService memberService = new MemberService();
 
-    @BeforeEach
-    public void beforeEach() {
-        memberRepository = new MemoryMemberRepository();
-        memberService = new MemberService(memberRepository);
-    }
-
-    @AfterEach
-    public void afterEach() {
-        memberRepository.clearStore();
+    @Test
+    void 회원가입() {
+//        //given -> 무언가가 주어졌는데
+//        Member member = new Member();
+//        member.setName("hello" +
+//                "");
+//        //when -> 이걸 실행 했을때
+//        Long saveId = memberService.join(member);
+//
+//        //then -> 결과가 이게 나와야 돼
+//        Member findMember = memberService.findOne(saveId).get();
+//        Assertions.assertThat(member.getName()).isEqualTo(findMember.getName());
     }
 
     @Test
-    public void save() {
-        Member member = new Member();
-        member.setId(1L);
-        member.setName("spring");
+    void findMembers() {
+    }
 
-        memberService.join(member);
-
-        List<Member> members = memberService.findMembers();
-        assertThat(members);
+    @Test
+    void findOne() {
     }
 }
