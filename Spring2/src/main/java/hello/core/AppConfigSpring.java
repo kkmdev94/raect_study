@@ -11,21 +11,27 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@Configuration // Spring 설정 정보는 항상 사용해준다.
 public class AppConfigSpring { // 스프링 리팩토링
+
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberReposiotry(), new RateDiscountPolicy()() 호출
 
     @Bean
     public MemberService memberService() {
+        System.out.println("call = AppConfigSpring.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call2 = AppConfigSpring.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
+        System.out.println("call3 = AppConfigSpring.orderService");
         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
 
