@@ -1,8 +1,5 @@
 package hello.core;
 
-import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -18,11 +15,11 @@ import static org.springframework.context.annotation.ComponentScan.*;
                 Configuration.class))
 public class AutoAppConfig { // 설정이 없어지는 대신 각 기능에 Component를 이용해 스프링 빈에 등록하고 의존과계 주입을 위한 Autowirte를 사용한다.
 
-    // 수동 빈.
-    @Bean(name = "memoryMemberRepository")
-    MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
+//    // 수동 빈.
+//    @Bean(name = "memoryMemberRepository")
+//    MemberRepository memberRepository() {
+//        return new MemoryMemberRepository();
+//    }
     /*
      수동 빈 등록시 남는 로그 : 수동 빈 등록이 우선권을 가진다.(수동 빈이 자동빈을 오버라이딩 해버린다.)
     Overriding bean definition for bean 'memoryMemberRepository' with a different definition: replacing
