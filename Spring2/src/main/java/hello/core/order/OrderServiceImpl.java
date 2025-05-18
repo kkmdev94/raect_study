@@ -17,7 +17,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository; // 생성자 주입을 쓰면 final 키워드를 쓸수 있다.
     private final DiscountPolicy discountPolicy;
 
-    @Autowired // 생성자에 작성.
+    @Autowired // 생성자에 작성. / 왠만하면 그냥 95%이상은 생성자 주입을 사용한다. 순수 자바 코드 테스트부터 불필요한 행위로 인한 오류도 컴파일 오류로 잡을 수 있다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
