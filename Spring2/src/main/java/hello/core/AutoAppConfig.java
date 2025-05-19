@@ -11,8 +11,7 @@ import static org.springframework.context.annotation.ComponentScan.*;
         // 기본값은 디폴트, 지정을 하지 않고 기본으로 하면 @ComponentScan이 붙은 설정 정보 클래스의 패키지가 시작위치가 되어서 다 뒤진다.
         // 권장 방법은 : 패키지 위치를 지정하지 않고 설정 정보 클래스의 위치를 프로젝트 최상단에 두는것이다.
         basePackages = "hello.core", // 해당 패키지부터 찾아간다. / 이 베이스패키지를 사용하는 이유는 모든 패키지(라이브러리 포함) 다 뒤져서 시간이 오래걸리기 때문이다.
-        excludeFilters = @Filter(type = FilterType.ANNOTATION, classes =
-                Configuration.class))
+        excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = Configuration.class))
 public class AutoAppConfig { // 설정이 없어지는 대신 각 기능에 Component를 이용해 스프링 빈에 등록하고 의존과계 주입을 위한 Autowirte를 사용한다.
 
 //    // 수동 빈.

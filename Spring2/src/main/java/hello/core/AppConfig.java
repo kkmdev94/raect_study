@@ -21,8 +21,8 @@ public class AppConfig { // 실제 동작에 필요한 구현 객체를 여기�
     }
 
     public OrderService orderService() {
-//        return new OrderServiceImpl(memberRepository(),discountPolicy());
-        return null;
+        return new OrderServiceImpl(memberRepository(),discountPolicy());
+//        return null;
     }
 
 

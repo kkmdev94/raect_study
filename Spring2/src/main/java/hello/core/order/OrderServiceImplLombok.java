@@ -5,6 +5,7 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class OrderServiceImplLombok implements OrderService{
 
     private final MemberRepository memberRepository; // 생성자 주입을 쓰면 final 키워드를 쓸수 있다.
-    private final DiscountPolicy discountPolicy;
+    private final DiscountPolicy  discountPolicy;
 //    private final Object object; -> 이렇게 추가해도 생성자에서 추가를 안하고 @RequiredArgsConstructor 자동으로 만들어주므로 편하다.
 
 //    @Autowired // -> 즉 아래의 코드에 있는 생성자가 지금처럼 주석 즉, 없어도 @RequiredArgsConstructor가 자동으로 만들어 준다는 것이다.
