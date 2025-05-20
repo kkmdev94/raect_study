@@ -4,11 +4,9 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @RequiredArgsConstructor // final이 붙은 필드객체를 파라미터로 받는 생성자를 바로 만들어 준다. ctrl + f12 를 이용하여 안에 있는 메서드 확인 가능
 public class OrderServiceImplLombok implements OrderService{
 
