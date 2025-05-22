@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Scope;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SingletonWithPrototypeTest3 {
+public class SingletonWithPrototypeTest4 {
 
     @Test
     void prototypeFind() {
@@ -41,11 +41,10 @@ public class SingletonWithPrototypeTest3 {
     static class ClientBean {
 
         @Autowired
-        private ObjectProvider<PrototypeBean> prototypeBeanProvider; // getObject를 호출하면 getObject가 스프링 컨테이너에서 프로토타입 빈을 찾아서 반환해준다.
-        // 즉, 우리가 애플리케이션 컨텍스트한테 직접 찾는게 아니라 찾아주는 기능만 제공 / 단 이거의 문제는 스프링에 의존하게 된다. 그래서 나온게 JSR-330 이건 Test4에서
+        private Provider<PrototypeBean> prototypeBeanProvider;
 
         public int logic() {
-            PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+            PrototypeBean prototypeBean = prototypeBeanProvider.get();
             prototypeBean.addCount();
             return prototypeBean.getCount();
         }
