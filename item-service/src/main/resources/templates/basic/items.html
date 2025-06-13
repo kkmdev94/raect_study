@@ -33,8 +33,10 @@
             </thead>
             <tbody>
             <tr th:each="item : ${items}">
+                <!-- 2가지의 방법으로 소개 / 하나는 URL 링크 표현식으로 템플릿으로 선언 해놓고 오른쪽에 자바 처럼 변수를 선언할 수 있다. 거기에 쿼리 파라미터도 지원한다. 이 형식이 회원 id 형식
+                두번째 방법은 리터럴 대체 문법(|...|) 이 방식으로 간단하게 표기 할 수 도 있다. 이 방법이 상품명 조회-->
                 <td><a href="item.html" th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.id}">회원id</a></td>
-                <td><a href="item.html" th:href="@{/basic/items/{itemId}(itemId=${item.id})}" th:text="${item.itemName}">상품명</a></td>
+                <td><a href="item.html" th:href="@{|/basic/items/${item.id}|}" th:text="${item.itemName}">상품명</a></td>
                 <td th:text="${item.price}">10000</td>
                 <td th:text="${item.quantity}">10</td>
             </tr>
