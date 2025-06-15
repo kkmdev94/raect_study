@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -73,12 +74,52 @@ public class BasicItemController {
         return "basic/item";
     }
 
-    @PostMapping("/add")
+//    @PostMapping("/add")
     public String addItemV4(Item item) {
 
         itemRepository.save(item);
 
         return "basic/item";
+    }
+
+    /**
+     *  웹 브라우저의 새로 고침은 마지막에 서버에 전송한 데이터를 다시 전송하는 행위이다.
+     *  따라서 새로고침을 통해 우리가 마지막에 전송한 POST 형식이 전송되어서 새로고침을 해도 저장이 되는것이다.
+     *  따라서 Redirect를 사용해야 한다. 그래서 이러한 패턴을 PRG패턴이라고 하는데 POST/Redirect/GET을 줄인 말이다.
+     *
+     *  "redirect:/basic/items/" + item.getId() redirect에서 +item.getId() 처럼 URL에 변수를
+     * 더해서 사용하는 것은 URL 인코딩이 안되기 때문에 위험하다. 다음에 설명하는 RedirectAttributes 를 사
+     * 용하자
+     */
+//    @PostMapping("/add")
+    public String addItemV5(Item item) { // PRG 패턴이 적용된 최종 등록 폼.
+
+        itemRepository.save(item);
+        return "redirect:/basic/items/"+item.getId();
+    }
+
+    /**
+     *
+     */
+    @PostMapping("/add")
+    public String addItemV6(Item item, RedirectAttributes redirectAttributes) {
+        Item savedItem = itemRepository.save(item);
+        redirectAttributes.addAttribute("itemId", savedItem.getId());
+        redirectAttributes.addAttribute("status", true);
+        return "redirect:/basic/items/{itemId}";
+    }
+
+    @GetMapping("/{itemId}/edit")
+    public String editForm(@PathVariable Long itemId, Model model) {
+        Item item = itemRepository.findById(itemId);
+        model.addAttribute("item", item);
+        return "basic/editForm";
+    }
+
+    @PostMapping("/{itemId}/edit")
+    public String edit(@PathVariable Long itemId, @ModelAttribute Item item) {
+        itemRepository.update(itemId, item);
+        return "redirect:/basic/items/{itemId}";
     }
 
     /**
