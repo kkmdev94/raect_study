@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -18,6 +20,17 @@ import java.util.List;
 public class FormItemController {
 
     private final ItemRepository itemRepository;
+
+    @ModelAttribute("regions")
+    public Map<String,String> regions() {
+        Map<String, String> regions = new LinkedHashMap<>();
+
+        regions.put("SEOUL", "서울");
+        regions.put("BUSAN", "부산");
+        regions.put("JEJU", "제주");
+
+        return regions;
+    }
 
     @GetMapping
     public String items(Model model) {
@@ -30,12 +43,28 @@ public class FormItemController {
     public String item(@PathVariable long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
+
+//        Map<String, String> regions = new LinkedHashMap<>(); // 스프링에서 기능을 지원해서 @ModelAttribute()를 사용해서 중복 데이터를 입력 안해줘도 된다.
+//
+//        regions.put("SEOUL", "서울");
+//        regions.put("BUSAN", "부산");
+//        regions.put("JEJU", "제주");
+
+//        model.addAttribute(regions);
         return "form/item";
     }
 
     @GetMapping("/add")
     public String addForm(Model model) {
         model.addAttribute("item", new Item());
+
+//        Map<String, String> regions = new LinkedHashMap<>();
+//
+//        regions.put("SEOUL", "서울");
+//        regions.put("BUSAN", "부산");
+//        regions.put("JEJU", "제주");
+//
+//        model.addAttribute(regions);
         return "form/addForm";
     }
 
@@ -52,6 +81,14 @@ public class FormItemController {
     public String editForm(@PathVariable Long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
+
+//        Map<String, String> regions = new LinkedHashMap<>();
+//
+//        regions.put("SEOUL", "서울");
+//        regions.put("BUSAN", "부산");
+//        regions.put("JEJU", "제주");
+//
+//        model.addAttribute(regions);
         return "form/editForm";
     }
 
