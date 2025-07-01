@@ -45,7 +45,7 @@ public class ValidationItemControllerV2 {
         return "validation/v2/addForm";
     }
 
-    @PostMapping("/add") // 주의 : BindingResult 는 항상 ModelAttribute의 객체 바로 뒤에 와야된다.
+//    @PostMapping("/add") // 주의 : BindingResult 는 항상 ModelAttribute의 객체 바로 뒤에 와야된다.
     public String addItemV1(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
 //        //검증 오류 결과를 보관
@@ -71,6 +71,44 @@ public class ValidationItemControllerV2 {
             if (resultPrice < 10000) {
 //                errors.put("globalError", "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice);
                 bindingResult.addError(new ObjectError("item","가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice));
+            }
+        }
+
+        // 검증에 실패하면 다시 입력 폼으로
+        if (bindingResult.hasErrors()) {
+            log.info("bindingResult = {}", bindingResult);
+//            model.addAttribute("bindingResult", bindingResult); // 생략 가능, 굳이 모델에 안담아도 자동으로 담긴다.
+            return "validation/v2/addForm";
+        }
+
+        // 성공 로직
+        Item savedItem = itemRepository.save(item);
+        redirectAttributes.addAttribute("itemId", savedItem.getId());
+        redirectAttributes.addAttribute("status", true);
+        return "redirect:/validation/v2/items/{itemId}";
+    }
+
+    @PostMapping("/add")
+    public String addItemV2(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+
+        //검증 로직(BindingResult를 통한 오류 검증)
+        if (!StringUtils.hasText(item.getItemName())) {
+            // objectName, field, 두번째 생성자(거절당할 시 거절된 값을 넣어줌, 바인딩 페일러(데이터 자체가 넘어오는게 실패했는지), 코드와 아규먼츠는 뒤에서 메세지화 학습
+            bindingResult.addError(new FieldError("item","itemName", item.getItemName(), false, null, null,"상품 이름은 필수 입니다."));
+        }
+        if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000) {
+            bindingResult.addError(new FieldError("item","price", item.getPrice(), false, null, null,"가격은 1,000 - 1,000,000원 까지 허용합니다."));
+        }
+        if (item.getQuantity() == null || item.getQuantity() >= 9999) {
+            bindingResult.addError(new FieldError("item","quantity", item.getQuantity(), false, null, null,"수량은 최대 9,999까지 허용합니다."));
+        }
+
+        // 특정 필드가 아닌 복합 룰 검증
+        if (item.getPrice() != null && item.getQuantity() != null) {
+            int resultPrice = item.getPrice() * item.getQuantity();
+            if (resultPrice < 10000) {
+//                errors.put("globalError", "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice);
+                bindingResult.addError(new ObjectError("item", null, null,"가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice));
             }
         }
 
