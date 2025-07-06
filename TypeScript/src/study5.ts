@@ -43,15 +43,51 @@
 // const c = superPrint3(["a","b","c"])
 // const d = superPrint3([1,2,true,false,"hello"]);
 
-// Generics Recap
-// 매개변수를 늘리는것과 같이 제네릭에 추가를 해주고 부여를 해주면 된다.
-type SuperPrint = {
-    <T,M>(arr: T[], b:M): T
+// // Generics Recap
+// // 매개변수를 늘리는것과 같이 제네릭에 추가를 해주고 부여를 해주면 된다.
+// type SuperPrint = {
+//     <T,M>(arr: T[], b:M): T
+// }
+//
+// const superPrint: SuperPrint = (arr) => arr[0]
+//
+// const a = superPrint([1,2,3,4], "x")
+// const b = superPrint([true, false, true], 1);
+// const c = superPrint(["a","b","c"], true)
+// const d = superPrint([1,2,true,false,"hello"], []);
+
+//Conclusions
+// 타입스크립트는 스스로가 타입을 찾게하는것이 항상 좋기에 제네릭 사용이 매우 유용함.
+function superPrint<V>(a: V[]) {
+    return a[0]
 }
 
-const superPrint: SuperPrint = (arr) => arr[0]
+const a = superPrint([1,2,3,4])
+const b = superPrint([true, false, true]);
+const c = superPrint(["a","b","c"])
+const d = superPrint([1,2,true,false,"hello"]);
 
-const a = superPrint([1,2,3,4], "x")
-const b = superPrint([true, false, true], 1);
-const c = superPrint(["a","b","c"], true)
-const d = superPrint([1,2,true,false,"hello"], []);
+type Player<E> = {
+    name:string;
+    extraInfo:E
+}
+type NicoPlayer = Player<{favFood:string}>
+
+const nico: NicoPlayer = {
+    name:"nico",
+    extraInfo:{
+        favFood:"kimchi"
+    }
+}
+
+const lynn : Player<null> = {
+    name: "lynn",
+    extraInfo:null
+}
+
+type A = Array<number>
+let a:A= [1,2,3,4]
+
+function printAllNumber(arr: Array<number>){
+
+}
