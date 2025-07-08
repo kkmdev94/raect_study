@@ -1,3 +1,4 @@
+export {}
 // let a : number = 1;
 // let b : string = "il"
 // let c : boolean = true
@@ -53,11 +54,12 @@ type Player = {
     name: Name,
     age?: Age
 }
-function playerMaker(name:string) : Player {
-    return {
-        name:name,
-    }
-}
+// function playerMaker(name:string) : Player {
+//     return {
+//         name:name,
+//     }
+// }
+const playerMaker = (name:string) : Player => ({name})
 
 const nico = playerMaker("nico");
 nico.age = 12

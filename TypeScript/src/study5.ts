@@ -1,3 +1,4 @@
+export {}
 //Polymorphism(다형성)
 // 여러가지 다른 구조
 // type SuperPrint = {
@@ -86,7 +87,7 @@ const lynn : Player<null> = {
 }
 
 type A = Array<number>
-let a:A= [1,2,3,4]
+let e:A= [1,2,3,4]
 
 function printAllNumber(arr: Array<number>){
 

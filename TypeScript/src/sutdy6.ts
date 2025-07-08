@@ -1,3 +1,5 @@
+export{}
+
 abstract class User{
     constructor(
         private firstName:string,

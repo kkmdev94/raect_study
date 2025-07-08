@@ -1,3 +1,5 @@
+export {}
+
 // unknown
 let a : unknown;
 
@@ -30,7 +32,7 @@ function hello2() : never {
 function hello3(name:string|number) : never {  // 파라미터의 타입을 string과 number로 받고 hello3의 타입을 never를 주입
     if(typeof name === "string") { // typeof를 통해 string이면 name 출력
         name
-    }else if (typeof a === "number") { // string이 아니면 위에서 아래로 내려와서 number인지 확인 / 맞으면 출력
+    }else if (typeof name === "number") { // string이 아니면 위에서 아래로 내려와서 number인지 확인 / 맞으면 출력
         name
     }else { // 그 외의 타입은 전부 never가 되고 return이 없다. / 절대 실행되지 않음.
         name

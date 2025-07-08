@@ -1,3 +1,4 @@
+export {}
 // type Age = number;
 // type Name = String;
 // type Player = {
