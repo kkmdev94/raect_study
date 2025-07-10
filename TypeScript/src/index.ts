@@ -7,4 +7,8 @@ class Block {
         return 'hi';
     }
 }
+
+// document.querySelector()
+localStorage.getItem()
 console.log('Happy developing ✨')
+
