@@ -1,7 +1,7 @@
 "use strict";
 const hello = () => "hi";
 class Block {
-    constructor(data) {
+git     constructor(data) {
         this.data = data;
     }
     static hello() {
