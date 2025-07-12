@@ -12,11 +12,8 @@
 // // localStorage.getItem()
 // console.log('Happy developing ✨')
 
-import {init, exit} from "myPackage";
+import { init, exit } from "./myPackage";
 
-init({
-    url : "true"
-})
+init();
+exit();
 
-exit(1)
-localStorage.clear();
