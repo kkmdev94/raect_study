@@ -1,19 +1,19 @@
-// const hello = () => "hi";
-//
-//
-// class Block {
-//     constructor(private data: string) {}
-//     static hello() {
-//         return 'hi';
-//     }
-// }
-//
-// // document.querySelector()
-// // localStorage.getItem()
-// console.log('Happy developing ✨')
+const hello = () => "hi";
 
-import { init, exit } from "./myPackage";
 
-init();
-exit();
+class Block {
+    constructor(private data: string) {}
+    static hello() {
+        return 'hi';
+    }
+}
+
+// document.querySelector()
+// localStorage.getItem()
+console.log('Happy developing ✨')
+
+// import { init, exit } from "./myPackage";
+//
+// init();
+// exit();
 
