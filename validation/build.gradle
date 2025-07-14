@@ -27,6 +27,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+//	implementation 'org.openjdk.nashorn:nashorn-core:15.3' //Bean Validation 오브젝트 오류에서 ScriptAssert를 사용할떄 JDk17 이상 버전인 경우 JS를 지원하지 않아 dependencies를 추가.
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
