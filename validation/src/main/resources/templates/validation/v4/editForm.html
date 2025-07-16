@@ -8,13 +8,10 @@
         .container {
             max-width: 560px;
         }
-<<<<<<< HEAD
         .field-error {
             border-color: #dc3545;
             color: #dc3545;
         }
-=======
->>>>>>> 537d41b284ca914d46d4b26cc48630857d5c3e05
     </style>
 </head>
 <body>
@@ -26,19 +23,15 @@
     </div>
 
     <form action="item.html" th:action th:object="${item}" method="post">
-<<<<<<< HEAD
 
         <div th:if="${#fields.hasGlobalErrors()}">
             <p class="field-error" th:each="err: ${#fields.globalErrors()}" th:text="${err}">글로벌 오류 메시지</p>
         </div>
 
-=======
->>>>>>> 537d41b284ca914d46d4b26cc48630857d5c3e05
         <div>
             <label for="id" th:text="#{label.item.id}">상품 ID</label>
             <input type="text" id="id" th:field="*{id}" class="form-control" readonly>
         </div>
-<<<<<<< HEAD
 
         <div>
             <label for="itemName" th:text="#{label.item.itemName}">상품명</label>
@@ -65,19 +58,6 @@
             <div class="field-error" th:errors="*{quantity}">
                 수량 오류
             </div>
-=======
-        <div>
-            <label for="itemName" th:text="#{label.item.itemName}">상품명</label>
-            <input type="text" id="itemName" th:field="*{itemName}" class="form-control">
-        </div>
-        <div>
-            <label for="price" th:text="#{label.item.price}">가격</label>
-            <input type="text" id="price" th:field="*{price}" class="form-control">
-        </div>
-        <div>
-            <label for="quantity" th:text="#{label.item.quantity}">수량</label>
-            <input type="text" id="quantity" th:field="*{quantity}" class="form-control">
->>>>>>> 537d41b284ca914d46d4b26cc48630857d5c3e05
         </div>
 
         <hr class="my-4">
