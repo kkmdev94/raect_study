@@ -19,7 +19,8 @@ public class LogFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         log.info("log filter doFilter");
 
-        HttpServletRequest httpRequest = (HttpServletRequest) request; // 인터페이스에는 기능이 없기에 다운캐스팅을 통한 HttpServletRequest 를 담아줌.
+        // ServletRequest와 ServletResponse는 Http 요청이 아닌 경우까지 고려해서 만든 인터페이스이기에, 다운캐스팅을 통한 HttpServletRequest를 사용한다.
+        HttpServletRequest httpRequest = (HttpServletRequest) request;
         String requestURI = httpRequest.getRequestURI();
 
         String uuid = UUID.randomUUID().toString();
