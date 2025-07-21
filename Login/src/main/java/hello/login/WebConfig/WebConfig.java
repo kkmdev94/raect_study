@@ -1,6 +1,7 @@
 package hello.login.WebConfig;
 
 import hello.login.web.filter.LogFilter;
+import hello.login.web.filter.LoginCheckFilter;
 import jakarta.servlet.Filter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -18,4 +19,16 @@ public class WebConfig {
 
         return filterRegistrationBean;
     }
+
+    @Bean // springBoot로 필터 등록할때 사용. WAS를 본인이 들고 띄우기에 같이 넣어준다.
+    public FilterRegistrationBean loginCheckFilter() {
+        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
+        filterRegistrationBean.setFilter(new LoginCheckFilter());
+        filterRegistrationBean.setOrder(2);
+        filterRegistrationBean.addUrlPatterns("/*");
+
+        return filterRegistrationBean;
+    }
+
+
 }
