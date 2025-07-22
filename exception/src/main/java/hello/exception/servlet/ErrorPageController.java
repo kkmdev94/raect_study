@@ -27,6 +27,7 @@ public class ErrorPageController {
     @RequestMapping("/error-page/404")
     public String errorPage404(HttpServletRequest request, HttpServletResponse response) {
         log.info("errorPage 404");
+        log.info("한글되나??");
         printErrorInfo(request);
         return "error-page/404";
     }
