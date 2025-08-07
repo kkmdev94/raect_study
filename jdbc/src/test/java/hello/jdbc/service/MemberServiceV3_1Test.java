@@ -38,6 +38,7 @@ class MemberServiceV3_1Test {
         memberRepository = new MemberRepositoryV3(dataSource);
 
         // V3에서는 추상화된 플랫폼 트랜잭션 매니저를 쓰기 떄문에 PlatformTransactionManager를 사용 단, 현재 이 로직에서는 JDBC이기에 자식을 DataSourceTransactionManager를 받는다.
+        // 트랜잭션의 추상화를 사용한 덕분에 이제 JDBC 기술에 의존하지 않고 아래의 로직처럼 DI 즉, 의존관계 주입만 바꿔주면 된다.
         PlatformTransactionManager transactionManager = new DataSourceTransactionManager(dataSource); //dataSource를 주입을 안해줘서 오류가 발생 했었다.
 
         memberService = new MemberServiceV3_1(transactionManager, memberRepository);
