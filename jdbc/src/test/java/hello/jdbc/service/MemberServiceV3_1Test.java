@@ -20,6 +20,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
  * 트랜잭션 - 트랜잭션 매니저
+ * 해당 순서의 커넥션을 트랜잭션 매니저 2에서 순서를 설명해준다.
  */
 @Slf4j
 class MemberServiceV3_1Test {
