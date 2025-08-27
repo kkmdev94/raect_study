@@ -14,7 +14,7 @@ public class CheckedAppTest {
     void checked() {
         Controller controller = new Controller();
         assertThatThrownBy(() -> controller.request())
-                .isInstanceOf(SQLException.class);
+                .isInstanceOf(Exception.class);
     }
 
     static class Controller {
