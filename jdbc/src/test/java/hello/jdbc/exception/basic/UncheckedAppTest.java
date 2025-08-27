@@ -1,11 +1,18 @@
 package hello.jdbc.exception.basic;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import java.net.ConnectException;
 import java.sql.SQLException;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+
+/**
+ * 예외를 전환할때는 꼭 기존 예외를 같이 담아줘야 한다
+ * 해당 예제를 담는것은 생성자에서 cause를 넣어 주어야 한다.
+ */
+@Slf4j
 public class UncheckedAppTest {
 
     @Test
@@ -13,6 +20,16 @@ public class UncheckedAppTest {
         Controller controller = new Controller();
         assertThatThrownBy(() -> controller.request())
                 .isInstanceOf(Exception.class);
+    }
+
+    @Test
+    void printEx() {
+        Controller controller = new Controller();
+        try {
+            controller.request();
+        }catch (Exception e) {
+            log.info("ex", e);
+        }
     }
 
     static class Controller {
