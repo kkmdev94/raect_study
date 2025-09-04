@@ -4,10 +4,7 @@ import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepository;
 import hello.jdbc.repository.MemberRepositoryV5_1;
 import hello.jdbc.repository.MemberRepositoryV5_2;
-<<<<<<< HEAD
-=======
 import hello.jdbc.repository.MemberRepositoryV5_3;
->>>>>>> debf05d0af44952d547192d82aa9a06c8d908910
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -55,12 +52,8 @@ class MemberServiceV4Test {
         @Bean
         MemberRepository memberRepository() {
 //            return new MemberRepositoryV5_1(dataSource);
-<<<<<<< HEAD
-            return new MemberRepositoryV5_2(dataSource);
-=======
 //            return new MemberRepositoryV5_2(dataSource);
             return new MemberRepositoryV5_3(dataSource);
->>>>>>> debf05d0af44952d547192d82aa9a06c8d908910
         }
         @Bean
         MemberServiceV5 memberServiceV5() {
