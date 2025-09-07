@@ -31,7 +31,7 @@ dependencies {
     //JdbcTemplate 추가
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     //H2 DB 추가
-    runtimeOnly 'com.h2database:h2'
+    implementation 'com.h2database:h2'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
