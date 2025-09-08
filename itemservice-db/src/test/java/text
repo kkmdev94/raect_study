@@ -1,0 +1,11 @@
+테스트 에서는 굳이 TestDB를 만들거나 임베디드를 설정할 필요 없이
+
+package hello.itemservice.domain;
+
+@SpringBootTest
+@Transactional  <-- 요 트렌젝션과
+class ItemRepositoryTest {
+...
+}
+
+테스트 리소스에 schema.sql을 만들면 자동으로 스프링 부트에서 임베디드 메모리 형식의 DB를 사용하여 테스트를 할 수 있게 해준다.
