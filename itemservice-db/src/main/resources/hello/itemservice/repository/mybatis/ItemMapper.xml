@@ -4,7 +4,7 @@
 <mapper namespace="hello.itemservice.repository.mybatis.ItemMapper">
 
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
-        insert into item(item name, price, quantity)
+        insert into item(item_name, price, quantity)
         values (#{itemName}, #{price}, #{quantity})
     </insert>
 
@@ -30,7 +30,7 @@
                 and item_name like concat('%', #{itemName}, '%')
             </if>
             <if test="maxPrice != null">
-                and price $lt;= #{maxPrice} <!--xml문법이라 < 같은 부등호는 충돌이 나기에 $lt; 로 치환해서 작성.-->
+                and price &lt;= #{maxPrice} <!--xml문법이라 < 같은 부등호는 충돌이 나기에 $lt; 로 치환해서 작성.-->
             </if>
         </where>
     </select>
