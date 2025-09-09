@@ -9,3 +9,14 @@ class ItemRepositoryTest {
 }
 
 테스트 리소스에 schema.sql을 만들면 자동으로 스프링 부트에서 임베디드 메모리 형식의 DB를 사용하여 테스트를 할 수 있게 해준다.
+
+
+문자열 대체(String Sbustitution)
+#{} 문법은 ? 넣고 파라미터를 바인딩 하는 PreparedStatement를 사용
+하지만 때로는 파라미터바인딩이 아닌 문자 그대로 처리하고 싶은 경우가 있다. 이때는 ${}를 사용한다.
+
+@Select("select * from user where ${column} = #{value}")
+User findByColumn(@Param("column") String column, @Param("value") String value):
+이런식으로 작성하면 된다.
+
+단, ${}는 SQL 인젝션 공격에 매우 취하약하므로 DBA와의 충분한 얘기와 논의를 거치고 사용하는게 아니라면 그냥 사용하지 말자.
