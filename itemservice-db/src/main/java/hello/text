@@ -44,3 +44,21 @@ ItemServiceApplication에서 MemoryConfig를 호출! 이렇게 해서 Bean으로
 @Repository가 붙은 클래스는 예외 변환 AOP의 적용 대상이 된다.
   - 스프링과 JPA를 함께 사용하면 스프링은 JPA 예외 변환기를 등록한다
   - 예외 변환 AOP 프록시는 JPA 관련 예외가 발생하면 JPA 예외 변환기를 통해 발생한 예외를 스프링 데이터 접근 예외로 변환.
+
+동적 쿼리는 매우 불편해 보이긴 한다. 빨리 queryDSL 배우고 싶다.
+    @Override
+    public List<Item> findAll(ItemSearchCond cond) {
+        String itemName = cond.getItemName();
+        Integer maxPrice = cond.getMaxPrice();
+
+        if (StringUtils.hasText(itemName) && maxPrice != null) {
+//            return repository.findByItemNameAndPriceLessThanEqual("%" + itemName + "%", maxPrice); // 너무 김
+            return repository.findItems("%" + itemName + "%", maxPrice);
+        }else if (StringUtils.hasText(itemName)) {
+            return repository.findByItemNameLike("%" + itemName + "%");
+        } else if (maxPrice != null) {
+            return repository.findByPriceLessThanEqual(maxPrice);
+        } else {
+            return repository.findAll();
+        }
+    }
