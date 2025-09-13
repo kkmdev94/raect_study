@@ -1,9 +1,10 @@
 package hello.itemservice.repository.jpa;
 
 import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import hello.itemservice.domain.Item;
-import hello.itemservice.domain.QItem;
 import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
@@ -49,8 +50,7 @@ public class JpaItemRepositoryV3 implements ItemRepository {
         return Optional.ofNullable(item);
     }
 
-    @Override
-    public List<Item> findAll(ItemSearchCond cond) {
+    public List<Item> findAllOld(ItemSearchCond cond) {
 
         String itemName = cond.getItemName();
         Integer maxPrice = cond.getMaxPrice();
@@ -72,5 +72,42 @@ public class JpaItemRepositoryV3 implements ItemRepository {
                 .fetch();
 
         return result;
+    }
+
+    @Override
+    public List<Item> findAll(ItemSearchCond cond) {
+
+        String itemName = cond.getItemName();
+        Integer maxPrice = cond.getMaxPrice();
+
+//        QItem item = new QItem("i"); // 내부적으로 QItem을 가지고 있기에 아래처럼 QItem.item으로 해주는게 더 좋다. 스태틱 메서드라 스태틱으로 지정도 가능.
+        // QueryDSL의 강점. / 동적 쿼리를 자바코드로 만들어서 지정.
+//        BooleanBuilder builder = new BooleanBuilder();
+//        if (StringUtils.hasText(itemName)){
+//            builder.and(item.itemName.like("%" + itemName + "%"));
+//        }
+//        if (maxPrice != null) {
+//            builder.and(item.price.loe(maxPrice));
+//        }
+
+        return query
+                .select(item)
+                .from(item)
+                .where(likeItemName(itemName), maxPricem(maxPrice))
+                .fetch();
+    }
+
+    private BooleanExpression likeItemName(String itemName) {
+        if (StringUtils.hasText(itemName)){
+            return item.itemName.like("%" + itemName + "%");
+        }
+        return null;
+    }
+
+    private BooleanExpression maxPricem(Integer maxPrice) {
+        if (maxPrice != null) {
+            return item.price.loe(maxPrice);
+        }
+        return null;
     }
 }
