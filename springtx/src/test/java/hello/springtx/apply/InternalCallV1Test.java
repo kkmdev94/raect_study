@@ -6,47 +6,57 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+@Slf4j
 @SpringBootTest
-public class TxLevelTest {
+public class InternalCallV1Test {
 
-    @Autowired LevelService service;
+    @Autowired CallService callService;
 
     @Test
-    void orderTest() {
-        service.write();
-        service.read();
+    void printProxy() {
+        log.info("callService class={}", callService.getClass());
+    }
+
+    @Test
+    void internalCall() {
+        callService.internal();
+    }
+
+    @Test
+    void externalCall() {
+        callService.external();
     }
 
     @TestConfiguration
-    static class TxLevelTestConfig {
+    static class InternalCallV1TestConfig {
+
         @Bean
-        LevelService levelService() {
-            return new LevelService();
+        CallService callService() {
+            return new CallService();
         }
     }
 
     @Slf4j
-    @Transactional(readOnly = true) // 쓰기 작업 x / 읽기 전용으로 트랜잭션이 생성
-    static class LevelService {
+    static class CallService {
 
-        @Transactional(readOnly = false) // defulte false / 안적어도 되긴함.
-        public void write() {
-            log.info("call write");
+        public void external() {
+            log.info("call external");
             printTxInfo();
+            internal();
         }
 
-        public void read() {
-            log.info("call read");
+        @Transactional
+        public void internal() {
+            log.info("call internal");
             printTxInfo();
         }
 
         private void printTxInfo() {
             boolean txActive = TransactionSynchronizationManager.isActualTransactionActive();
-            log.info("tx active: {]", txActive);
+            log.info("tx active: {}", txActive);
             boolean readOnly= TransactionSynchronizationManager.isCurrentTransactionReadOnly();// read only 인지 확인
             log.info("tx readOnly = {}", readOnly);
         }
