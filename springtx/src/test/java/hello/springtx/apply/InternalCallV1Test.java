@@ -40,6 +40,7 @@ public class InternalCallV1Test {
     }
 
     @Slf4j
+    @Transactional
     static class CallService {
 
         public void external() {
