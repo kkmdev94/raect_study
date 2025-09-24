@@ -5,17 +5,17 @@ import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class MemberRepository {
+public class MemberRepository_1 {
 
     @PersistenceContext
     private EntityManager em;
 
-    public Long save(Member member) {
-        em.persist(member);
-        return member.getId();
+    public Long save(Member_1 member1) {
+        em.persist(member1);
+        return member1.getId();
     }
 
-    public Member find(Long id) {
-        return em.find(Member.class, id);
+    public Member_1 find(Long id) {
+        return em.find(Member_1.class, id);
     }
 }
