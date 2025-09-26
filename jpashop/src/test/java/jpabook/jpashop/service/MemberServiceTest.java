@@ -31,12 +31,36 @@ class MemberServiceTest {
         //then
         assertEquals(member,memberRepository.findOne(savedId));
     }
+
+    /**
+     * 강의에서는 Junit4 버전이라 (expected = IllegalStateException.class) 이걸 사용했지만
+     * Junit5 에서는 assertThrows를 사용한다.
+     * assertThrows(IllegalStateException.class, () -> {
+*              memberService.join(member2); //여기서 예외가 발생해야 테스트 성공!
+ *          });
+     */
     @Test
     public void 중복_회원_예외() throws Exception {
         //given
+        Member member1 = new Member();
+        member1.setName("kim");
+
+        Member member2 = new Member();
+        member2.setName("kim");
 
         //when
+        memberService.join(member1);
+//        memberService.join(member2); //예외가 발생해야 한다.
+//        try {
+//            memberService.join(member2); //예외가 발생해야 한다.
+//        } catch (IllegalStateException e) {
+//            return;
+//        }
 
         //then
+        fail("예외가 발생해야 한다.");
+        assertThrows(IllegalStateException.class, () -> {
+            memberService.join(member2); //여기서 예외가 발생해야 테스트 성공!
+        });
     }
 }
