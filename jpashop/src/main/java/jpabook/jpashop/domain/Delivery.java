@@ -20,5 +20,5 @@ public class Delivery {
     private Address address;
 
     @Enumerated(EnumType.STRING) // ORDINAL 사용 금지. STRING은 중간에 추가 되거나 순서가 밀려도 오류가 발생 하지 않기에 STRING을 사용/
-    private DeliveryStatus deliveryStatus; // READY, COMP
+    private DeliveryStatus Status; // READY, COMP
 }
