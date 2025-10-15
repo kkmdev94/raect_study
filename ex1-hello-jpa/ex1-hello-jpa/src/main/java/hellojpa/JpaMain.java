@@ -19,30 +19,39 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction(); // 트랜잭션 호출
         tx.begin(); // 트랜잭션 시작
         try {
-            //insert
-//            Member member = new Member();
+//            //insert
+////            Member member = new Member();
+////
+////            member.setId(1L);
+////            member.setName("HelloA");
+////            em.persist(member);
 //
-//            member.setId(1L);
-//            member.setName("HelloA");
-//            em.persist(member);
+//            //update
+//            Member findMember = em.find(Member.class, 1L);
+//            System.out.println("findMember.getId() = " + findMember.getId());
+//            System.out.println("findMember.getName() = " + findMember.getName());
+//
+//            findMember.setName("HelloJPA"); // 그 이후 persist는 안해도 된다 / JPA가 자동으로 update쿼리로 내보내줌.
+//
+//            //delete
+////            em.remove(findMember);
+//
+//            //jpql 맛보기
+//            List<Member> result = em.createQuery("Select m from Member as m", Member.class)
+//                    .getResultList();
+//
+//            for (Member member : result) {
+//                System.out.println("member.getName() = " + member.getName());
+//            }
+            // 비영속 (멤버 엔티티의 상태가 비영속 상태)
+            Member member = new Member();
+            member.setId(100L);
+            member.setName("HelloJPA");
 
-            //update
-            Member findMember = em.find(Member.class, 1L);
-            System.out.println("findMember.getId() = " + findMember.getId());
-            System.out.println("findMember.getName() = " + findMember.getName());
-
-            findMember.setName("HelloJPA"); // 그 이후 persist는 안해도 된다 / JPA가 자동으로 update쿼리로 내보내줌.
-
-            //delete
-//            em.remove(findMember);
-
-            //jpql 맛보기
-            List<Member> result = em.createQuery("Select m from Member as m", Member.class)
-                    .getResultList();
-
-            for (Member member : result) {
-                System.out.println("member.getName() = " + member.getName());
-            }
+            // 여기서 부터 영속상태
+            System.out.println("=== BEFORE ===");
+            em.persist(member);
+            System.out.println("=== AFTER ===");
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
