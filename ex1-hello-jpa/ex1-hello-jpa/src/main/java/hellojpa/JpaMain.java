@@ -44,14 +44,28 @@ public class JpaMain {
 //                System.out.println("member.getName() = " + member.getName());
 //            }
             // 비영속 (멤버 엔티티의 상태가 비영속 상태)
-            Member member = new Member();
-            member.setId(100L);
-            member.setName("HelloJPA");
+//            Member member = new Member();
+//            member.setId(100L); // 1차 캐시에 저장
+//            member.setName("HelloJPA");
+//
+//            // 여기서 부터 영속상태
+//            System.out.println("=== BEFORE ===");
+//            em.persist(member);
+//            System.out.println("=== AFTER ===");
+//
+//            Member findMember1 = em.find(Member.class, 100L);
+//            Member findMember2 = em.find(Member.class, 100L);
+////            System.out.println("findMember.getId() = " + findMember1.getId());
+//            System.out.println("findMember.getName() = " + findMember1.getName());
 
-            // 여기서 부터 영속상태
-            System.out.println("=== BEFORE ===");
-            em.persist(member);
-            System.out.println("=== AFTER ===");
+            //new 영속
+            Member member1 = new Member(150L,"A");
+            Member member2 = new Member(160L,"B");
+
+            em.persist(member1);
+            em.persist(member2);
+
+            System.out.println("=========================");
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
