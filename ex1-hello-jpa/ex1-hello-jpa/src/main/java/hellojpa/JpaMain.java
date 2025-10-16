@@ -20,11 +20,11 @@ public class JpaMain {
         tx.begin(); // 트랜잭션 시작
         try {
 //            //insert
-////            Member member = new Member();
-////
-////            member.setId(1L);
-////            member.setName("HelloA");
-////            em.persist(member);
+//            Member member = new Member();
+//
+//            member.setId(1L);
+//            member.setName("HelloA");
+//            em.persist(member);
 //
 //            //update
 //            Member findMember = em.find(Member.class, 1L);
@@ -34,7 +34,7 @@ public class JpaMain {
 //            findMember.setName("HelloJPA"); // 그 이후 persist는 안해도 된다 / JPA가 자동으로 update쿼리로 내보내줌.
 //
 //            //delete
-////            em.remove(findMember);
+//            em.remove(findMember);
 //
 //            //jpql 맛보기
 //            List<Member> result = em.createQuery("Select m from Member as m", Member.class)
@@ -55,7 +55,7 @@ public class JpaMain {
 //
 //            Member findMember1 = em.find(Member.class, 100L);
 //            Member findMember2 = em.find(Member.class, 100L);
-////            System.out.println("findMember.getId() = " + findMember1.getId());
+//            System.out.println("findMember.getId() = " + findMember1.getId());
 //            System.out.println("findMember.getName() = " + findMember1.getName());
 
             //new 영속
@@ -66,12 +66,24 @@ public class JpaMain {
 //            em.persist(member2);
 
             // 변경 감지(Dirty Checking / setName을 통한 변경 후 persist는 사용하지 않는다.)
-            Member member = em.find(Member.class, 150L);
-            member.setName("ZZZZZZZ");
-
+//            Member member = em.find(Member.class, 150L);
+//            member.setName("ZZZZZZZ");
+//
 //            if(member.getName().equals("ZZZZZZ")){
 //                em.persist(member);
 //            }
+            //flush  commit 전에 DB에 바로 반영. 단, 1차 캐쉬는 그대로 유지된다.
+//            Member member = new Member(200L, "member200");
+//            em.persist(member);
+//
+//            em.flush();
+
+            // 준영속 상태
+            Member member = em.find(Member.class, 150L); // 여기까지는 영속성 상태.
+            member.setName("AAAAA");
+
+//            em.detach(member); // JPA에서 관리 안하는 준영속 상태.
+//            em.clear(); // 엔티티 매니저 안에 있는 영속성 컨텍스트를 통째로 다 지워버림.
 
             System.out.println("=========================");
 
