@@ -59,11 +59,19 @@ public class JpaMain {
 //            System.out.println("findMember.getName() = " + findMember1.getName());
 
             //new 영속
-            Member member1 = new Member(150L,"A");
-            Member member2 = new Member(160L,"B");
+//            Member member1 = new Member(150L,"A");
+//            Member member2 = new Member(160L,"B");
+//
+//            em.persist(member1);
+//            em.persist(member2);
 
-            em.persist(member1);
-            em.persist(member2);
+            // 변경 감지(Dirty Checking / setName을 통한 변경 후 persist는 사용하지 않는다.)
+            Member member = em.find(Member.class, 150L);
+            member.setName("ZZZZZZZ");
+
+//            if(member.getName().equals("ZZZZZZ")){
+//                em.persist(member);
+//            }
 
             System.out.println("=========================");
 
