@@ -1,5 +1,6 @@
 package hellojpa;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -18,6 +19,9 @@ public class Member {
 
     @Id
     private Long id;
+
+//    @Column(unique = true, length = 10) DDL 생성 기능 / 제약 조건을 추가하거나 유니크 제약조건 추가하던가.
+    // DDL 생성 기능은 DDL을 자동 생성할 때만 사용되고 JPA의 실행 로직에는 영향을 주지 않는다.
     private String name;
 
     public Member() {
