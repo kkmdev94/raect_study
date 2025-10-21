@@ -30,14 +30,14 @@ public class Member2 {
     private RoleType roleType;
 
     // 날짜 타입(Date, Time, TimeStamp) / 자바에서는 날짜랑 시간이 다 있지만 데이터 베이스에는 날짜, 시간, 날짜&시간 이렇게 있기에 3가지를 준다.
-    // 이거는 이제 옛날 ... 이젠 LocalDate를 사용한다..
+    // 이거는 이제 옛날 ... 이젠 LocalDate/LocalDateTime를 사용한다..
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastModifiedDate;
 
-    // DB에 varchar보다 큰 데이터를 넣고 싶으면 사용.
+    // DB에 varchar보다 큰 데이터를 넣고 싶으면 사용. / 문자는 CLOB, 숫자는 BLOB
     @Lob
     private String description;
 
