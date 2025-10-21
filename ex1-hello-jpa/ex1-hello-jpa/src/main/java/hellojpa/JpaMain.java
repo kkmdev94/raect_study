@@ -79,13 +79,13 @@ public class JpaMain {
 //            em.flush();
 
             // 준영속 상태
-            Member member = em.find(Member.class, 150L); // 여기까지는 영속성 상태.
-            member.setName("AAAAA");
-
+//            Member member = em.find(Member.class, 150L); // 여기까지는 영속성 상태.
+//            member.setName("AAAAA");
+//
 //            em.detach(member); // JPA에서 관리 안하는 준영속 상태.
 //            em.clear(); // 엔티티 매니저 안에 있는 영속성 컨텍스트를 통째로 다 지워버림.
-
-            System.out.println("=========================");
+//
+//            System.out.println("=========================");
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
