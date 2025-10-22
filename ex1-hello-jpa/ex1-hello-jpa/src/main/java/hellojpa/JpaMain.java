@@ -87,6 +87,11 @@ public class JpaMain {
 //
 //            System.out.println("=========================");
 
+            Member2 member2 = new Member2();
+            member2.setUsername("ID_A");
+
+            em.persist(member2);
+
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
             tx.rollback();
