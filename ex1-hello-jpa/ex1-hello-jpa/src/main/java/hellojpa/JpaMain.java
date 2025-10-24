@@ -101,13 +101,18 @@ public class JpaMain {
             member3.setUsername("member1");
 //            member3.setTeamId(team.getId()); // 연관관계 매핑으로 사용 X
             member3.setTeam(team);
-
             em.persist(member3);
 
-            Member3 findMember = em.find(Member3.class, member3.getId());
+            em.flush();
+            em.clear();
 
-            Team findTeamId = findMember.getTeam();
-            System.out.println("findTeamId = " + findTeamId.getName());
+            // 멤버에서 팀으로 <-> 팀에서 멤버로 왔다갔다 하는 이 상황이 양방향 연관관계
+            Member3 findMember = em.find(Member3.class, member3.getId()); // 멤버에서 조회
+            List<Member3> members = findMember.getTeam().getMembers(); // 역방향인 팀에서 조회
+
+            for (Member3 member : members) {
+                System.out.println("member.getUsername() = " + member.getUsername());
+            }
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
