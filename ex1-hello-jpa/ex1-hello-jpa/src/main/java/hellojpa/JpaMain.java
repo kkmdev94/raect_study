@@ -87,10 +87,27 @@ public class JpaMain {
 //
 //            System.out.println("=========================");
 
-            Member2 member2 = new Member2();
-            member2.setUsername("ID_A");
+//            Member2 member2 = new Member2();
+//            member2.setUsername("ID_A");
+//
+//            em.persist(member2);
 
-            em.persist(member2);
+            //25.10.24 연관관계
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
+            Member3 member3 = new Member3();
+            member3.setUsername("member1");
+//            member3.setTeamId(team.getId()); // 연관관계 매핑으로 사용 X
+            member3.setTeam(team);
+
+            em.persist(member3);
+
+            Member3 findMember = em.find(Member3.class, member3.getId());
+
+            Team findTeamId = findMember.getTeam();
+            System.out.println("findTeamId = " + findTeamId.getName());
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
