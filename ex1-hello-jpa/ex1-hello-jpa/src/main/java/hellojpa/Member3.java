@@ -43,6 +43,6 @@ public class Member3 {
 
     public void setTeam(Team team) {
         this.team = team;
-        team.getMembers().add(this); // 양방향 연관관계에서 주인이 되는 쪽에 편의 메서드를 생성하는 방법. 여기서는 set이 존재하기에 해당 메서드에 자신을 넣는 로직을 추가하였다.
+//        team.getMembers().add(this); // 양방향 연관관계에서 주인이 되는 쪽에 편의 메서드를 생성하는 방법. 여기서는 set이 존재하기에 해당 메서드에 자신을 넣는 로직을 추가하였다.
     }
 }

@@ -28,8 +28,14 @@ public class Team {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "team")
-    private List<Member3> members = new ArrayList<>();
+//    다대일에서 양방향으로 변경할때 사용. 맵두바이는 필수적이다.
+//    @OneToMany(mappedBy = "team")
+//    private List<Member3> members = new ArrayList<>();
+//
+//    public void addMember(Member3 member) {
+//        member.setTeam(this);
+//        members.add(member);
+//    }
 
     public Long getId() {
         return id;
@@ -47,11 +53,11 @@ public class Team {
         this.name = name;
     }
 
-    public List<Member3> getMembers() {
-        return members;
-    }
-
-    public void setMembers(List<Member3> members) {
-        this.members = members;
-    }
+//    public List<Member3> getMembers() {
+//        return members;
+//    }
+//
+//    public void setMembers(List<Member3> members) {
+//        this.members = members;
+//    }
 }
