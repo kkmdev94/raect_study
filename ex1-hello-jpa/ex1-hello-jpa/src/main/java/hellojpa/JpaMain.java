@@ -93,25 +93,53 @@ public class JpaMain {
 //            em.persist(member2);
 
             //25.10.24 연관관계
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            Member3 member3 = new Member3();
+//            member3.setUsername("member1");
+//            member3.setTeamId(team.getId()); // 연관관계 매핑으로 사용 X
+//            member3.setTeam(team);
+//            em.persist(member3);
+//
+//            em.flush();
+//            em.clear();
+
+            // 멤버에서 팀으로 <-> 팀에서 멤버로 왔다갔다 하는 이 상황이 양방향 연관관계
+//            Member3 findMember = em.find(Member3.class, member3.getId()); // 멤버에서 조회
+//            List<Member3> members = findMember.getTeam().getMembers(); // 역방향인 팀에서 조회
+//
+//            for (Member3 member : members) {
+//                System.out.println("member.getUsername() = " + member.getUsername());
+//            }
+
+            // 25.10.27
+
             Team team = new Team();
             team.setName("TeamA");
+//            team.getMembers().add(member3); //읽기 전용이라 들어가지 않는다.
             em.persist(team);
 
             Member3 member3 = new Member3();
             member3.setUsername("member1");
-//            member3.setTeamId(team.getId()); // 연관관계 매핑으로 사용 X
             member3.setTeam(team);
             em.persist(member3);
 
+            //객체 지향적으로 양쪽에 다 값을 걸어야 하며, 걸지 않으면 두가지의 문제가 생긴다. / 간단하게 생각하면 양방향 영속성을 할때는 양쪽에 값을 다 넣는게 편하다.
+            // 선생님의 추천은 연관관계 편의 메소드를 생성하는 것이다. / Member3에서 확인. / 1에도 되고 다 에도 편하게 아무대나 편의메소드를 생성해도 되지만 둘다 하면 무한루프에 걸리니 조심하자.
+            // 또한 toString(), lombok, JSON 생성 라이브러리 같은 경우도 무한루프에 걸릴 수 있다. / 단 JSON 생성 라이브러리의 답을 드리자면, 컨트롤러에서는 절대 엔티티를 반환하지 않으면 된다.
+//            team.getMembers().add(member3);
+
+            // 첫번째 문제는 flush와 clear의 유무, 플러쉬와 클리어를 하면 문제가 없지만 하지 않는다면 1차캐시에 있는 내용을 찾지 못하고 셀렉되지 않는다.
             em.flush();
             em.clear();
 
-            // 멤버에서 팀으로 <-> 팀에서 멤버로 왔다갔다 하는 이 상황이 양방향 연관관계
-            Member3 findMember = em.find(Member3.class, member3.getId()); // 멤버에서 조회
-            List<Member3> members = findMember.getTeam().getMembers(); // 역방향인 팀에서 조회
+            Team findTeam = em.find(Team.class, team.getId()); // 플러쉬와 클리어를 안하면 1차 캐시에 있음.
+            List<Member3> members = findTeam.getMembers();
 
-            for (Member3 member : members) {
-                System.out.println("member.getUsername() = " + member.getUsername());
+            for (Member3 m : members) {
+                System.out.println("m.getUsername() = " + m.getUsername());
             }
 
             tx.commit(); // 트랜잭션 커밋
