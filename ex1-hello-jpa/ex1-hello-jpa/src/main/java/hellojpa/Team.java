@@ -37,6 +37,11 @@ public class Team {
 //        members.add(member);
 //    }
 
+    // 25.10.28 OneToMany
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID")
+    private List<Member3> members = new ArrayList<>();
+
     public Long getId() {
         return id;
     }
@@ -53,11 +58,11 @@ public class Team {
         this.name = name;
     }
 
-//    public List<Member3> getMembers() {
-//        return members;
-//    }
-//
-//    public void setMembers(List<Member3> members) {
-//        this.members = members;
-//    }
+    public List<Member3> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<Member3> members) {
+        this.members = members;
+    }
 }

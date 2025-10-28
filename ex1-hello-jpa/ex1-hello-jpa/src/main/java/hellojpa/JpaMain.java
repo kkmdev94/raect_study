@@ -116,15 +116,15 @@ public class JpaMain {
 
             // 25.10.27
 
-            Team team = new Team();
-            team.setName("TeamA");
+//            Team team = new Team();
+//            team.setName("TeamA");
 //            team.getMembers().add(member3); //읽기 전용이라 들어가지 않는다.
-            em.persist(team);
-
-            Member3 member3 = new Member3();
-            member3.setUsername("member1");
-            member3.setTeam(team);
-            em.persist(member3);
+//            em.persist(team);
+//
+//            Member3 member3 = new Member3();
+//            member3.setUsername("member1");
+//            member3.setTeam(team);
+//            em.persist(member3);
 
             //객체 지향적으로 양쪽에 다 값을 걸어야 하며, 걸지 않으면 두가지의 문제가 생긴다. / 간단하게 생각하면 양방향 영속성을 할때는 양쪽에 값을 다 넣는게 편하다.
             // 선생님의 추천은 연관관계 편의 메소드를 생성하는 것이다. / Member3에서 확인. / 1에도 되고 다 에도 편하게 아무대나 편의메소드를 생성해도 되지만 둘다 하면 무한루프에 걸리니 조심하자.
@@ -132,15 +132,28 @@ public class JpaMain {
 //            team.getMembers().add(member3);
 
             // 첫번째 문제는 flush와 clear의 유무, 플러쉬와 클리어를 하면 문제가 없지만 하지 않는다면 1차캐시에 있는 내용을 찾지 못하고 셀렉되지 않는다.
-            em.flush();
-            em.clear();
+//            em.flush();
+//            em.clear();
+//
+//            Team findTeam = em.find(Team.class, team.getId()); // 플러쉬와 클리어를 안하면 1차 캐시에 있음.
+//            List<Member3> members = findTeam.getMembers();
+//
+//            for (Member3 m : members) {
+//                System.out.println("m.getUsername() = " + m.getUsername());
+//            }
 
-            Team findTeam = em.find(Team.class, team.getId()); // 플러쉬와 클리어를 안하면 1차 캐시에 있음.
-            List<Member3> members = findTeam.getMembers();
+            //25.10.28 OneToMany
+            Member3 member = new Member3();
+            member.setUsername("member1");
 
-            for (Member3 m : members) {
-                System.out.println("m.getUsername() = " + m.getUsername());
-            }
+            em.persist(member);
+
+            Team team = new Team();
+            team.setName("teamA");
+
+            team.getMembers().add(member);
+
+            em.persist(team);
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
