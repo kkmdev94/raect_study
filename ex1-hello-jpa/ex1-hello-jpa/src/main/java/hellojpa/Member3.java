@@ -21,6 +21,10 @@ public class Member3 {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+//    @ManyToOne // 일대다 양방향 상황에서 편법으로 하는 방법, 일 대 다는 그냥 사용을 안하는게 제일 좋다고 한다.
+//    @JoinColumn(insertable = false, updatable = false)
+//    private Team team;
+
     public Long getId() {
         return id;
     }
