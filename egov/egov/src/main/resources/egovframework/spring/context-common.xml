@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="org.example.egov">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <bean id="leaveaTrace" class="org.egovframe.rte.fdl.cmmn.trace.LeaveaTrace">
+        <property name="traceHandlerServices">
+            <list>
+                <ref bean="traceHandlerService" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="traceHandlerService" class="org.egovframe.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager">
+        <property name="reqExpMatcher">
+            <ref bean="antPathMatcher" />
+        </property>
+        <property name="patterns">
+            <list>
+                <value>*</value>
+            </list>
+        </property>
+        <property name="handlers">
+            <list>
+                <ref bean="defaultTraceHandler" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="antPathMatcher" class="org.springframework.util.AntPathMatcher" />
+
+    <bean id="defaultTraceHandler" class="org.egovframe.rte.fdl.cmmn.trace.handler.DefaultTraceHandler" />
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:egovframework/message/message-common</value>
+            </list>
+        </property>
+        <property name="cacheSeconds" value="60" />
+    </bean>
+
+</beans>
