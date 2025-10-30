@@ -2,6 +2,9 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Member3 {
 
@@ -29,6 +32,13 @@ public class Member3 {
     @OneToOne
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
+
+    //    @ManyToMany // ManyToMany 즉 다대다는 객체에서는 가능하지만 DB에서는 안된다. 즉, JPA에서는 구현이 불가능해서 중간 테이블을 하나 만들어야 한다. 그래서 실무에서 사용 X
+//    @JoinTable(name = "MEMBER_PRODUCT")
+//    private List<Product> products = new ArrayList<>();
+    //엔티티로 승격시킨 객체를 참조하도록 변경
+    @OneToMany(mappedBy = "member3")
+    private List<MemberProduct> memberProducts = new ArrayList<>();
 
     public Long getId() {
         return id;
