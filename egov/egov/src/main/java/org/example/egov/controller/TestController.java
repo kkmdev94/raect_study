@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 
-@Controller
+//@Controller
 public class TestController {
 
     @Resource(name = "testService")
