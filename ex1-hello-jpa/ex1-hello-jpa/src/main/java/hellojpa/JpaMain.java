@@ -143,17 +143,20 @@ public class JpaMain {
 //            }
 
             //25.10.28 OneToMany
-            Member3 member = new Member3();
-            member.setUsername("member1");
+//            Member3 member = new Member3();
+//            member.setUsername("member1");
+//
+//            em.persist(member);
+//
+//            Team team = new Team();
+//            team.setName("teamA");
+//
+//            team.getMembers().add(member);
+//
+//            em.persist(team);
+//
 
-            em.persist(member);
-
-            Team team = new Team();
-            team.setName("teamA");
-
-            team.getMembers().add(member);
-
-            em.persist(team);
+            //25.10.30
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {

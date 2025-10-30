@@ -25,6 +25,11 @@ public class Member3 {
 //    @JoinColumn(insertable = false, updatable = false)
 //    private Team team;
 
+    //25.10.30
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
     public Long getId() {
         return id;
     }
