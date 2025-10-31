@@ -2,6 +2,7 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -157,21 +158,31 @@ public class JpaMain {
 //
 
             //25.10.31
-            Movie movie = new Movie();
-            movie.setActor("aaaa");
-            movie.setDirector("abcd");
-            movie.setName("13245324");
-            movie.setPrice(10000);
+//            Movie movie = new Movie();
+//            movie.setActor("aaaa");
+//            movie.setDirector("abcd");
+//            movie.setName("13245324");
+//            movie.setPrice(10000);
+//
+//            em.persist(movie);
+//
+//            em.flush();
+//            em.clear();
+//
+////            Movie findMove = em.find(Movie.class, movie.getId());
+//            Movie findMove = em.find(Movie.class, movie.getId()); // TABLE_PER_CLASS를 사용할 때 위험한것은 조회할때 객체 지향이다보니 Item 타입으로 조회할 수 도 있는데 조회할때
+//            //                                                        Union을 통해서 테이블을 전체 다 select 해서 비효율적으로 작동한다.
+//            System.out.println("findMove = " + findMove);
 
-            em.persist(movie);
+            Member3 member3 = new Member3();
+            member3.setUsername("user1");
+            member3.setCreatedBy("kim");
+            member3.setCreatedDate(LocalDateTime.now());
+
+            em.persist(member3);
 
             em.flush();
             em.clear();
-
-//            Movie findMove = em.find(Movie.class, movie.getId());
-            Movie findMove = em.find(Movie.class, movie.getId()); // TABLE_PER_CLASS를 사용할 때 위험한것은 조회할때 객체 지향이다보니 Item 타입으로 조회할 수 도 있는데 조회할때
-            //                                                        Union을 통해서 테이블을 전체 다 select 해서 비효율적으로 작동한다.
-            System.out.println("findMove = " + findMove);
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {

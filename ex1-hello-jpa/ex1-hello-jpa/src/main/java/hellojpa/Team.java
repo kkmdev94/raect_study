@@ -21,7 +21,7 @@ import java.util.List;
  * 너무 길어서 memo에 작성
  */
 @Entity
-public class Team {
+public class Team extends  BaseEntity{
 
     @Id @GeneratedValue
     @Column(name = "TEAM_ID")
