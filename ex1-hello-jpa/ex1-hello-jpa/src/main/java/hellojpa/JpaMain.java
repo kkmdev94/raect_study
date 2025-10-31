@@ -168,7 +168,9 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            Movie findMove = em.find(Movie.class, movie.getId());
+//            Movie findMove = em.find(Movie.class, movie.getId());
+            Movie findMove = em.find(Movie.class, movie.getId()); // TABLE_PER_CLASS를 사용할 때 위험한것은 조회할때 객체 지향이다보니 Item 타입으로 조회할 수 도 있는데 조회할때
+            //                                                        Union을 통해서 테이블을 전체 다 select 해서 비효율적으로 작동한다.
             System.out.println("findMove = " + findMove);
 
             tx.commit(); // 트랜잭션 커밋
