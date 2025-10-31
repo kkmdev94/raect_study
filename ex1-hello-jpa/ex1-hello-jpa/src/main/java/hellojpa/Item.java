@@ -11,7 +11,9 @@ import jakarta.persistence.*;
  */
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn // -> 단일테이블 즉, 싱글테이블에서는 DTYPE을 명시 해주지 않아도 자동으로 들어간다.
 public class Item {
 
     @Id @GeneratedValue
