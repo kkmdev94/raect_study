@@ -156,7 +156,20 @@ public class JpaMain {
 //            em.persist(team);
 //
 
-            //25.10.30
+            //25.10.31
+            Movie movie = new Movie();
+            movie.setActor("aaaa");
+            movie.setDirector("abcd");
+            movie.setName("13245324");
+            movie.setPrice(10000);
+
+            em.persist(movie);
+
+            em.flush();
+            em.clear();
+
+            Movie findMove = em.find(Movie.class, movie.getId());
+            System.out.println("findMove = " + findMove);
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
