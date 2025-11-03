@@ -2,13 +2,14 @@ package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 //@Inheritance(strategy =  InheritanceType.SINGLE_TABLE)
 @Inheritance(strategy =  InheritanceType.JOINED)
 @DiscriminatorColumn
-public abstract class Item { // 아이템만 단독으로 테이블에 저장할 일이 있냐 없냐로 판단 후 없다는 가정하에 추상클래스로 만듬.
+public abstract class Item extends BaseEntity { // 아이템만 단독으로 테이블에 저장할 일이 있냐 없냐로 판단 후 없다는 가정하에 추상클래스로 만듬.
 
     @Id @GeneratedValue
     @Column(name = "ITEM_ID")
@@ -19,7 +20,7 @@ public abstract class Item { // 아이템만 단독으로 테이블에 저장할
     private int stockQuantity;
 
     @ManyToMany(mappedBy = "items")
-    private List<Category> categories;
+    private List<Category> categories = new ArrayList<>();
 
     public Long getId() {
         return id;
