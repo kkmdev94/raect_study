@@ -1,6 +1,7 @@
 package hellojpa;
 
 import jakarta.persistence.*;
+import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -174,22 +175,132 @@ public class JpaMain {
 //            //                                                        Union을 통해서 테이블을 전체 다 select 해서 비효율적으로 작동한다.
 //            System.out.println("findMove = " + findMove);
 
-            Member3 member3 = new Member3();
-            member3.setUsername("user1");
-            member3.setCreatedBy("kim");
-            member3.setCreatedDate(LocalDateTime.now());
+//            Member3 member3 = new Member3();
+//            member3.setUsername("user1");
+//            member3.setCreatedBy("kim");
+//            member3.setCreatedDate(LocalDateTime.now());
+//
+//            em.persist(member3);
+//
+//            em.flush();
+//            em.clear();
 
+            //25.11.04
+//            Member3 member3 = em.find(Member3.class, 1L);
+//
+//            printMember(member3);
+//
+//            printMemberAndTeam(member3);
+
+            //Proxy
+//            Member3 member3 = new Member3();
+//            member3.setUsername("hello");
+//            em.persist(member3);
+
+//            em.flush();
+//            em.clear();
+            
+//            Member3 findMember = em.find(member3.getClass(), member3.getId());
+//            Member3 findMember = em.getReference(member3.getClass(), member3.getId());
+//
+//            System.out.println("findMember.getClass() = " + findMember.getClass());
+//            System.out.println("findMember.username = " + findMember.getUsername());
+//            System.out.println("findMember.id = " + findMember.getId());
+
+
+            // ==이 아닌 instanceof를 사용해야 하는 이유
+//            Member3 member3 = new Member3();
+//            member3.setUsername("hello");
+//            em.persist(member3);
+//            
+//            Member3 member4 = new Member3();
+//            member4.setUsername("hello1");
+//            em.persist(member4);
+//
+//            em.flush();
+//            em.clear();
+//            
+//            Member3 m1 = em.find(Member3.class, member3.getId());
+////            Member3 m2 = em.find(Member3.class, member4.getId()); // True
+//            Member3 m2 = em.getReference(Member3.class, member4.getId()); // false
+//
+////            System.out.println(" m1 == m2 :  " + (m1.getClass() == m2.getClass())); // 타입 비교를 == 으로 하면안되는 이유.
+//            System.out.println(" m1 == m2 :  " + (m1 instanceof Member3));
+//            System.out.println(" m1 == m2 :  " + (m2 instanceof Member3));
+            
+            //영속성 컨텍스트에 엔티티가 있으면 레퍼런스로 호출해도 같은 엔티티가 호출
+//            Member3 member3 = new Member3();
+//            member3.setUsername("hello");
+//            em.persist(member3);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Member3 m1 = em.find(Member3.class, member3.getId());
+//            System.out.println("m1.getClass() = " + m1.getClass());
+//
+//            Member3 reference = em.getReference(Member3.class, member3.getId());
+//            System.out.println("reference.getClass() = " + reference.getClass());
+
+            //영속성 컨텍스트에 엔티티가 있으면 레퍼런스로 호출해도 같은 엔티티가 호출(반대의 상황일때 / 프록시 -> 엔티티 이렇게 흘러도 true를 만들어야 하기에 프록시로 변경.)
+//            Member3 member3 = new Member3();
+//            member3.setUsername("hello");
+//            em.persist(member3);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Member3 refMember = em.getReference(Member3.class, member3.getId());
+//            System.out.println("m1.getClass() = " + refMember.getClass());
+//
+//            Member3 findMember = em.find(Member3.class, member3.getId());
+//            System.out.println("reference.getClass() = " + findMember.getClass());
+//
+//            System.out.println("refMember == findMember : " + (refMember == findMember));
+
+            //준영속 상태일 떄, 프록시 초기화 문제 발생
+            Member3 member3 = new Member3();
+            member3.setUsername("hello");
             em.persist(member3);
 
             em.flush();
             em.clear();
 
+            Member3 refMember = em.getReference(Member3.class, member3.getId());
+            System.out.println("refMember.getClass() = " + refMember.getClass());
+
+            //영속성 컨텍스트를 실수로 종료
+//            em.detach(refMember);
+
+            System.out.println("refMember.getUsername() = " + refMember.getUsername());
+
+            // 프록시 인스턴스의 초기화 여부 확인
+            System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(refMember));
+            // 프록시 클래스 확인 방법
+            //Member3 refMember = em.getReference(Member3.class, member3.getId());
+            // 프록시 강제 초기화
+            Hibernate.initialize(refMember);
+            //JPA 표준에 강제 초기화는 없다. / 강제 호출은 member.getName()
+
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
             tx.rollback();
+            e.printStackTrace();
         }finally {
             em.close();
             emf.close();
         }
+    }
+
+    private static void printMember(Member3 member3) {
+        System.out.println("member3.getUsername() = " + member3.getUsername());
+    }
+
+    private static void printMemberAndTeam(Member3 member3) {
+        String username = member3.getUsername();
+        System.out.println("username = " + username);
+
+        Team team = member3.getTeam();
+        System.out.println("team = " + team);
     }
 }
