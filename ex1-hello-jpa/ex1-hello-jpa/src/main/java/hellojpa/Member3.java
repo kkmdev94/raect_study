@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member3{
+public class Member3 extends  BaseEntity{
 
     @Id
     @GeneratedValue
@@ -20,8 +20,14 @@ public class Member3{
 //    private Long teamId;
 
     // 객체지향스럽게 모델링하기
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
+//    @ManyToOne
+//    @JoinColumn(name = "TEAM_ID")
+//    private Team team;
+
+    //25.11.05
+    @ManyToOne(fetch = FetchType.LAZY) //Lazy 타입은 team을 엔티티가 아닌 proxy 객체로 조회한다는것. / 지연 로딩
+//    @ManyToOne(fetch = FetchType.EAGER) // / 즉시 로딩 / 실무에서는 즉시로딩을 거의 사용하지 않는다. 이유는 메모에
+    @JoinColumn
     private Team team;
 
 //    @ManyToOne // 일대다 양방향 상황에서 편법으로 하는 방법, 일 대 다는 그냥 사용을 안하는게 제일 좋다고 한다.

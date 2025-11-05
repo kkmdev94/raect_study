@@ -258,29 +258,64 @@ public class JpaMain {
 //
 //            System.out.println("refMember == findMember : " + (refMember == findMember));
 
-            //준영속 상태일 떄, 프록시 초기화 문제 발생
+//            //준영속 상태일 떄, 프록시 초기화 문제 발생
+//            Member3 member3 = new Member3();
+//            member3.setUsername("hello");
+//            em.persist(member3);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Member3 refMember = em.getReference(Member3.class, member3.getId());
+//            System.out.println("refMember.getClass() = " + refMember.getClass());
+//
+//            //영속성 컨텍스트를 실수로 종료
+////            em.detach(refMember);
+//
+//            System.out.println("refMember.getUsername() = " + refMember.getUsername());
+//
+//            // 프록시 인스턴스의 초기화 여부 확인
+//            System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(refMember));
+//            // 프록시 클래스 확인 방법
+//            //Member3 refMember = em.getReference(Member3.class, member3.getId());
+//            // 프록시 강제 초기화
+//            Hibernate.initialize(refMember);
+//            //JPA 표준에 강제 초기화는 없다. / 강제 호출은 member.getName()
+
+            //25.11.05 즉시로딩과 지연로딩
+            Team team = new Team();
+            team.setName("teamA");
+            em.persist(team);
+
+            Team team2 = new Team();
+            team2.setName("teamB");
+            em.persist(team2);
+
             Member3 member3 = new Member3();
             member3.setUsername("hello");
+            member3.setTeam(team);
             em.persist(member3);
+
+            Member3 member4 = new Member3();
+            member4.setUsername("hello2");
+            member4.setTeam(team2);
+            em.persist(member4);
 
             em.flush();
             em.clear();
 
-            Member3 refMember = em.getReference(Member3.class, member3.getId());
-            System.out.println("refMember.getClass() = " + refMember.getClass());
+//            Member3 m = em.find(Member3.class, member3.getId());
+//
+//            System.out.println("m.getTeam().getClass() = " + m.getTeam().getClass());
+//
+//            System.out.println("================================");
+//            m.getTeam().getName(); // 초기화 / 지연로딩
+//            System.out.println("m.getTeam().getName() = " + m.getTeam().getName()); // 즉시로딩
+//            System.out.println("================================");
 
-            //영속성 컨텍스트를 실수로 종료
-//            em.detach(refMember);
-
-            System.out.println("refMember.getUsername() = " + refMember.getUsername());
-
-            // 프록시 인스턴스의 초기화 여부 확인
-            System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(refMember));
-            // 프록시 클래스 확인 방법
-            //Member3 refMember = em.getReference(Member3.class, member3.getId());
-            // 프록시 강제 초기화
-            Hibernate.initialize(refMember);
-            //JPA 표준에 강제 초기화는 없다. / 강제 호출은 member.getName()
+            // JPQL에서 N + 1 문제를 발생시키는 예시 -> 즉시 로딩의 문제
+            List<Member3> members = em.createQuery("select m from Member3 m join fetch m.team", Member3.class)
+                    .getResultList();
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
