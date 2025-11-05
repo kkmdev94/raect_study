@@ -325,14 +325,15 @@ public class JpaMain {
             parent.addChild(child2);
 
             em.persist(parent);
-//            em.persist(child1);
+//            em.persist(child1);  @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true) 이때는 부모가 생명주기를 관리하기에 필요 없음.
 //            em.persist(child2);
 
             em.flush();
             em.clear();
 
             Parent findParent = em.find(Parent.class, parent.getId());
-            findParent.getChildren().remove(0);
+//            findParent.getChildren().remove(0);
+            em.remove(findParent); // 자식까지 삭제
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
