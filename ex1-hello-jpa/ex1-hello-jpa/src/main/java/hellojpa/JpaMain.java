@@ -283,26 +283,26 @@ public class JpaMain {
 //            //JPA 표준에 강제 초기화는 없다. / 강제 호출은 member.getName()
 
             //25.11.05 즉시로딩과 지연로딩
-            Team team = new Team();
-            team.setName("teamA");
-            em.persist(team);
-
-            Team team2 = new Team();
-            team2.setName("teamB");
-            em.persist(team2);
-
-            Member3 member3 = new Member3();
-            member3.setUsername("hello");
-            member3.setTeam(team);
-            em.persist(member3);
-
-            Member3 member4 = new Member3();
-            member4.setUsername("hello2");
-            member4.setTeam(team2);
-            em.persist(member4);
-
-            em.flush();
-            em.clear();
+//            Team team = new Team();
+//            team.setName("teamA");
+//            em.persist(team);
+//
+//            Team team2 = new Team();
+//            team2.setName("teamB");
+//            em.persist(team2);
+//
+//            Member3 member3 = new Member3();
+//            member3.setUsername("hello");
+//            member3.setTeam(team);
+//            em.persist(member3);
+//
+//            Member3 member4 = new Member3();
+//            member4.setUsername("hello2");
+//            member4.setTeam(team2);
+//            em.persist(member4);
+//
+//            em.flush();
+//            em.clear();
 
 //            Member3 m = em.find(Member3.class, member3.getId());
 //
@@ -314,8 +314,25 @@ public class JpaMain {
 //            System.out.println("================================");
 
             // JPQL에서 N + 1 문제를 발생시키는 예시 -> 즉시 로딩의 문제
-            List<Member3> members = em.createQuery("select m from Member3 m join fetch m.team", Member3.class)
-                    .getResultList();
+//            List<Member3> members = em.createQuery("select m from Member3 m join fetch m.team", Member3.class)
+//                    .getResultList();
+
+            Child child1 = new Child();
+            Child child2 = new Child();
+
+            Parent parent = new Parent();
+            parent.addChild(child1);
+            parent.addChild(child2);
+
+            em.persist(parent);
+//            em.persist(child1);
+//            em.persist(child2);
+
+            em.flush();
+            em.clear();
+
+            Parent findParent = em.find(Parent.class, parent.getId());
+            findParent.getChildren().remove(0);
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
