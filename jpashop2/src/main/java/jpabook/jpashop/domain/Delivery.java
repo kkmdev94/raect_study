@@ -1,12 +1,11 @@
 package jpabook.jpashop.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static jakarta.persistence.FetchType.*;
 
 @Entity
 public class Delivery extends BaseEntity{
@@ -14,7 +13,7 @@ public class Delivery extends BaseEntity{
     @Id @GeneratedValue
     private Long id;
 
-    @OneToOne(mappedBy = "delivery") // 양방향
+    @OneToOne(mappedBy = "delivery", fetch = LAZY) // 양방향
     private Order order;
 
     private String city;

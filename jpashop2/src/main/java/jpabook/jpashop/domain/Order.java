@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static jakarta.persistence.CascadeType.*;
+import static jakarta.persistence.FetchType.*;
+
 @Entity
 @Table(name = "ORDERS") // 종종 Order가 예약어로 걸려있어서 안되는 DB도 있어서 테이블 명을 변경.
 public class Order extends BaseEntity{
@@ -18,16 +21,16 @@ public class Order extends BaseEntity{
 //    private Long memberId;
 
     // 25.10.27 예제2번 시작
-    @ManyToOne
+    @ManyToOne(fetch =  LAZY)
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
     //25.10.31
-    @OneToOne
+    @OneToOne(fetch =  LAZY, cascade = ALL)
     @JoinColumn(name = "DELIVERY_ID")
     private Delivery delivery;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
     private LocalDateTime orderDate;
