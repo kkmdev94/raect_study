@@ -36,7 +36,49 @@ public class Member3 {
     @Embedded
     private Address address;
 
+    //주소
+    @Embedded
+    @AttributeOverrides({//한 엔티티  안에서 같은 값을 사용할때 즉, 예시처럼 한 멤버가 주소가 2개 있을때 이때 사용하는게 @AttributeOverrides
+            @AttributeOverride(name = "city",
+                column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street",
+                column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode",
+                column = @Column(name = "WORK_ZIPCODE"))
+    })
+    private Address workaddress;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Period getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(Period period) {
+        this.period = period;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 //    @Column(name = "TEAM_ID")
 //    private Long teamId;
 

@@ -335,6 +335,14 @@ public class JpaMain {
 ///           findParent.getChildren().remove(0);
 //            em.remove(findParent); // 자식까지 삭제
 
+            // 25.11.06
+            Member3 member = new Member3();
+            member.setUsername("hello");
+            member.setAddress(new Address("city", "street", "10"));
+            member.setPeriod(new Period());
+
+            em.persist(member);
+
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
             tx.rollback();

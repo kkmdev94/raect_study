@@ -10,6 +10,17 @@ public class Address {
     String street;
     String zipcode;
 
+//    private Member3 member3; // 다른 엔티티도 들어올 수 있다.
+
+    public Address() {
+    }
+
+    public Address(String city, String street, String zipcode) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
+
     public String getCity() {
         return city;
     }
