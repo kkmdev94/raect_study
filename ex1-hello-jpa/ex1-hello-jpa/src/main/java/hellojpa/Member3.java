@@ -2,11 +2,13 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member3 extends  BaseEntity{
+public class Member3 {
+//public class Member3 extends  BaseEntity{
 
     @Id
     @GeneratedValue
@@ -15,6 +17,25 @@ public class Member3 extends  BaseEntity{
 
     @Column(name = "USERNAME")
     private String username;
+
+    //25.11.06 @Embedded
+//    // 기간
+//    private LocalDateTime startDate;
+//    private LocalDateTime endDate;
+
+//    // 주소
+//    String city;
+//    String street;
+//    String zipcode;
+    
+    //기간 period
+    @Embedded // 값 타입을 사용하는 곳에 표시
+    private Period period;
+    
+    //주소
+    @Embedded
+    private Address address;
+
 
 //    @Column(name = "TEAM_ID")
 //    private Long teamId;
@@ -25,49 +46,49 @@ public class Member3 extends  BaseEntity{
 //    private Team team;
 
     //25.11.05
-    @ManyToOne(fetch = FetchType.LAZY) //Lazy 타입은 team을 엔티티가 아닌 proxy 객체로 조회한다는것. / 지연 로딩
-//    @ManyToOne(fetch = FetchType.EAGER) // / 즉시 로딩 / 실무에서는 즉시로딩을 거의 사용하지 않는다. 이유는 메모에
-    @JoinColumn
-    private Team team;
+//    @ManyToOne(fetch = FetchType.LAZY) //Lazy 타입은 team을 엔티티가 아닌 proxy 객체로 조회한다는것. / 지연 로딩
+////    @ManyToOne(fetch = FetchType.EAGER) // / 즉시 로딩 / 실무에서는 즉시로딩을 거의 사용하지 않는다. 이유는 메모에
+//    @JoinColumn
+//    private Team team;
 
 //    @ManyToOne // 일대다 양방향 상황에서 편법으로 하는 방법, 일 대 다는 그냥 사용을 안하는게 제일 좋다고 한다.
 //    @JoinColumn(insertable = false, updatable = false)
 //    private Team team;
 
     //25.10.30
-    @OneToOne
-    @JoinColumn(name = "LOCKER_ID")
-    private Locker locker;
+//    @OneToOne
+//    @JoinColumn(name = "LOCKER_ID")
+//    private Locker locker;
 
     //    @ManyToMany // ManyToMany 즉 다대다는 객체에서는 가능하지만 DB에서는 안된다. 즉, JPA에서는 구현이 불가능해서 중간 테이블을 하나 만들어야 한다. 그래서 실무에서 사용 X
 //    @JoinTable(name = "MEMBER_PRODUCT")
 //    private List<Product> products = new ArrayList<>();
     //엔티티로 승격시킨 객체를 참조하도록 변경
-    @OneToMany(mappedBy = "member3")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+//    @OneToMany(mappedBy = "member3")
+//    private List<MemberProduct> memberProducts = new ArrayList<>();
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public String getUsername() {
+//        return username;
+//    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
+//
+//    public Team getTeam() {
+//        return team;
+//    }
+//
+//    public void setTeam(Team team) {
+//        this.team = team;
 //        team.getMembers().add(this); // 양방향 연관관계에서 주인이 되는 쪽에 편의 메서드를 생성하는 방법. 여기서는 set이 존재하기에 해당 메서드에 자신을 넣는 로직을 추가하였다.
-    }
+//    }
 }

@@ -316,24 +316,24 @@ public class JpaMain {
             // JPQL에서 N + 1 문제를 발생시키는 예시 -> 즉시 로딩의 문제
 //            List<Member3> members = em.createQuery("select m from Member3 m join fetch m.team", Member3.class)
 //                    .getResultList();
-
-            Child child1 = new Child();
-            Child child2 = new Child();
-
-            Parent parent = new Parent();
-            parent.addChild(child1);
-            parent.addChild(child2);
-
-            em.persist(parent);
+//
+//            Child child1 = new Child();
+//            Child child2 = new Child();
+//
+//            Parent parent = new Parent();
+//            parent.addChild(child1);
+//            parent.addChild(child2);
+//
+//            em.persist(parent);
 //            em.persist(child1);  @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true) 이때는 부모가 생명주기를 관리하기에 필요 없음.
 //            em.persist(child2);
-
-            em.flush();
-            em.clear();
-
-            Parent findParent = em.find(Parent.class, parent.getId());
-//            findParent.getChildren().remove(0);
-            em.remove(findParent); // 자식까지 삭제
+//
+//            em.flush();
+//            em.clear();
+//
+//            Parent findParent = em.find(Parent.class, parent.getId());
+///           findParent.getChildren().remove(0);
+//            em.remove(findParent); // 자식까지 삭제
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
@@ -345,15 +345,15 @@ public class JpaMain {
         }
     }
 
-    private static void printMember(Member3 member3) {
-        System.out.println("member3.getUsername() = " + member3.getUsername());
-    }
-
-    private static void printMemberAndTeam(Member3 member3) {
-        String username = member3.getUsername();
-        System.out.println("username = " + username);
-
-        Team team = member3.getTeam();
-        System.out.println("team = " + team);
-    }
+//    private static void printMember(Member3 member3) {
+//        System.out.println("member3.getUsername() = " + member3.getUsername());
+//    }
+//
+//    private static void printMemberAndTeam(Member3 member3) {
+//        String username = member3.getUsername();
+//        System.out.println("username = " + username);
+//
+//        Team team = member3.getTeam();
+//        System.out.println("team = " + team);
+//    }
 }

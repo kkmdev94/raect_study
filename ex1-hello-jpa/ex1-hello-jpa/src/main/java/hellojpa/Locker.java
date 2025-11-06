@@ -10,7 +10,7 @@ public class Locker {
 
     private String name;
 
-    @OneToOne(mappedBy = "locker")
-    private Member3 member3;
+//    @OneToOne(mappedBy = "locker")
+//    private Member3 member3;
 
 }
