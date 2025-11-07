@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 엔티티 매니저 팩토리는 하나만 생성해서 애플리케이션 전체에서 공유
@@ -358,12 +359,15 @@ public class JpaMain {
             em.flush();
             em.clear();
 **/
+
+
             // 25.11.06 값 타입과 불변객체
             /**
              * 임베디드 타입 같은 값 타입을 여러 엔티티에서 공유하면 위엄하다 사이드 이펙트가 발생한다.
              * 이럴경우에는 임베디드로 된 값 타입이 아닌 엔티티로 만들어서 새로운 객체가 되도록 해야한다.
              * 메모 확인.
              */
+/**
             Address address = new Address("city", "street", "10000");
 
             Member4 member = new Member4();
@@ -385,6 +389,63 @@ public class JpaMain {
 
             member.getAddress().setCity("newCity"); // 사이드 이펙트 버그. / setter를 삭제해서 불변객체로 만들어서 변경이 안되게 한다.
              **/
+
+            //25.11.07
+            /**
+             *  값 타입 컬렉션 사용
+             *  값 타입 컬렉션도 라이프 사이클이 없어서 멤버에서 생명주기를 관리한다.
+             *  별도의 persist나 update 할 필요가 없다.
+             *  값 컬렉션들은 지연 로딩이다.
+             */
+            Member4 member = new Member4();
+            member.setUsername("hello1");
+            member.setAddress(new Address("city", "street", "10000"));
+
+            member.getFavoriteFoods().add("pizza");
+            member.getFavoriteFoods().add("burger");
+            member.getFavoriteFoods().add("jokbal");
+
+            // 값 컬렉션 사용 대신 -> Entity 승격
+//            member.getAddressHistory().add(new Address("old1", "street", "10000"));
+//            member.getAddressHistory().add(new Address("old2", "street", "10000"));
+
+            member.getAddressEntity().add(new AddressEntity("old1", "street", "10000"));
+            member.getAddressEntity().add(new AddressEntity("old2", "street", "10000"));
+
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            System.out.println("=============SELECT start===================");
+            Member4 findMember = em.find(Member4.class, member.getId());
+
+            Set<String> favoriteFoods = findMember.getFavoriteFoods();
+            for (String favoriteFood : favoriteFoods) {
+                System.out.println("favoriteFood = " + favoriteFood);
+            }
+
+//            List<Address> addressHistory = findMember.getAddressHistory();
+//            for (Address address : addressHistory) {
+//                System.out.println("address.getCity() = " + address.getCity());
+//            }
+            System.out.println("=============SELECT END===================");
+            System.out.println();
+            System.out.println("=============UPDATE start===================");
+            //homeCity -> newCity
+//            findMember.getAddress().setCity("newCity"); // 이대로 바꾸면 사이드 이펙트 발생한다 / 항상 새로운 인스턴스를 생성해야한다.
+
+            Address a = findMember.getAddress();
+            findMember.setAddress(new Address("newCity",a.getStreet(),a.getZipcode()));
+
+            // 컬렉션에 있는 pizza를 다른걸로
+            findMember.getFavoriteFoods().remove("pizza");
+            findMember.getFavoriteFoods().add("hansick"); // 삭제 후 새로 add 해야한다. 컬렉션도 값 타입이기 때문이다
+
+            //주소 변경 / 제약 사항이 있는데 메모를 확인해야 한다.
+            // 컬렉션은 기본으로 대상을 찾을 때는 ==이 아닌 equals를 사용한다. / 따라서 Equals랑 해시 코드가 제대로 구현이 되어 있어야 한다.
+//            findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
+//            findMember.getAddressHistory().add(new Address("new3", "street", "10000"));
 
 
             tx.commit(); // 트랜잭션 커밋

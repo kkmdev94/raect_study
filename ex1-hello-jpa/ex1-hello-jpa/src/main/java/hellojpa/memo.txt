@@ -157,3 +157,51 @@
   가장 쉬운 방법은 생성자로만 값을 설정하고 수정자(Setter)를 만들지 않으면 된다.
 
   즉, 사이드 이펙트가 발생하지 않게 그냥 다른거 다 빼고 값 타입은 불변으로 만들면 된다.
+
+값 타입 컬렉션의 제약 사항
+          // 여기는 delete 이후 insert가 1번만 나가고 되게 잘됬는데
+          findMember.getFavoriteFoods().remove("pizza");
+          findMember.getFavoriteFoods().add("hansick"); // 삭제 후 새로 add 해야한다. 컬렉션도 값 타입이기 때문이다
+
+          // 여기서는 결과값은 내가 원하는 대로였지만 delete 이후 insert 가 두 번 나갔다
+          findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
+          findMember.getAddressHistory().add(new Address("new3", "street", "10000"));
+
+          쿼리 :
+          Hibernate:
+              /* one-shot delete for hellojpa.Member4.addressHistory */delete
+              from
+                  ADDRESS
+              where
+                  MEMBER_ID=?
+          22:19 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BIGINT) <- [1]
+          Hibernate:
+              /* insert for
+                  hellojpa.Member4.addressHistory */insert
+              into
+                  ADDRESS (MEMBER_ID, city, street, zipcode)
+              values
+                  (?, ?, ?, ?)
+          22:19 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BIGINT) <- [1]
+          22:19 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [old2]
+          22:19 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [street]
+          22:19 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:VARCHAR) <- [10000]
+          Hibernate:
+              /* insert for
+                  hellojpa.Member4.addressHistory */insert
+              into
+                  ADDRESS (MEMBER_ID, city, street, zipcode)
+              values
+                  (?, ?, ?, ?)
+    무슨 이유일까?
+    - 값 타입은 엔티티와 다르게 식별자 개념이 없다.
+    - 값은 변경하면 추적이 어렵다.
+    - 값 타입 컬렉션에 변경 사항이 발생하면, 주인 엔티티와 연관된 모든 데이터를 삭제하고 값 타입 컬렉션에 있는 현재 값을 모두 다시 저장한다.
+    - 값 타입 컬렉션을 매핑하는 테이블은 모든 컬럼을 묶어서 기본키를 구성해야함 : null 입력 X, 중복 저장 X
+
+    결론을 얘기하자면 값 타입 컬렉션은 사용을 안하는게 맞다.
+    이 값 타입 컬렉션에 대한 대안으로
+    - 실무에서는 상황에 따라 값 타입 컬렉션 대신에 일대다 관계를 고려
+    - 일대다  관계를 위한 엔티티를 만들고, 여기에서 값 타입을 사용
+    - 영속성 전이(Cascade) + 고아 객체 제거를 사용해 값 타입 컬렉션 처럼 사용
+    - ex) AddressEntity
