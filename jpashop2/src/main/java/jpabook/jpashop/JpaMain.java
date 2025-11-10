@@ -30,12 +30,17 @@ public class JpaMain {
 //
 //            em.persist(orderItem);
 
+            /**
             //25.11.03
             Book book = new Book();
             book.setName("JPA");
             book.setAuthor("김영한");
 
             em.persist(book);
+             **/
+
+            //25.11.10
+            //Embedded table create
 
             tx.commit();
         } catch (Exception e) {
