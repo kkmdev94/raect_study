@@ -1,6 +1,9 @@
 package hellojpa;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
@@ -397,6 +400,7 @@ public class JpaMain {
              *  별도의 persist나 update 할 필요가 없다.
              *  값 컬렉션들은 지연 로딩이다.
              */
+            /**
             Member4 member = new Member4();
             member.setUsername("hello1");
             member.setAddress(new Address("city", "street", "10000"));
@@ -446,7 +450,38 @@ public class JpaMain {
             // 컬렉션은 기본으로 대상을 찾을 때는 ==이 아닌 equals를 사용한다. / 따라서 Equals랑 해시 코드가 제대로 구현이 되어 있어야 한다.
 //            findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
 //            findMember.getAddressHistory().add(new Address("new3", "street", "10000"));
+**/
 
+            //25.11.10 JPQL
+//            Member4 member = new  Member4();
+//
+//            String jpql = "select m From Member4 m where m.username like '%hello%'";
+//            List<Member4> result = em.createQuery(jpql, Member4.class)
+//                    .getResultList();
+//
+//            for (Member4 member4 : result) {
+//                System.out.println("member4 = " + member4);
+//            }
+            // Criteria // 자바에서 짜는 것이기에 오타가 나도 잡기 쉽고, 동적 쿼리를 만들기 쉽다. / SQL 스럽지 않다. 실무에서 잘 사용 X 유지보수 어려움.
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery<Member4> query = cb.createQuery(Member4.class);
+
+            Root<Member4> m = query.from(Member4.class);
+//            CriteriaQuery<Member4> cq = query.select(m).where(cb.equal(m.get("id"), 1));
+            CriteriaQuery<Member4> cq = query.select(m);
+
+            //동적쿼리 예시
+            String id = "2";
+            if (id != null) {
+                cq.where(cb.equal(m.get("id"), 1));
+            }
+
+            List<Member4> resultList = em.createQuery(cq).getResultList();
+
+//          실제 쿼리처럼도 날릴 수 있다.->네이티브 쿼리
+//          flush -> commit, query
+//            em.createNativeQuery("select MEMBER_ID, city, street, zipcode,USERNAME from member4")
+//                    .getResultList();
 
             tx.commit(); // 트랜잭션 커밋
         } catch (Exception e) {
