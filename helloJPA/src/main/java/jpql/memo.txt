@@ -1,0 +1,4 @@
+TypeQuery : 반환 타입이 명확할 때 사용
+    ex) TypedQuery<Member> query = em.createQuery("Select m FROM Member m", Member.class);
+Query : 반환 타입이 명확하지 않을 때 사용
+    ex) Query query = em.createQuery("SELECT m.username, m.age From Member m"
