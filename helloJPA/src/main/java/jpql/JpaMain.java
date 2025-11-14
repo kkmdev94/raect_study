@@ -140,6 +140,9 @@ public class JpaMain {
              * 내부 조인 : SELECT m FROM Member m [INNER] JOIN m.team t // INNER는 디폴트라 생략 가능
              * 외부 조인 : SELECT m FROM Member m LEFT [OUTER] JOIN m.team t
              * 세타 조인 : SELECT count(m) from Member m, Team t where m.username = t.name
+             *
+             * from절  서브 쿼리가 안된다.(JPQL에서)
+             * select mm from (select m.age from Member m) as mm" <- 이런 프롬절에 들어가는 서브 쿼리가 안된다.
              */
             Team team = new Team();
             team.setName("teamA");
