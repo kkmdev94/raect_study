@@ -112,25 +112,64 @@ public class JpaMain {
              * setFirstResult(int startPosition) : 조회 시작 위치(0부터 시작)
              * setMaxResults(int maxResult) : 조회할 데이터 수
              */
-            for (int i = 0; i < 100; i++) {
-                Member member = new Member();
-                member.setUsername("member" + i);
-                member.setAge(i);
-                em.persist(member);
-            }
+//            for (int i = 0; i < 100; i++) {
+//                Member member = new Member();
+//                member.setUsername("member" + i);
+//                member.setAge(i);
+//                em.persist(member);
+//            }
+//
+//
+//            em.flush();
+//            em.clear();
+//
+//            List<Member> result = em.createQuery("select m from Member m order by m.age desc", Member.class)
+//                    .setFirstResult(1)
+//                    .setMaxResults(10)
+//                    .getResultList();
+//
+//            System.out.println("result.size() = " + result.size());
+//            for (Member member1 : result) {
+//                System.out.println("member1 = " + member1);
+//            }
+            // JOIN
+            /**
+             * 아래 로직을 실행해 보면 이상한 select 쿼리가 한번더 나가는데 해당 쿼리가
+             * 1대다에서 조심해야 할것이 패치를 항상 레이지로 잡아야 하는 것이다.
+             *
+             * 내부 조인 : SELECT m FROM Member m [INNER] JOIN m.team t // INNER는 디폴트라 생략 가능
+             * 외부 조인 : SELECT m FROM Member m LEFT [OUTER] JOIN m.team t
+             * 세타 조인 : SELECT count(m) from Member m, Team t where m.username = t.name
+             */
+            Team team = new Team();
+            team.setName("teamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setAge(10);
+
+            member.setTeam(team);
+
+            em.persist(member);
 
             em.flush();
             em.clear();
 
-            List<Member> result = em.createQuery("select m from Member m order by m.age desc", Member.class)
-                    .setFirstResult(1)
-                    .setMaxResults(10)
+//            String query = "select m from Member m inner join m.team t";
+
+            // 조인 대상 필터링 = on
+            // SELECT m, t FROM Member m LEFT JOIN m.team t on t.name = 'A'
+//            String query = "select m from Member m left join m.team t on t.name = 'teamA'";
+
+            // 연관관계 없는 엔티티 외부 조인
+            // SELECT m, t FROM Member m LEFT JOIN Team t on m.username = t.name
+            String query = "select m from Member m left join Team t on m.username = t.name";
+
+
+            List<Member> result = em.createQuery(query, Member.class)
                     .getResultList();
 
-            System.out.println("result.size() = " + result.size());
-            for (Member member1 : result) {
-                System.out.println("member1 = " + member1);
-            }
 
             tx.commit(); // 성공시 커밋
 
