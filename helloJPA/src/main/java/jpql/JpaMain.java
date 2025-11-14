@@ -64,6 +64,7 @@ public class JpaMain {
              * 엔티티 프로젝션을 하면 대상이 셀렉트 절에 한 10개 20개 나오는데 걔들이 다 영속성 컨텍스트에서 다 관리된다.
              * 따라서 해당 내용들은 바꾸면 다 정상적으로 데이터에 반영이 된다.
              */
+/**
             Member member = new Member();
             member.setUsername("member1");
             member.setAge(10);
@@ -104,6 +105,32 @@ public class JpaMain {
             MemberDTO memberDTO = resultList.get(0);
             System.out.println("memberDTO = " + memberDTO.getUsername());
             System.out.println("memberDTO = " + memberDTO.getAge());
+ **/
+            //25.11.14
+            /**
+             * 페이징 API  -> JPA는 페이징을 다음 두 API로 추상화
+             * setFirstResult(int startPosition) : 조회 시작 위치(0부터 시작)
+             * setMaxResults(int maxResult) : 조회할 데이터 수
+             */
+            for (int i = 0; i < 100; i++) {
+                Member member = new Member();
+                member.setUsername("member" + i);
+                member.setAge(i);
+                em.persist(member);
+            }
+
+            em.flush();
+            em.clear();
+
+            List<Member> result = em.createQuery("select m from Member m order by m.age desc", Member.class)
+                    .setFirstResult(1)
+                    .setMaxResults(10)
+                    .getResultList();
+
+            System.out.println("result.size() = " + result.size());
+            for (Member member1 : result) {
+                System.out.println("member1 = " + member1);
+            }
 
             tx.commit(); // 성공시 커밋
 

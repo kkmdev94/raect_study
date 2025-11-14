@@ -37,4 +37,14 @@ public class Member {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", age=" + age +
+//                ", team=" + team + -> 투스트링에서는 양방향이 되면 무한루프가 걸릴 수 있기에 지워주는게 좋다.
+                '}';
+    }
 }
