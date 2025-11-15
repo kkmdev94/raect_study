@@ -2,6 +2,7 @@ package jpql;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
 import java.util.List;
 
 public class JpaMain {
@@ -24,10 +25,11 @@ public class JpaMain {
 //            TypedQuery<String> query2 = em.createQuery("select m.username from Member m", String.class); // 타입 명시가 가능하면 상관 X
 //            // 하지만 아래처럼 String과 int를 각각 조회해서 출력해야할 경우 타입이 명확하지 않기에 타입 쿼리가 아닌 쿼리를 사용해야 한다.
 //            Query query3 = em.createQuery("select m.username,m.age from Member m");
+**/
+             /**
+             * 결과 조회 API - getResultList / getSingleResult
+             */
 /**
-//            /**
-//             * 결과 조회 API - getResultList / getSingleResult
-//             */
 //            // 반환에 타입이 있다면 제네릭에 들어가기에 리스트 타입으로 반환이 가능하여 for문으로 출력이 가능하다.
 //            List<Member> resultList = query.getResultList();
 //            for (Member member1 : resultList) {
@@ -37,12 +39,11 @@ public class JpaMain {
 //            //하나의 값만 뽑고 싶다면(where절로 조건을 걸었다면) -> getSingleResult로 출력 가능 / 단 singleResult는 결과가 정확히 단 하나이여야 한다. 결과가 없거나 둘 이상이면 무조건 Exception 발생함.
 //            Member singleResult = query.getSingleResult();
 //            System.out.println("singleResult = " + singleResult);
-
+**/
             /**
              * 파라미터 바인딩 -이름 기준 / 위치 기준( 왠만하면 사용X )
              */
-            //
-             /**
+/**
 //            TypedQuery<Member> query = em.createQuery("select m from Member m where m.username = :username", Member.class);
 //            query.setParameter("username", "member1");
 //            Member result = query.getSingleResult();
@@ -112,7 +113,7 @@ public class JpaMain {
              * setFirstResult(int startPosition) : 조회 시작 위치(0부터 시작)
              * setMaxResults(int maxResult) : 조회할 데이터 수
              */
-            /**
+/**
 //            for (int i = 0; i < 100; i++) {
 //                Member member = new Member();
 //                member.setUsername("member" + i);
@@ -133,6 +134,7 @@ public class JpaMain {
 //            for (Member member1 : result) {
 //                System.out.println("member1 = " + member1);
 //            }
+ **/
             // JOIN
             /**
              * 아래 로직을 실행해 보면 이상한 select 쿼리가 한번더 나가는데 해당 쿼리가
@@ -145,7 +147,8 @@ public class JpaMain {
              * from절  서브 쿼리가 안된다.(JPQL에서)
              * select mm from (select m.age from Member m) as mm" <- 이런 프롬절에 들어가는 서브 쿼리가 안된다.
              */
-            /**
+
+/**
             Team team = new Team();
             team.setName("teamA");
             em.persist(team);
@@ -196,22 +199,22 @@ public class JpaMain {
              *      이를 Java의 서비스 로더(ServiceLoader) 메커니즘을 통해 등록하는 방식을 사용합니다 -> Gemini 확인.
              */
 
-            Team team = new Team();
-            team.setName("teamA");
-            em.persist(team);
-
-            Member member = new Member();
-            member.setUsername("관리자");
-            member.setAge(10);
-            member.setType(MemberType.ADMIN);
-
-            member.setTeam(team);
-
-            em.persist(member);
-
-            em.flush();
-            em.clear();
-
+//            Team team = new Team();
+//            team.setName("teamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("관리자");
+//            member.setAge(10);
+//            member.setType(MemberType.ADMIN);
+//
+//            member.setTeam(team);
+//
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+//
 //            String query = "select m.username, 'HELLO', TRUE From Member m " +
 //                    "where m.type = jpql.MemberType.USER";
 //            List<Object[]> result = em.createQuery(query)
@@ -247,14 +250,68 @@ public class JpaMain {
 //            // ABS.SQRT,MOD 수학 펑션들
 //            String query = "select substring(m.username, 2, 3) from Member m";
 //            //SIZE, INDEX(JPA용도) size = 해당 컬렉션의 크기를 알려줌 / index는 거의 안씀
-            String query = "select function('group_concat', m.username) from Member m";
+//            String query = "select function('group_concat', m.username) from Member m";
+//
+//            List<String> result = em.createQuery(query, String.class)
+//                    .getResultList();
+//
+//            for (String s : result) {
+//                System.out.println("s = " + s);
+//            }
+            /**
+             * 경로 표현식 : . 을 찍어 객체 그래프를 탐색하는 것
+             *  - select m.username -> 상태 필드
+             *      from Member m
+             *      join m.team t -> 단일 값 연관 필드
+             *      join m.orders o -> 컬렉션 값 연관 필드
+             *      where t.name = '팀A'
+             * 상태 필드(state field):단순히 값을 저장하기 위한 필드 (ex: m.username)
+             * 연관 필드(association field) : 연관관계를 위한 필드
+             *   - 단일 값 연관 필드 : @ManyToOne, @OneToOne, 대상이 엔티티(ex:m.team)
+             *   - 컬렉션 값 연관 필드 : @OneToMany, @ManyToMany, 대상이 컬렉션(ex:m.orders)
+             * 명시적 조인 : join 키워드 직접 사용
+             *  - select m from Member m join m.team t
+             * 묵시적 조인 : 경로 표현식에 의해 묵시적으로 SQL 조인 발생 (내부 조인만 가능)
+             *  - select m.team from Member m
+             *  아래 예제에서 보이겠지만 단일 값, 컬렉션 값 등은 전부다 묵시적 조인이 들어가는데,
+             *   !! 실무에서는 묵시적 조인은 그냥 다 쓰지 말고 명시적 조인만 쓰는게 좋다. !!
+             */
+            Team team = new Team();
+            em.persist(team);
 
-            List<String> result = em.createQuery(query, String.class)
+            Member member1 = new Member();
+            member1.setUsername("관리자1");
+            member1.setTeam(team);
+            em.persist(member1);
+
+            Member member2 = new Member();
+            member2.setUsername("관리자2");
+            member2.setTeam(team);
+            em.persist(member2);
+
+            em.flush();
+            em.clear();
+            // JPQL 언어로 안바뀌고 문자열로 인식된다면 Inject Language에서 Hibernate QL로 변경하면된다.
+//            String query = "select m.username From Member m";
+
+            // 단일값 연관경로 : 묵시적 내부 조인(inner join 발생, 탐색 O / 이렇게 Member에서 team으로 묵시적 join을 한 뒤 team의 내부도 탐색이 가능하다. / 실제 운영에서는 튜닝이 어렵기에 웬만해선 사용 X
+//            String query = "select m.team.name From Member m";
+//
+//            List<String> result = em.createQuery(query, String.class)
+//                    .getResultList();
+//
+//            for (String s : result) {
+//                System.out.println("s = " + s);
+//            }
+
+            // 컬렉션 값 연관 경로 : 묵시적 내부 조인 발생, 탐색 X / From 절에서 명시적 조인을 통해 별칭을 얻으면 별칭을 통해 탐색 가능
+            String query = "select m.username From Team t join t.members m";
+
+
+            List<Member> result = em.createQuery(query, Member.class)
                     .getResultList();
 
-            for (String s : result) {
-                System.out.println("s = " + s);
-            }
+            System.out.println("result = " + result);
 
             tx.commit(); // 성공시 커밋
 
