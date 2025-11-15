@@ -112,6 +112,7 @@ public class JpaMain {
              * setFirstResult(int startPosition) : 조회 시작 위치(0부터 시작)
              * setMaxResults(int maxResult) : 조회할 데이터 수
              */
+            /**
 //            for (int i = 0; i < 100; i++) {
 //                Member member = new Member();
 //                member.setUsername("member" + i);
@@ -144,6 +145,7 @@ public class JpaMain {
              * from절  서브 쿼리가 안된다.(JPQL에서)
              * select mm from (select m.age from Member m) as mm" <- 이런 프롬절에 들어가는 서브 쿼리가 안된다.
              */
+            /**
             Team team = new Team();
             team.setName("teamA");
             em.persist(team);
@@ -173,6 +175,86 @@ public class JpaMain {
             List<Member> result = em.createQuery(query, Member.class)
                     .getResultList();
 
+**/
+            //25.11.15
+            /**
+             * JPQL 타입 표현
+             *  - 문자 : 'HELLO', 'She''s' = 싱글쿼테이션으로 표시
+             *  - 숫자 : 10L(Long), 10D(Double), 10F(Float)
+             *  - Boolean : true, false
+             *  - ENUM : jpabook.MemberType.Admin( 패키지명이 들어가야 한다.)
+             *  - 엔티티 타입 : TYPE(m) = Member (상속관계에서 사용)
+             * 조건식 - CASE 식
+             *   - 기본 CASE 식 : Select case when m.age <= 10 then '학생요금' when m.age >= 60 then '경로요금' else '일반요금' end from Member m
+             *   - 단순 CASE 식 : Select case t.name when '팀A' then '인센티브110%' when '팀B' then '인센티브120%' else '인센티브105%' end from Team t
+             *   - COALESCE : 하나씩 조회해서 null이 아니면 반환 / select coalesce(m.username, '이름 없는 회원') from Member m
+             *   - NULLIF : 두 값이 같으면 null 반환, 다르면 첫번째 값 반환 / select NULLIF(m.username, '관리자') from Member m
+             * JPQL 기본함수
+             * 사용자 정의 함수 호출
+             *  - 하이버네이트는 사용전 방언에 추가 필요 -> 하이버네이트6에서는 방언 추가가 필요가 없다.
+             *  - 최신 방식 (Hibernate 6 이상): 현재는 FunctionContributor라는 인터페이스를 구현하고,
+             *      이를 Java의 서비스 로더(ServiceLoader) 메커니즘을 통해 등록하는 방식을 사용합니다 -> Gemini 확인.
+             */
+
+            Team team = new Team();
+            team.setName("teamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("관리자");
+            member.setAge(10);
+            member.setType(MemberType.ADMIN);
+
+            member.setTeam(team);
+
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+//            String query = "select m.username, 'HELLO', TRUE From Member m " +
+//                    "where m.type = jpql.MemberType.USER";
+//            List<Object[]> result = em.createQuery(query)
+//                    .getResultList();
+//
+//            for (Object[] objects : result) {
+//                System.out.println("objects[0] = " + objects[0]);
+//                System.out.println("objects[1] = " + objects[1]);
+//                System.out.println("objects[2] = " + objects[2]);
+//            }
+            // 기본
+//            String query = "select " +
+//                    "case when m.age <= 10 then '학생요금'" +
+//                    "when m.age >= 60 then '경로요금'" +
+//                    "else '일반요금' end " +
+//                    "from Member m";
+            // COALESCE
+//            String query = "select coalesce(m.username, '이름 없는 회원') from Member m";
+
+            //NULLIF
+//            String query = "select NULLIF(m.username, '관리자') from Member m";
+
+            //JPQL 기본함수
+            //CONCAT (문자 A와 B를 더하는것) || <- 이것도 가능.
+//            String query = "select concat('a', 'b') from Member m";
+            //SubString 문자열 자르기
+//            String query = "select substring(m.username, 2, 3) from Member m";
+            //Trim 공백제거
+            //Lower,UPPER 대소문자 변경
+            //LENGTH 문자의 길이
+//            // LOCATE 찾는 문자나 숫자가 몇번째에 있는지 확인(Integer Type으로 반환됨)
+//            String query = "select locate('de','abcdefg') from Member m";
+//            // ABS.SQRT,MOD 수학 펑션들
+//            String query = "select substring(m.username, 2, 3) from Member m";
+//            //SIZE, INDEX(JPA용도) size = 해당 컬렉션의 크기를 알려줌 / index는 거의 안씀
+            String query = "select function('group_concat', m.username) from Member m";
+
+            List<String> result = em.createQuery(query, String.class)
+                    .getResultList();
+
+            for (String s : result) {
+                System.out.println("s = " + s);
+            }
 
             tx.commit(); // 성공시 커밋
 
