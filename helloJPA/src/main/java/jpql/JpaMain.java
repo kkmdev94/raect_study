@@ -276,6 +276,7 @@ public class JpaMain {
              *  아래 예제에서 보이겠지만 단일 값, 컬렉션 값 등은 전부다 묵시적 조인이 들어가는데,
              *   !! 실무에서는 묵시적 조인은 그냥 다 쓰지 말고 명시적 조인만 쓰는게 좋다. !!
              */
+            /**
             Team team = new Team();
             em.persist(team);
 
@@ -312,6 +313,82 @@ public class JpaMain {
                     .getResultList();
 
             System.out.println("result = " + result);
+             **/
+
+            //25.11.17
+            /**
+             * 페치 조인
+             *  - 회원을 조회하면서 연관된 팀도 함께 조회(SQL 한번에)
+             *  ex) JPQL : select m from Memeber m join fetch m.team
+             *      SQL : SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
+             * LAZY로 지연로딩을 설정해도 페치 조인이 우선으로 처리된다.
+             *
+             * 컬렉션 페치 조인
+             *   - 일대다 관계, 컬렉션 페치 조인
+             *   ex) JPQL : select t from Team t join fetch t.members where t.name = '팀A'
+             *       SQL : SELECT T.*, M.* FROM TEAM T INNER JOIN MEMBER M ON T.ID= M.TEAM_ID WHERE T.NAME = '팀A'
+             *
+             * 하이버네이트5에서는 데이터 뻥튀기가 있어서 중복된 결과값이 나오지만 하이버네이트6에서는 중복값을 없애준다.
+             * 만약 구버전인 하이버네이트5에서 개발을 하게 된다면 DISTINCT 라는 명령어를 사용한다
+             *   - JPQL의 DISTINCT는 2가지 기능을 제공한다.
+             *      1. SQL에 DISTINCT를 추가
+             *      2. 애플리케이션에서 엔티티 중복 제거
+             *   - 사용법은
+             *      String query = "select distinct t From Team t join fetch t.members";
+             */
+
+            Team teamA = new Team();
+            teamA.setName("teamA");
+            em.persist(teamA);
+
+            Team teamB = new Team();
+            teamB.setName("teamB");
+            em.persist(teamB);
+
+            Member member1 = new Member();
+            member1.setUsername("member1");
+            member1.setTeam(teamA);
+            em.persist(member1);
+
+            Member member2 = new Member();
+            member2.setUsername("member2");
+            member2.setTeam(teamA);
+            em.persist(member2);
+
+            Member member3 = new Member();
+            member3.setUsername("member3");
+            member3.setTeam(teamB);
+            em.persist(member3);
+
+            em.flush();
+            em.clear();
+
+//            String query = "select m From Member m";
+//            String query = "select m From Member m join fetch m.team"; // fetch join 사용
+            String query = "select t From Team t join fetch t.members"; // 컬렉션 fetch join 사용
+
+            List<Team> result = em.createQuery(query, Team.class)
+                    .getResultList();
+            
+            // fetch 조인 루프
+//            for (Member member : result) {
+//                System.out.println("member = " + member.getUsername() + "," + member.getTeam().getName()); // 페치 조인으로 인해 TEAM은 프록시가 아닌 영속성 컨텍스트에 올라가서 출력된다.
+//                // 회원1, 팀A(SQL)
+//                // 회원2, 팀A(1차캐시)
+//                // 회원3, 팀B(SQL)
+//
+//                // 회원100명 -> N + 1 문제
+//            }
+
+            System.out.println("result.size() = " + result.size());
+            
+            // 컬렉션 fetch 조인 루프
+            for (Team team : result) {
+                System.out.println("team = " + team.getName() + " |members =" + team.getMembers().size());
+                for (Member member : team.getMembers()) {
+                    System.out.println("-> member = " + member);
+                }
+            }
 
             tx.commit(); // 성공시 커밋
 
