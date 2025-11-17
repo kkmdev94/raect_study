@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class Team {
     private Long id;
     private String name;
 
+//    @BatchSize(size=100) // 보통 이렇게 하나에 부여하기보단 persistence.xml 파일에 글로벌 셋팅을 한다.
     @OneToMany(mappedBy = "team")
     private List<Member> members = new ArrayList<>();
 

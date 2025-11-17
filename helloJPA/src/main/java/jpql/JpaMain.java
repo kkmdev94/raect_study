@@ -317,7 +317,7 @@ public class JpaMain {
 
             //25.11.17
             /**
-             * 페치 조인
+             * 페치 조인 (왠만한 N + 1 문제는 이걸로 다 해결한다.)
              *  - 회원을 조회하면서 연관된 팀도 함께 조회(SQL 한번에)
              *  ex) JPQL : select m from Memeber m join fetch m.team
              *      SQL : SELECT M.*, T.* FROM MEMBER M INNER JOIN TEAM T ON M.TEAM_ID=T.ID
@@ -335,6 +335,31 @@ public class JpaMain {
              *      2. 애플리케이션에서 엔티티 중복 제거
              *   - 사용법은
              *      String query = "select distinct t From Team t join fetch t.members";
+             *
+             * 다대일은 뻥튀기가 애초에 없어서 큰 상관 없다.
+             *
+             * 페치 조인과 일반 조인의 차이
+             *   - 일반 조인 실행시 연관된 엔티티를 함께 조회하지 않음
+             *      ex) JPQL : select t from Team t join t.members m where t.name = '팀A'
+             *          SQL : SELECT T.* FROM TEAM T INNER JOIN MEMBER M ON T.ID = M.TEAM_ID WHERE T.NAME = '팀A'
+             *   - JPQL은 결과를 반환할 때 연관관계 고려 X
+             *   - 단지 SELECT 절에 지정한 엔티티만 조회할 뿐
+             *   - 여기서는 팀 엔티티만 조회하고, 회원 엔티티는 조회 X
+             *   - 페치 조인을 사용할 때만 연관된 엔티티도 함께 조회(즉시 로딩)
+             *   - 페치 조인은 객체 그래프를 SQL 한번에 조회하는 개념.
+             *
+             * 페치 조인의 한계
+             *   - 페치 조인 대상에는 별칭을 줄 수 없다.
+             *     1. 하이버네이트는 가능, 가급적 사용 X
+             *   - 둘 이상의 컬렉션은 페치 조인 할 수 없다.
+             *   - 컬렉션을 페치 조인하면 페이징 API(setFirstResult, setMaxResults)를 사용할 수 없다.
+             *     1. 일대일, 다대일 같은 단일 값 연고나 필드들은 페치 조인해도 페이징 가능
+             *     2. 하이버네이트는 경고 로그를 남기고 메모리에서 페이징(매우 위험)
+             *
+             * 페치 조인 - 정리
+             *   - 모든 것을 페치 조인으로 해결할 수 없다.
+             *   - 페치 조인은 객체 그래프를 유지할 때 사용하면 효과적이다.(X.X.x 이런식으로)
+             *   - 여러 테이블을 조인해서 엔티티가 가진 모양이 아닌 전혀 다른 결과를 내야 하면, 페치 조인보다는 일반 조인을 사용하고 필요한 데이터들만 조회해서 DTO로 반환하는 것이 효과적
              */
 
             Team teamA = new Team();
@@ -365,9 +390,15 @@ public class JpaMain {
 
 //            String query = "select m From Member m";
 //            String query = "select m From Member m join fetch m.team"; // fetch join 사용
-            String query = "select t From Team t join fetch t.members"; // 컬렉션 fetch join 사용
+//            String query = "select t From Team t join fetch t.members"; // 컬렉션 fetch join 사용
+//            String query = "select t From Team t join t.members m"; // 일반 조인일때.
+//            String query = "select t From Team t join fetch t.members m"; // 별칭 사용 X, 가능은 하지만 가급적 사용 X 데이터 누락 및 정합성 이슈가 있다.
+//            String query = "select m From Member m join fetch m.team t"; // 굳이 페이징을 써야 한다면 일대다인 로직을 다대 일로 변경
+            String query = "select t From Team t"; // 두번째는 Team Entity로 들어가서 @BatchSize(size=100) 부여.
 
             List<Team> result = em.createQuery(query, Team.class)
+                    .setFirstResult(0)
+                    .setMaxResults(2)
                     .getResultList();
             
             // fetch 조인 루프
