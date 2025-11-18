@@ -433,6 +433,24 @@ public class JpaMain {
              *
              *   - 외래 키 값
              *      로직에서 확인.
+             *
+             * Named 쿼리
+             *      -정적 쿼리
+             *          1. 미리 정의해서 이름을 부여해두고 사용하는 JPQL
+             *          2. 정적 쿼리 / 어노테이션, XML에 정의 / 동적 쿼리는 안댐.
+             *          3. 애플리케이션 로딩 시점에 초기화 후 재사용 / 로딩 시점에 쿼리를 검증
+             * 벌크 연산
+             *      - 일반적으로 아는 update / delete 문이라고 생각하면 편하다. / PK를 딱 찍어서 한건을 업데이트 하는걸 제외한 나머지 모든 업데이트 딜리트 문이라고 생각하면된다.
+             *      - 예시를 들어서 재고가 10개 미만인 모든 상품의 가격을 10% 상승한다고 할때,
+             *          1. JPA 변경 감지 기능으로 하려면 너무 많은 SQL을 실행해야 하지만 벌크를 쓰면,
+             *              1) 재고가 10개 미만인 상품을 리스트로 조회.
+             *              2) 상품 엔티티의 가격을 10% 증가
+             *              3) 트랜잭션 커밋 시점에 변경 감지 작동
+             *              4) 변경된 데이터가 100건이라면 100번의 업데이트 SQL 실행.
+             *          2. executeUpdate()로 결과에 영향받은 엔티티 수 반환
+             *          3. Update와 Delete를 지원하지만 하이버네이트는 insert도 지원한다.
+             *     - 벌크연산 주의 : 영속성 컨텍스트를 무시하고 데이터 베이스에 직접 쿼리하기에 벌크 연산을 먼저 실행 하거나,
+             *                      그게 아니라면 2번째 방법인 벌크 연산 수행 후 영속성 컨텍스트를 초기화 해주면 된다.
              */
 
             Team teamA = new Team();
@@ -445,21 +463,24 @@ public class JpaMain {
 
             Member member1 = new Member();
             member1.setUsername("member1");
+            member1.setAge(0);
             member1.setTeam(teamA);
             em.persist(member1);
 
             Member member2 = new Member();
             member2.setUsername("member2");
+            member2.setAge(0);
             member2.setTeam(teamA);
             em.persist(member2);
 
             Member member3 = new Member();
             member3.setUsername("member3");
+            member3.setAge(0);
             member3.setTeam(teamB);
             em.persist(member3);
 
-            em.flush();
-            em.clear();
+//            em.flush();
+//            em.clear();
 
 //            String query = "select m from Member m where m = :member";
 
@@ -468,15 +489,33 @@ public class JpaMain {
 //                    .getSingleResult();
 //            System.out.println("findMember = " + findMember);
 
-            String query = "select m from Member m where m.team = :team";
+//            String query = "select m from Member m where m.team = :team";
+//
+//            List<Member> result = em.createQuery(query, Member.class)
+//                    .setParameter("team", teamA)
+//                    .getResultList();
+//
+//            for (Member member : result) {
+//                System.out.println("member = " + member);
+//            }
+            //namedQuery
+//            List<Member> result = em.createNamedQuery("Member.findByUsername", Member.class)
+//                    .setParameter("username", "member1")
+//                    .getResultList();
+//
+//            for (Member member : result) {
+//                System.out.println("member = " + member);
+//            }
 
-            List<Member> result = em.createQuery(query, Member.class)
-                    .setParameter("team", teamA)
-                    .getResultList();
+            // 벌크 연산 / FLUSH 자동 호출.
+            int resultCount = em.createQuery("update Member m set m.age = 20")
+                    .executeUpdate();
 
-            for (Member member : result) {
-                System.out.println("member = " + member);
-            }
+            em.clear(); // 초기화 / 이 전에는 DB에만 반영이 되고 JPA에는 반영이 안되서 0살이 조회되지만 초기화 후 아래에서 다시 찾으면 새로 불러오기때문에 정상 조회 가능.
+
+            Member fm = em.find(Member.class, member1.getAge());
+
+            System.out.println("fm = " + fm.getAge());
 
             tx.commit(); // 성공시 커밋
 

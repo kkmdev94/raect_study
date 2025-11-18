@@ -3,6 +3,10 @@ package jpql;
 import jakarta.persistence.*;
 
 @Entity
+@NamedQuery( // 25.11.18 네임드쿼리 시작
+        name = "Member.findByUsername",
+        query = "select m from Member m where m.username = :username" // 쿼리가 잘못 되었을때 컴파일 오류를 발생시킨다.
+)
 public class Member {
 
     @Id @GeneratedValue
