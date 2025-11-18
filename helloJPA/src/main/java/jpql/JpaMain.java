@@ -361,7 +361,7 @@ public class JpaMain {
              *   - 페치 조인은 객체 그래프를 유지할 때 사용하면 효과적이다.(X.X.x 이런식으로)
              *   - 여러 테이블을 조인해서 엔티티가 가진 모양이 아닌 전혀 다른 결과를 내야 하면, 페치 조인보다는 일반 조인을 사용하고 필요한 데이터들만 조회해서 DTO로 반환하는 것이 효과적
              */
-
+/**
             Team teamA = new Team();
             teamA.setName("teamA");
             em.persist(teamA);
@@ -419,6 +419,63 @@ public class JpaMain {
                 for (Member member : team.getMembers()) {
                     System.out.println("-> member = " + member);
                 }
+            }
+**/
+            //25.11.18
+            /**
+             * 엔티티 직접 사용
+             *   - 기본 키 값
+             *    1. JPQL에서 엔티티를 직접 사용하면 SQL에서 해당 엔티티의 기본 키 값을 사용
+             *      ex) JPQL : select count(m.id) from Member m // 엔티티의 아이디를 직접 사용
+             *                 select count(m) from Member m // 엔티티를 직접 사용
+             *          SQL(둘다 같은 SQL이 실행된다) :  select count(m.id) as cnt from Member m
+             *    2.파라미터도 똑같다. select m from Member m where m = :member로 해도 똑같다.
+             *
+             *   - 외래 키 값
+             *      로직에서 확인.
+             */
+
+            Team teamA = new Team();
+            teamA.setName("teamA");
+            em.persist(teamA);
+
+            Team teamB = new Team();
+            teamB.setName("teamB");
+            em.persist(teamB);
+
+            Member member1 = new Member();
+            member1.setUsername("member1");
+            member1.setTeam(teamA);
+            em.persist(member1);
+
+            Member member2 = new Member();
+            member2.setUsername("member2");
+            member2.setTeam(teamA);
+            em.persist(member2);
+
+            Member member3 = new Member();
+            member3.setUsername("member3");
+            member3.setTeam(teamB);
+            em.persist(member3);
+
+            em.flush();
+            em.clear();
+
+//            String query = "select m from Member m where m = :member";
+
+//            Member findMember= em.createQuery(query, Member.class)
+//                    .setParameter("member", member1)
+//                    .getSingleResult();
+//            System.out.println("findMember = " + findMember);
+
+            String query = "select m from Member m where m.team = :team";
+
+            List<Member> result = em.createQuery(query, Member.class)
+                    .setParameter("team", teamA)
+                    .getResultList();
+
+            for (Member member : result) {
+                System.out.println("member = " + member);
             }
 
             tx.commit(); // 성공시 커밋
