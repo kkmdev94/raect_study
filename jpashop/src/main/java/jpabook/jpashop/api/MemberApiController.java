@@ -19,15 +19,28 @@ public class MemberApiController {
     @PostMapping("/api/v1/members")
     public CreateMemberResponse saveMemberV1(@RequestBody @Valid Member member) {
         Long id = memberService.join(member);
-        return new CreateMemberResponse(id);
+        String city = member.getAddress().getCity();
+        String street = member.getAddress().getStreet();
+        String zipcode = member.getAddress().getZipcode();
+        return new CreateMemberResponse(id,city,street,zipcode);
     }
 
     @Data
     static class CreateMemberResponse {
         private Long id;
+        private String city;
+        private String street;
+        private String zipcode;
 
         public CreateMemberResponse(Long id) {
             this.id = id;
+        }
+
+        public CreateMemberResponse(Long id, String city, String street, String zipcode) {
+            this.id = id;
+            this.city = city;
+            this.street = street;
+            this.zipcode = zipcode;
         }
     }
 }
