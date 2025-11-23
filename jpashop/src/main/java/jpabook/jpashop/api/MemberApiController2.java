@@ -9,11 +9,19 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class MemberApiController2 {
 
     private final MemberService memberService;
+
+    //25.11.23 SELECT
+    @GetMapping("api/v2/members2")
+    public List<Member> membersV2(){
+        return memberService.findMembers();
+    }
 
     //25.11.21 DTO 생성
     @PostMapping("/api/v2/members2")
