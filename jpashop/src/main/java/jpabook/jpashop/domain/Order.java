@@ -20,6 +20,11 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
+    /**
+     * 25.11.26 LAZY -> 지연로딩 -> 지연로딩은 DB에서 데이터를 가져오는게 아니다. 가짜 프록시 멤버를 상속받아서 proxy 멤버 객체를 생성해서 넣는다.
+     * 이것을 ByteBuddy라는 라이브러리를 사용하여 그 안의 메소드인 byteBuddyInterceptor를  사용하는데 이때 프록시 객체를 가짜로 넣어놓고 멤버 객체 값을 가져와서 채울때 그때 DB에 멤버 객체 SQL을 날린다.
+     * 이걸 프록시 초기화라 하는데 문제는 제이슨 라이브러리에서 루프를 돌려서 값을 뽑으려고 보니 순수 자바 객체가 아닌 가짜 프록시 인 byteBuddy가 들어가 있어서 오류를 발생시킨것이다.
+     */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
