@@ -111,4 +111,22 @@ public class OrderRepository {
         TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000); //최대 1000건
         return query.getResultList();
     }
+
+    public List<Order> findAllWithMemberDelivery() {
+        // 패치 조인 = Lazy나 proxy를 다 무시하고 값을 직접 Query를 날려서 확인한다. 이때 무시된 proxy의 가짜 객체 값이 아닌 진짜 객체값이 들어가 있다.
+        return em.createQuery("select o from Order o" +
+                " join fetch o.member m" +
+                " join fetch o.delivery d", Order.class)
+                .getResultList();
+    }
+
+    // DTO 반환에서는 Entity나 Value Object만 가능 DTO는 반환 불가능 그래서 new Operation을 사용해야 함.
+    public List<SimpleOrderQueryDto> findOrderDto() {
+        return em.createQuery(
+                "select new jpabook.jpashop.repository.SimpleOrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address)" +
+                        "from Order o" +
+                   " join o.member m" +
+                   " join o.delivery d", SimpleOrderQueryDto.class)
+            .getResultList();
+    }
 }
