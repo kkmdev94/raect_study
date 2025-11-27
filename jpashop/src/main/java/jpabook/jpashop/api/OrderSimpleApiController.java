@@ -5,7 +5,8 @@ import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderStatus;
 import jpabook.jpashop.repository.OrderRepository;
 import jpabook.jpashop.repository.OrderSearch;
-import jpabook.jpashop.repository.SimpleOrderQueryDto;
+import jpabook.jpashop.repository.order.simplequery.SimpleOrderQueryDto;
+import jpabook.jpashop.repository.order.simplequery.OrderSimpleQuerryRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,7 @@ import java.util.stream.Collectors;
 public class OrderSimpleApiController {
 
     private final OrderRepository orderRepository;
+    private final OrderSimpleQuerryRepository orderSimpleQuerryRepository;
 
     // 엔티티를 직접 노출시키니 무한 루프에 걸린다.
     @GetMapping("/api/v1/simple-orders")
@@ -78,7 +80,7 @@ public class OrderSimpleApiController {
 
     @GetMapping("/api/v4/simple-orders")
     public List<SimpleOrderQueryDto> ordersV4() {
-        return orderRepository.findOrderDto();
+        return orderSimpleQuerryRepository.findOrderDtos();
     }
 
     @Data
