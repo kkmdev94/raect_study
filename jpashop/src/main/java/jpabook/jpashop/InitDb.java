@@ -77,6 +77,9 @@ public class InitDb {
             return delivery;
         }
 
+        /**
+         * ctrl + alt + m -> 메서드 만든 후 .set() 파라미터로 받는 값에서 ctrl + alt + p를 누르면 메서드 파라미터로 넘길 수 있다.
+         */
         private Book createBook(String s, int i, int stockQuantity) {
             Book book1 = new Book();
             book1.setName(s);
