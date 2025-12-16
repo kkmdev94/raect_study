@@ -130,4 +130,26 @@ public class OrderRepository {
                    " join o.delivery d", SimpleOrderQueryDto.class)
             .getResultList();
     }
+    // 1대다에서 데이터가 뻥튀기 되어 버린다. 예를 들어 order가 2개고 orderItems가 4개면 order가 items 갯수만큼 증가되서 나온다.
+//    public List<Order> findAllWithItem() {
+//        return em.createQuery(
+//                "select o from Order o" +
+//                " join fetch o.member m" +
+//                " join fetch o.delivery d" +
+//                " join fetch o.orderItems oi" +
+//                " join fetch oi.item i", Order.class)
+//                .getResultList();
+//    }
+    // 위의 로직처럼 뻥튀기를 막기위해 distinct를 넣어 사용한다. 데이터 베이스의 디스틴트는 정말 한줄이 완벽하게 똑같아야 중복이 제거 된다. 하지만 JPA는 Order가 같은 ID 값이면 그냥 중복을 제거해준다.
+    // 단점 : 페이징이 불가능하다. 1대 다를 페치 조인 하는순간 페이징이 불가능해진다. 1대 다가 아닌 다른것들은 페이징을 해도 상관 없다.
+    // 컬렉션 페치 조인은 1개만 사용할 수 있다. 컬렉션 둘 이상에 페치 조인을 사용하면 데이터가 부정합하게 조회 될 수 있다.
+    public List<Order> findAllWithItem() {
+        return em.createQuery(
+                        "select distinct o from Order o" +
+                                " join fetch o.member m" +
+                                " join fetch o.delivery d" +
+                                " join fetch o.orderItems oi" +
+                                " join fetch oi.item i", Order.class)
+                .getResultList();
+    }
 }
