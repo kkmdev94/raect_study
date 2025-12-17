@@ -59,6 +59,17 @@ public class OrderApiController {
                 .collect(Collectors.toList());
         return collect;
     }
+    /**
+     * 25.12.17 fetch Join 페이징 한계돌파
+     */
+    @GetMapping("/api/v4/orders")
+    public List<OrderDto> ordersV4() {
+        List<Order> orders = orderRepository.findAllWithItem();
+        List<OrderDto> collect = orders.stream()
+                .map(o -> new OrderDto(o))
+                .collect(Collectors.toList());
+        return collect;
+    }
 
     /**
      * DTO로 반환해라고 했을때 엔티티가 노출되면 안된다.
