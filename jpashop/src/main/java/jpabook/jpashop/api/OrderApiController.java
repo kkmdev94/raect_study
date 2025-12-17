@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
@@ -61,10 +62,16 @@ public class OrderApiController {
     }
     /**
      * 25.12.17 fetch Join 페이징 한계돌파
+     * member와 delivery paging 작업까지 진행.
+     * default_batch_fetch_size 글로벌 설정을 하고 쿼리를 확인해보면 in 쿼리를 통해 한방 쿼리로 다 가져와 버린다 즉 1,n,m 증가 공식이 되는게 아닌 묶어서 다 가져와 버린다.
+     *
      */
-    @GetMapping("/api/v4/orders")
-    public List<OrderDto> ordersV4() {
-        List<Order> orders = orderRepository.findAllWithItem();
+    @GetMapping("/api/v3.1/orders")
+    public List<OrderDto> ordersV3_page(
+            @RequestParam(value = "offset", defaultValue = "0") int offset,
+            @RequestParam(value = "limit", defaultValue = "100") int limit) {
+        List<Order> orders = orderRepository.findAllWithMemberDelivery(offset, limit); // member랑 delivery를 한번에 패치조인하는 메서드
+
         List<OrderDto> collect = orders.stream()
                 .map(o -> new OrderDto(o))
                 .collect(Collectors.toList());
