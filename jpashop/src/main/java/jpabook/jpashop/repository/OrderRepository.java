@@ -153,6 +153,10 @@ public class OrderRepository {
                 .getResultList();
     }
 
+    /**
+     * 25.12.23 투원관계에서도 default_batch_fetch_size 설정했다는 가정하에 패치 조인을 제외하고 쿼리문을 날려도 된다.
+     * 다만, 이렇게 되면 네트워크를 많이 타야 하기 떄문에 투원 관계에서는 패치 조인을 미리 잡고 진행하는게 좋다.
+     */
     public List<Order> findAllWithMemberDelivery(int offset, int limit) {
         return em.createQuery("select o from Order o" +
                         " join fetch o.member m" +

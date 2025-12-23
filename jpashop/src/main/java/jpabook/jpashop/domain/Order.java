@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -29,6 +30,14 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    /**
+     * 25.12.23 default_batch_fetch_size를 통해 글로벌하게 설정할 수 있지만
+     * 좀더 디테일하게 적용하고 싶다면 @BatchSize를 적용하면 된다.
+     * 단, @BatchSize는 컬렉션을 적용할떄 적용이 가능하고 Item 같이 투원 관계인 N대다 관계가 아니라면
+     * 클래스 위 선언에서 해주면 된다 예시는 Item클래스에.
+     *
+     */
+    @BatchSize(size = 1000)
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 

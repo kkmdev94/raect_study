@@ -5,6 +5,7 @@ import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +13,10 @@ import java.util.List;
 /**
  * @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
  * 상속관계 맵핑에서 상속관계 전략을 부모클래에서 잡아서 지정을 해야되는데 이떄 사용하는 어노테이션.
+ *
+ * 25.12.23 컬렉션이 아닌 N대다 관계에서 BatchSize 설정
  */
-
+@BatchSize(size = 1000)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")

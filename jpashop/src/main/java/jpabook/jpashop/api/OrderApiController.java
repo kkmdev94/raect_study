@@ -72,10 +72,10 @@ public class OrderApiController {
             @RequestParam(value = "limit", defaultValue = "100") int limit) {
         List<Order> orders = orderRepository.findAllWithMemberDelivery(offset, limit); // member랑 delivery를 한번에 패치조인하는 메서드
 
-        List<OrderDto> collect = orders.stream()
+        List<OrderDto> result = orders.stream()
                 .map(o -> new OrderDto(o))
                 .collect(Collectors.toList());
-        return collect;
+        return result;
     }
 
     /**
