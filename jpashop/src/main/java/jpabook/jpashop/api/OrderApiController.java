@@ -6,6 +6,8 @@ import jpabook.jpashop.domain.OrderItem;
 import jpabook.jpashop.domain.OrderStatus;
 import jpabook.jpashop.repository.OrderRepository;
 import jpabook.jpashop.repository.OrderSearch;
+import jpabook.jpashop.repository.order.query.OrderQueryDto;
+import jpabook.jpashop.repository.order.query.OrderQueryReposiotry;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.jaxb.SpringDataJaxb;
@@ -22,6 +24,7 @@ import java.util.stream.Collectors;
 public class OrderApiController {
 
     private final OrderRepository orderRepository;
+    private final OrderQueryReposiotry orderQueryReposiotry;
 
     @GetMapping("/api/v1/orders")
     public List<Order> ordersV1() {
@@ -79,6 +82,14 @@ public class OrderApiController {
     }
 
     /**
+     * 25.12.27 JPA에서 DTO 직접 조회
+     */
+    @GetMapping("/api/v4/orders")
+    public List<OrderQueryDto> ordersV4() {
+        return orderQueryReposiotry.findOrderQueryDtos();
+    }
+
+    /**
      * DTO로 반환해라고 했을때 엔티티가 노출되면 안된다.
      * 아래의 로직처럼 랩핑도 안된다. POSTMAN으로 돌려보면 OrderItems의 스펙이 즉, 데이터가 외부에 전부 노출된다는 것이다.
      * 엔티티에 대한 의존을 완전히 끊어야 한다.
@@ -90,7 +101,7 @@ public class OrderApiController {
         private LocalDateTime orderDate;
         private OrderStatus orderStatus;
         private Address address;
-//        private List<OrderItem> orderItems;
+        //        private List<OrderItem> orderItems;
         private List<OrderItemDto> orderItems;
 
         public OrderDto(Order order) {
